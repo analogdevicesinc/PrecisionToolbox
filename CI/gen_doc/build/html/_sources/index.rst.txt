@@ -1,0 +1,9 @@
+Welcome to Precision Converter Toolbox's documentation!
+=======================================================
+
+.. raw:: html
+   :file: ../../../doc/adi_bsp.html
+
+.. toctree::
+   Devices <devices/index.rst>
+   Developers <dev/index.rst>

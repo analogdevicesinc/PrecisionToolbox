@@ -1,0 +1,231 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Devloper’s Guide &mdash; Precision Converter Toolbox 21.1.1 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/style.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Additional Support" href="Support.html" />
+    <link rel="prev" title="Code Examples" href="CodeExamples.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Precision Converter Toolbox
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../devices/index.html">Devices</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Developers</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Buffer.html">Buffers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CodeExamples.html">Code Examples</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Devloper’s Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Support.html">Additional Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StateMgmt.html">State Management</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Precision Converter Toolbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">Devloper’s guide</a> &raquo;</li>
+      <li>Devloper’s Guide</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/dev/ForDevs.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="devloper-s-guide">
+<h1>Devloper’s Guide<a class="headerlink" href="#devloper-s-guide" title="Permalink to this headline"></a></h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,IE=9,chrome=1"><meta name="generator" content="MATLAB 2022a"><title>For Developers</title><style type="text/css">.rtcContent { padding: 30px; } .S0 { margin: 3px 10px 5px 4px; padding: 0px; line-height: 28.8px; min-height: 0px; white-space: pre-wrap; color: rgb(192, 76, 11); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 24px; font-weight: 400; text-align: left;  }
+.S1 { margin: 2px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S2 { margin: 20px 10px 5px 4px; padding: 0px; line-height: 20px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 20px; font-weight: 700; text-align: left;  }
+.CodeBlock { background-color: #F5F5F5; margin: 10px 0 10px 0; }
+.S3 { border-left: 1px solid rgb(191, 191, 191); border-right: 1px solid rgb(191, 191, 191); border-top: 1px solid rgb(191, 191, 191); border-bottom: 1px solid rgb(191, 191, 191); border-radius: 4px 4px 0px 0px; padding: 6px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }
+.S4 { color: rgb(33, 33, 33); padding: 10px 0px 6px 17px; background: rgb(255, 255, 255) none repeat scroll 0% 0% / auto padding-box border-box; font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px; overflow-x: hidden; line-height: 17.234px;  }
+/* Styling that is common to warnings and errors is in diagnosticOutput.css */.embeddedOutputsErrorElement {    min-height: 18px;    max-height: 550px;}
+.embeddedOutputsErrorElement .diagnosticMessage-errorType {    overflow: auto;}
+.embeddedOutputsErrorElement.inlineElement {}
+.embeddedOutputsErrorElement.rightPaneElement {}
+/* Styling that is common to warnings and errors is in diagnosticOutput.css */.embeddedOutputsWarningElement {    min-height: 18px;    max-height: 550px;}
+.embeddedOutputsWarningElement .diagnosticMessage-warningType {    overflow: auto;}
+.embeddedOutputsWarningElement.inlineElement {}
+.embeddedOutputsWarningElement.rightPaneElement {}
+/* Copyright 2015-2019 The MathWorks, Inc. *//* In this file, styles are not scoped to rtcContainer since they could be in the Dojo Tooltip */.diagnosticMessage-wrapper {    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;    font-size: 12px;}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType {    color: rgb(255,100,0);}
+.diagnosticMessage-wrapper.diagnosticMessage-warningType a {    color: rgb(255,100,0);    text-decoration: underline;}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType {    color: rgb(230,0,0);}
+.diagnosticMessage-wrapper.diagnosticMessage-errorType a {    color: rgb(230,0,0);    text-decoration: underline;}
+.diagnosticMessage-wrapper .diagnosticMessage-messagePart,.diagnosticMessage-wrapper .diagnosticMessage-causePart {    white-space: pre-wrap;}
+.diagnosticMessage-wrapper .diagnosticMessage-stackPart {    white-space: pre;}
+.embeddedOutputsTextElement,.embeddedOutputsVariableStringElement {    white-space: pre;    word-wrap:  initial;    min-height: 18px;    max-height: 550px;}
+.embeddedOutputsTextElement .textElement,.embeddedOutputsVariableStringElement .textElement {    overflow: auto;}
+.textElement,.rtcDataTipElement .textElement {    padding-top: 2px;}
+.embeddedOutputsTextElement.inlineElement,.embeddedOutputsVariableStringElement.inlineElement {}
+.inlineElement .textElement {}
+.embeddedOutputsTextElement.rightPaneElement,.embeddedOutputsVariableStringElement.rightPaneElement {    min-height: 16px;}
+.rightPaneElement .textElement {    padding-top: 2px;    padding-left: 9px;}
+.S5 { margin: 10px 10px 9px 4px; padding: 0px; line-height: 21px; min-height: 0px; white-space: pre-wrap; color: rgb(33, 33, 33); font-family: Helvetica, Arial, sans-serif; font-style: normal; font-size: 14px; font-weight: 400; text-align: left;  }
+.S6 { border-left: 1px solid rgb(191, 191, 191); border-right: 1px solid rgb(191, 191, 191); border-top: 1px solid rgb(191, 191, 191); border-bottom: 1px solid rgb(191, 191, 191); border-radius: 4px; padding: 6px 45px 4px 13px; line-height: 18.004px; min-height: 0px; white-space: nowrap; color: rgb(33, 33, 33); font-family: Menlo, Monaco, Consolas, "Courier New", monospace; font-size: 14px;  }</style></head><body><div class = rtcContent><h1  class = 'S0'><span>For Developers</span></h1><div  class = 'S1'><span>In order to better understand the internals of how ADI's transceiver and High-Speed Converter Toolbox system objects are implemented, it is also useful to understand the overall structure of MATLAB's libiio package and how </span><span style=' font-weight: bold;'>adi.common</span><span> serves as the interface layer on which both of these toolboxes rely. </span></div><h2  class = 'S2'><span>matlabshared.libiio</span></h2><div  class = 'S1'><span>First, let us take a look at the list of superclasses that the base class in MATLAB's libiio package inherits from. </span></div><div class="CodeBlock"><div class="inlineWrapper outputs"><div  class = 'S3'><span style="white-space: pre"><span >superclasses(</span><span style="color: rgb(167, 9, 245);">'matlabshared.libiio.base'</span><span >)</span></span></div><div  class = 'S4'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="8260E771" prevent-scroll="true" data-testid="output_0" style="width: 1146px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;"><div class="textElement eoOutputContent" data-width="1116" data-height="160" data-hashorizontaloverflow="false" style="max-height: 261px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;">Superclasses for class matlabshared.libiio.base:
+
+    matlab.System
+    handle
+    matlab.mixin.CustomDisplay
+    matlab.system.mixin.Propagates
+    matlabshared.libiio.context
+    matlabshared.libiio.channel
+    matlabshared.libiio.device
+    matlabshared.libiio.buffer
+    matlabshared.libiio.top</div></div></div></div></div><div  class = 'S5'><span>As shown by the output displayed, the </span><span style=' font-weight: bold;'>matlabshared.libiio.base</span><span> is a child class of the remaining classes that get installed when MATLAB's Communications Toolbox Support Package for Xilinx Zynq Based Radio. Additionally, since this class is the parent for the classes in the </span><span style=' font-weight: bold;'>adi.common</span><span> interface layer, we can also look at the abstract properties and methods that the child classes of </span><span style=' font-weight: bold;'>matlabshared.libiio.base</span><span> are expected to implement. </span></div><div class="CodeBlock"><div class="inlineWrapper outputs"><div  class = 'S3'><span style="white-space: pre"><span >meta.abstractDetails(</span><span style="color: rgb(167, 9, 245);">'matlabshared.libiio.base'</span><span >)</span></span></div><div  class = 'S4'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="3D00057E" prevent-scroll="true" data-testid="output_1" style="width: 1146px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;"><div class="textElement eoOutputContent" data-width="1116" data-height="175" data-hashorizontaloverflow="false" style="max-height: 261px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;">Abstract methods for class matlabshared.libiio.base:
+    releaseChanBuffers  	% defined in matlabshared.libiio.base
+    configureChanBuffers	% defined in matlabshared.libiio.base
+
+Abstract properties for class matlabshared.libiio.base:
+    SamplesPerFrame   	% defined in matlabshared.libiio.base
+    devName           	% defined in matlabshared.libiio.base
+    kernelBuffersCount	% defined in matlabshared.libiio.base
+    dataTypeStr       	% defined in matlabshared.libiio.base
+    channelCount      	% defined in matlabshared.libiio.base
+    DataTimeout       	% defined in matlabshared.libiio.base
+    isOutput          	% defined in matlabshared.libiio.base</div></div></div></div></div><div  class = 'S5'><span>When we look at the properties list for adi.common.RxTx class, </span></div><div class="CodeBlock"><div class="inlineWrapper outputs"><div  class = 'S3'><span style="white-space: pre"><span >properties(</span><span style="color: rgb(167, 9, 245);">'adi.common.RxTx'</span><span >)</span></span></div><div  class = 'S4'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="A15FA3FB" prevent-scroll="true" data-testid="output_2" style="width: 1146px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;"><div class="textElement eoOutputContent" data-width="1116" data-height="131" data-hashorizontaloverflow="false" style="max-height: 261px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;">Properties for class adi.common.RxTx:
+
+    EnabledChannels
+    uri
+    enIO
+    SamplesPerFrame
+    devName
+    kernelBuffersCount
+    dataTypeStr</div></div></div></div></div><div  class = 'S5'><span>we can notice that all the properties have been inherited by this class. Note however that this class is still an abstract class which defines other abstract properties and methods which its child classes must implement. So, it cannot be instantiated as shown below. </span></div><div class="CodeBlock"><div class="inlineWrapper"><div  class = 'S6'><span style="white-space: pre"><span style="color: rgb(0, 128, 19);">% c = adi.common.RxTx % produces an error</span></span></div></div></div><div  class = 'S5'><span>These abstract properties and methods can be listed as follows:</span></div><div class="CodeBlock"><div class="inlineWrapper outputs"><div  class = 'S3'><span style="white-space: pre"><span >meta.abstractDetails(</span><span style="color: rgb(167, 9, 245);">'adi.common.RxTx'</span><span >)</span></span></div><div  class = 'S4'><div class="inlineElement eoOutputWrapper embeddedOutputsTextElement" uid="368E3132" prevent-scroll="true" data-testid="output_3" style="width: 1146px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;"><div class="textElement eoOutputContent" data-width="1116" data-height="160" data-hashorizontaloverflow="false" style="max-height: 261px; white-space: pre; font-style: normal; color: rgb(33, 33, 33); font-size: 12px;">Abstract methods for class adi.common.RxTx:
+    setupInit	% defined in adi.common.RxTx
+
+Abstract properties for class adi.common.RxTx:
+    Type              	% defined in adi.common.RxTx
+    ComplexData       	% defined in adi.common.RxTx
+    SamplesPerFrame   	% defined in matlabshared.libiio.base
+    devName           	% defined in matlabshared.libiio.base
+    kernelBuffersCount	% defined in matlabshared.libiio.base
+    dataTypeStr       	% defined in matlabshared.libiio.base
+    isOutput          	% defined in matlabshared.libiio.base</div></div></div></div></div><div  class = 'S5'><span>Before, we look at how these abstract properties and methods are implemented by the Transceiver Toolbox and High-Speed Converter Toolbox system objects, we look at the </span><span style=' font-weight: bold;'>adi.common</span><span> interface layer in some more detail. As an exercise, running the </span><span style=' font-weight: bold;'>superclasses()</span><span> function with each of the classes available in adi.common package as the argument will reveal the superclasses of that class.</span></div>
+<br>
+<!-- 
+##### SOURCE BEGIN #####
+%% For Developers
+% In order to better understand the internals of how ADI's transceiver and High-Speed 
+% Converter Toolbox system objects are implemented, it is also useful to understand 
+% the overall structure of MATLAB's libiio package and how *adi.common* serves 
+% as the interface layer on which both of these toolboxes rely. 
+%% matlabshared.libiio
+% First, let us take a look at the list of superclasses that the base class 
+% in MATLAB's libiio package inherits from. 
+
+superclasses('matlabshared.libiio.base')
+%% 
+% As shown by the output displayed, the *matlabshared.libiio.base* is a child 
+% class of the remaining classes that get installed when MATLAB's Communications 
+% Toolbox Support Package for Xilinx Zynq Based Radio. Additionally, since this 
+% class is the parent for the classes in the *adi.common* interface layer, we 
+% can also look at the abstract properties and methods that the child classes 
+% of *matlabshared.libiio.base* are expected to implement. 
+
+meta.abstractDetails('matlabshared.libiio.base')
+%% 
+% When we look at the properties list for adi.common.RxTx class, 
+
+properties('adi.common.RxTx')
+%% 
+% we can notice that all the properties have been inherited by this class. Note 
+% however that this class is still an abstract class which defines other abstract 
+% properties and methods which its child classes must implement. So, it cannot 
+% be instantiated as shown below. 
+
+% c = adi.common.RxTx % produces an error
+%% 
+% These abstract properties and methods can be listed as follows:
+
+meta.abstractDetails('adi.common.RxTx')
+%% 
+% Before, we look at how these abstract properties and methods are implemented 
+% by the Transceiver Toolbox and High-Speed Converter Toolbox system objects, 
+% we look at the *adi.common* interface layer in some more detail. As an exercise, 
+% running the *superclasses()* function with each of the classes available in 
+% adi.common package as the argument will reveal the superclasses of that class.
+##### SOURCE END #####
+-->
+</div></body></html></section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="CodeExamples.html" class="btn btn-neutral float-left" title="Code Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Support.html" class="btn btn-neutral float-right" title="Additional Support" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Darshil R. Trivedi.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

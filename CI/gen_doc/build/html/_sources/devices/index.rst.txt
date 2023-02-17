@@ -1,0 +1,10 @@
+Supported Devices
+=================
+
+.. toctree::
+   AD4630 <AD4630.rst>
+   AD4030 <AD4030.rst>
+   AD463x <AD463x.rst>
+   AD7768 <AD7768.rst>
+   
+
