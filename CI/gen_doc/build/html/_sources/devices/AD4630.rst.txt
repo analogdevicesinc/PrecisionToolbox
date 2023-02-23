@@ -1,5 +1,0 @@
-AD4630
-=======
-
-.. raw:: html
-   :file: ../../../../doc/AD4630_Rx.html

@@ -49,7 +49,8 @@ classdef (Abstract, Hidden = true) Base < ...
         % Check SamplesPerFrame
         function set.SamplesPerFrame(obj, value)
             validateattributes(value, { 'double', 'single', 'uint32'}, ...
-                               { 'real', 'positive', 'scalar', 'finite', 'nonnan', 'nonempty', 'integer', '>', 0, '<=', 2^20}, ...
+                               { 'real', 'positive', 'scalar', 'finite', ...
+                               'nonnan', 'nonempty', 'integer', '>', 0, '<=', 2^20}, ...
                                '', 'SamplesPerFrame');
             obj.SamplesPerFrame = value;
         end
@@ -92,12 +93,14 @@ classdef (Abstract, Hidden = true) Base < ...
             else
                 if obj.BufferTypeConversionEnable
 
-                    dataRAW = zeros([length(obj.EnabledChannels) obj.SamplesPerFrame * capCount]);
+                    dataRAW = zeros([length(obj.EnabledChannels) ...
+                        obj.SamplesPerFrame * capCount]);
                     for count = 1:capCount
                         [data_i, valid] = getData(obj);
                         % dataRAW = cat(2, dataRAW, data_i);
 
-                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + 1:count * obj.SamplesPerFrame) = data_i;
+                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + ...
+                            1:count * obj.SamplesPerFrame) = data_i;
                     end
                     disp("Finished grabbing data. Processing it now...");
                     % Channels must be in columns or pointer math fails
@@ -109,7 +112,8 @@ classdef (Abstract, Hidden = true) Base < ...
                     % Convert hardware format to human format channel by
                     % channel
                     for l = 0:D2 - 1
-                        chanPtr = getChan(obj, obj.iioDev, obj.channel_names{obj.EnabledChannels(l + 1)}, false);
+                        chanPtr = getChan(obj, obj.iioDev, ...
+                            obj.channel_names{obj.EnabledChannels(l + 1)}, false);
                         % Pull out column
                         tmpPtrSrc = dataRAWPtr + D1 * l;
                         tmpPtrDst = dataPtr + D1 * l;
@@ -121,12 +125,14 @@ classdef (Abstract, Hidden = true) Base < ...
                     end
                     data = dataPtr.Value;
                 else
-                    dataRAW = zeros([length(obj.EnabledChannels) obj.SamplesPerFrame * capCount]);
+                    dataRAW = zeros([length(obj.EnabledChannels) ...
+                        obj.SamplesPerFrame * capCount]);
                     for count = 1:capCount
                         [data_i, valid] = getData(obj);
                         % dataRAW = cat(2, dataRAW, data_i);
 
-                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + 1:count * obj.SamplesPerFrame) = data_i;
+                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + ...
+                            1:count * obj.SamplesPerFrame) = data_i;
                     end
 
                     data = dataRAW.';

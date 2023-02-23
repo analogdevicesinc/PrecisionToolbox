@@ -1,5 +1,0 @@
-Devloper's Guide
-================
-
-.. raw:: html
-   :file: ../../../../doc/ForDevs.html

@@ -26,7 +26,8 @@ classdef Rx < adi.AD7768.Base & matlabshared.libiio.base & adi.common.Attribute
 
     properties (Nontunable, Hidden, Constant)
         channel_names = { ...
-                         'voltage0', 'voltage1', 'voltage2', 'voltage3', 'voltage4', 'voltage5', 'voltage6', 'voltage7'}
+                         'voltage0', 'voltage1', 'voltage2', 'voltage3', ...
+                         'voltage4', 'voltage5', 'voltage6', 'voltage7'}
     end
 
     properties (Hidden, Nontunable, Access = protected)
@@ -35,7 +36,9 @@ classdef Rx < adi.AD7768.Base & matlabshared.libiio.base & adi.common.Attribute
 
     properties (Constant, Hidden)
         SampleRateSet = matlab.system.StringSet({ ...
-                                                 '256000', '128000', '64000', '32000', '16000', '8000', '4000', '2000', '1000'})
+                                                 '256000', '128000', '64000', ...
+                                                 '32000', '16000', '8000', '4000', ...
+                                                 '2000', '1000'})
 
     end
 

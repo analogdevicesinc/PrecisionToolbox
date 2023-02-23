@@ -1,10 +1,12 @@
-%% Script for capturing and displaying a continuous set of samples from a connected AD7768-1 board
+%% Script for capturing and displaying a continuous set of samples from a 
+%% connected AD7768-1 board
 
 % Instantiate the system object
 rx = adi.AD7768_1.Rx;
 % Specify uri
 rx.uri = 'ip:analog.local';
-rx.SamplesPerFrame = 4096;  % Using values less than 3660 can yield poor performance, generally
+rx.SamplesPerFrame = 4096;  % Using values less than 3660 can yield poor 
+% performance, generally
 rx.EnabledChannels = [1];
 
 % The parameter below specifies the number of frames or buffers to capture.

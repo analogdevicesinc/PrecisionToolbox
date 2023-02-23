@@ -1,5 +1,6 @@
 classdef Base < adi.common.Rx & adi.common.RxTx & ...
-         matlabshared.libiio.base & adi.common.Attribute & adi.common.RegisterReadWrite & adi.common.Channel
+         matlabshared.libiio.base & adi.common.Attribute & ...
+         adi.common.RegisterReadWrite & adi.common.Channel
     % AD463x is a family of Precision ADC
     % AD4630-16 is dual channel 16bit SAR ADC with max sampling frequency
     % of 2MSPS
@@ -17,8 +18,9 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
         SamplesPerFrame = 2^15
 
         % SampleAveragingLength
-        %   Block length of samples to be averaged. Applied in the Averaging Mode register only when
-        %   OUT_DATA_MD is set to 30-bit averaged differential mode
+        %   Block length of samples to be averaged. Applied in the
+        %   Averaging Mode register only when OUT_DATA_MD is set
+        %   to 30-bit averaged differential mode
         SampleAveragingLength = '2'
     end
 
@@ -45,7 +47,9 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
     properties (Hidden, Constant)
         ComplexData = false
         SampleAveragingLengthSet = matlab.system.StringSet({ ...
-                                                            '2', '4', '8', '16', '32', '64', '128', '256', '512', '1024', '2048', '4096', '8192', '16384', '32768', '65536'})
+                                      '2', '4', '8', '16', '32', '64', '128', '256', ...
+                                      '512', '1024', '2048', '4096', '8192', '16384', ...
+                                      '32768', '65536'})
     end
 
     methods
@@ -71,7 +75,9 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
                 end
             end
             if uriFound == 0
-                error("Error. \nUri was not supplied. Supply it in the following manner \n    %s", "adi.ADXXXX.Rx('uri', <insert uri>)");
+                error("Error. \nUri was not supplied. Supply it in the" + ...
+                      " following manner \n    %s", ...
+                      "adi.ADXXXX.Rx('uri', <insert uri>)");
             end
 
             % Connects to device temporarily and fetches the channel names
@@ -81,7 +87,9 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
 
         function set.SamplesPerFrame(obj, value)
             validateattributes(value, { 'double', 'single', 'uint32' }, ...
-                               { 'real', 'positive', 'scalar', 'finite', 'nonnan', 'nonempty', 'integer', '>', 0, '<', 2^20 + 1}, ...
+                               { 'real', 'positive', 'scalar', 'finite', ...
+                                'nonnan', 'nonempty', 'integer', '>', 0, ...
+                                '<', 2^20 + 1}, ...
                                '', 'SamplesPerFrame');
             obj.SamplesPerFrame = value;
         end
@@ -121,9 +129,12 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
             % Do writes directly to hardware without using set methods.
             % This is required sine Simulink support doesn't support
             % modification to nontunable variables at SetupImpl
-            obj.setDeviceAttributeRAW('sampling_frequency', num2str(obj.SampleRate));
-            if obj.getRegister('0x20')  == 67  % Check if the current out-data-mode is 30bit averaging
-                obj.setDeviceAttributeRAW('sample_averaging', obj.SampleAveragingLength);
+            obj.setDeviceAttributeRAW('sampling_frequency', ...
+                                      num2str(obj.SampleRate));
+            if obj.getRegister('0x20')  == 67  % Check if the
+                % current out-data-mode is 30bit averaging
+                obj.setDeviceAttributeRAW('sample_averaging', ...
+                                          obj.SampleAveragingLength);
             end
 
             obj.set_channel_names();
@@ -167,10 +178,12 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
             else
                 if obj.BufferTypeConversionEnable
 
-                    dataRAW = zeros([length(obj.EnabledChannels) obj.SamplesPerFrame * capCount]);
+                    dataRAW = zeros([length(obj.EnabledChannels) ...
+                                     obj.SamplesPerFrame * capCount]);
                     for count = 1:capCount
                         [data_i, valid] = getData(obj);
-                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + 1:count * obj.SamplesPerFrame) = data_i;
+                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + ...
+                                1:count * obj.SamplesPerFrame) = data_i;
                     end
                     disp("Finished grabbing data. Processing it now...");
                     % Channels must be in columns or pointer math fails
@@ -182,7 +195,8 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
                     % Convert hardware format to human format channel by
                     % channel
                     for l = 0:D2 - 1
-                        chanPtr = getChan(obj, obj.iioDev, obj.channel_names{obj.EnabledChannels(l + 1)}, false);
+                        chanPtr = getChan(obj, obj.iioDev, ...
+                                          obj.channel_names{obj.EnabledChannels(l + 1)}, false);
                         % Pull out column
                         tmpPtrSrc = dataRAWPtr + D1 * l;
                         tmpPtrDst = dataPtr + D1 * l;
@@ -197,7 +211,8 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
                     dataRAW = zeros([length(obj.EnabledChannels) obj.SamplesPerFrame * capCount]);
                     for count = 1:capCount
                         [data_i, valid] = getData(obj);
-                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + 1:count * obj.SamplesPerFrame) = data_i;
+                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + ...
+                                1:count * obj.SamplesPerFrame) = data_i;
                     end
                     data = dataRAW.';
                 end

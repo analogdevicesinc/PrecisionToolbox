@@ -39,8 +39,8 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
     end
 
     properties (Constant, Hidden)
-        SampleRateSet = matlab.system.StringSet({ ...
-                                                 '4000000', '256000', '128000', '64000', '32000', '16000', '8000', '4000', '2000', '1000'})
+        SampleRateSet = matlab.system.StringSet({'4000000', '256000', '128000', '64000', ...
+            '32000', '16000', '8000', '4000', '2000', '1000'})
 
     end
 
@@ -126,7 +126,8 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
                     dataRAW = zeros([length(obj.EnabledChannels) obj.SamplesPerFrame * capCount]);
                     for count = 1:capCount
                         [data_i, valid] = getData(obj);
-                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + 1:count * obj.SamplesPerFrame) = data_i;
+                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + ...
+                            1:count * obj.SamplesPerFrame) = data_i;
                     end
                     disp("Finished grabbing data. Processing it now...");
                     % Channels must be in columns or pointer math fails
@@ -138,7 +139,8 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
                     % Convert hardware format to human format channel by
                     % channel
                     for l = 0:D2 - 1
-                        chanPtr = getChan(obj, obj.iioDev, obj.channel_names{obj.EnabledChannels(l + 1)}, false);
+                        chanPtr = getChan(obj, obj.iioDev, ...
+                            obj.channel_names{obj.EnabledChannels(l + 1)}, false);
                         % Pull out column
                         tmpPtrSrc = dataRAWPtr + D1 * l;
                         tmpPtrDst = dataPtr + D1 * l;
@@ -150,10 +152,12 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
                     end
                     data = dataPtr.Value;
                 else
-                    dataRAW = zeros([length(obj.EnabledChannels) obj.SamplesPerFrame * capCount]);
+                    dataRAW = zeros([length(obj.EnabledChannels) ...
+                        obj.SamplesPerFrame * capCount]);
                     for count = 1:capCount
                         [data_i, valid] = getData(obj);
-                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + 1:count * obj.SamplesPerFrame) = data_i;
+                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + ...
+                            1 : count * obj.SamplesPerFrame) = data_i;
                     end
 
                     data = dataRAW.';

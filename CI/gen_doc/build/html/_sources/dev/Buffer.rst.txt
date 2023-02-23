@@ -1,5 +1,0 @@
-Buffers
-========
-
-.. raw:: html
-   :file: ../../../../doc/Buffers.html

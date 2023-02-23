@@ -1,5 +1,0 @@
-State Management
-================
-
-.. raw:: html
-   :file: ../../../../doc/StateMgmt.html

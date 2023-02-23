@@ -1,5 +1,0 @@
-Code Examples
-=============
-
-.. raw:: html
-   :file: ../../../../doc/CodeExamples.html

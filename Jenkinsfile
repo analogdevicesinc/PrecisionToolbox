@@ -13,7 +13,7 @@ dockerHost = 'docker'
 ////////////////////////////
 
 
-hdlBranches = ['master']
+hdlBranches = ['main']
 
 stage("Build Toolbox") {
     dockerParallelBuild(hdlBranches, dockerHost, dockerConfig) { 
@@ -41,7 +41,7 @@ node {
         unstash "builtSources"
         uploadArtifactory('PrecisionToolbox','*.mltbx')
     }
-    if (env.BRANCH_NAME == 'master') {
+    if (env.BRANCH_NAME == 'main') {
         stage('Deploy Production') {
             unstash "builtSources"
             uploadFTP('PrecisionToolbox','*.mltbx')
