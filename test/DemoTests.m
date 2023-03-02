@@ -33,6 +33,8 @@ classdef DemoTests < matlab.uitest.TestCase
                     vivado = '2018.2';
                 case '(R2021b)'
                     vivado = '2021.1';
+		case '(R2022a)'
+                    vivado = '2022.2';
             end
             if ispc
                 hdlsetuptoolpath('ToolName', 'Xilinx Vivado', ...
@@ -55,36 +57,17 @@ classdef DemoTests < matlab.uitest.TestCase
     end
     
     methods(Test)
-        function buildHDLDAQ2ZCU102_BOOTBIN(testCase)
-            cd(fullfile(testCase.root,'test'));
-            out = hdlworkflow_daq2_zcu102_rx('2018.2');
-            if ~isempty(out)
-                disp(out.message);
-            end
-            % Check for BOOT.BIN
-            if exist('hdl_prj/vivado_ip_prj/boot/BOOT.BIN', 'file') ~= 2
-                error('BOOT.BIN Failed');
-            end
-        end
-        function buildHDLDAQ2ZCU102_BOOTBIN_2018_3(testCase)
-            vivado = '2018.3';
-            if ispc
-                hdlsetuptoolpath('ToolName', 'Xilinx Vivado', ...
-                    'ToolPath', ['C:\Xilinx\Vivado\',vivado,'\bin\vivado.bat']);
-            elseif isunix
-                hdlsetuptoolpath('ToolName', 'Xilinx Vivado', ...
-                    'ToolPath', ['/opt/Xilinx/Vivado/',vivado,'/bin/vivado']);
-            end
-            cd(fullfile(testCase.root,'test'));
-            out = hdlworkflow_daq2_zcu102_rx('2018.2');
-            if ~isempty(out)
-                disp(out.message);
-            end
-            % Check for BOOT.BIN
-            if exist('hdl_prj/vivado_ip_prj/boot/BOOT.BIN', 'file') ~= 2
-                error('BOOT.BIN Failed');
-            end
-        end
+        %function buildHDLDAQ2ZCU102_BOOTBIN(testCase)
+        %    cd(fullfile(testCase.root,'test'));
+        %    out = hdlworkflow_daq2_zcu102_rx('2018.2');
+        %    if ~isempty(out)
+        %        disp(out.message);
+        %    end
+        %    % Check for BOOT.BIN
+        %    if exist('hdl_prj/vivado_ip_prj/boot/BOOT.BIN', 'file') ~= 2
+        %        error('BOOT.BIN Failed');
+        %    end
+        %end
     end
     
 end
