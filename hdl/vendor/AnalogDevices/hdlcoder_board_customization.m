@@ -9,7 +9,7 @@ function r = hdlcoder_board_customization
 %   Copyright 2012-2013 The MathWorks, Inc.
 
 r = { ...
-
+    'AnalogDevices.cn0585_fmcz.zed.plugin_board' ...,
     };
 end
 % LocalWords:  Zynq ZC
