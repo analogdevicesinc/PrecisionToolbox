@@ -21,7 +21,7 @@ jobs:
         run: |
           make -C CI/gen_doc doc
       - name: Publish master doc
-        if: github.ref == 'refs/heads/master'
+        if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
