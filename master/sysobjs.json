@@ -1,0 +1,178 @@
+[
+  {
+    "name": "adi.AD7380.Rx",
+    "dec": "  adi.AD7380.Rx Receives data from the AD7380 ADC<br>    The adi.AD7380.Rx System object is a signal source that can receive<br>    data from the AD7380.<br> <br>    rx = adi.AD7380.Rx;<br>    rx = adi.AD7380.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad7380-7381.pdf\">AD7380 Datasheet</a><br>    Documentation for adi.AD7380.Rx<br>       doc adi.AD7380.Rx<br>",
+    "props": [
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SampleRate",
+        "prop_title": "  SampleRate Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second. Options are: '256000','128000','64000','32000','16000','8000','4000', '2000','1000'"
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD7380.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD7380.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
+  },
+  {
+    "name": "adi.AD7768.Rx",
+    "dec": "  adi.AD7768.Rx Receives data from the AD7768 ADC<br>    The adi.AD7768.Rx System object is a signal source that can receive<br>    data from the AD7768.<br> <br>    rx = adi.AD7768.Rx;<br>    rx = adi.AD7768.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad7768-7768-4.pdf\">AD7768 Datasheet</a><br>    Documentation for adi.AD7768.Rx<br>       doc adi.AD7768.Rx<br>",
+    "props": [
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SampleRate",
+        "prop_title": "  SampleRate Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second. Options are: '256000','128000','64000','32000','16000','8000','4000', '2000','1000'"
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  SamplesPerFrame Samples Per Frame",
+        "prop_description": "Number of samples per frame, specified as an even positive integer from 2 to 16,777,216. Using values less than 3660 can yield poor performance."
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD7768.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
+  },
+  {
+    "name": "adi.AD7768_1.Rx",
+    "dec": "  adi.AD7768_1.Rx Receives data from the AD7768-1 ADC<br>    The adi.AD7768_1.Rx System object is a signal source that can receive<br>    data from the AD7768-1.<br> <br>    rx = adi.AD7768_1.Rx;<br>    rx = adi.AD7768_1.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad7768-1.pdf\">AD7768-1 Datasheet</a><br>    Documentation for adi.AD7768_1.Rx<br>       doc adi.AD7768_1.Rx<br>",
+    "props": [
+      {
+        "prop_name": "CommonModeVolts",
+        "prop_title": "  SCommonModeVolts Common Mode Voltage",
+        "prop_description": "Common mode voltage in volts, specified as a string Options are: '(AVDD1-AVSS)/2','2V5','2V05','1V9','1V65','1V1','0V9','OFF'"
+      },
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SampleRate",
+        "prop_title": "  SampleRate Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second. Options are: '256000','128000','64000','32000','16000','8000','4000', '2000','1000'"
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  SamplesPerFrame Samples Per Frame",
+        "prop_description": "Number of samples per frame, specified as an even positive integer from 2 to 16,777,216. Using values less than 3660 can yield poor performance."
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD7768_1.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
+  },
+  {
+    "name": "adi.AD4030.Rx",
+    "dec": "  adi.AD4030.Rx Receives data from the AD4030-24 ADC<br>    The adi.AD4030.Rx System object is a signal source that can receive<br>    data from the AD4030-24.<br> <br>    rx = adi.AD4030.Rx;<br>    rx = adi.AD4030.Rx('uri','192.168.2.1');<br> <br>    <a href=\"http://www.analog.com/media/en/technical-documentation/data-sheets/AD4030-24.pdf\">AD4030-24 Datasheet</a><br>    Documentation for adi.AD4030.Rx<br>       doc adi.AD4030.Rx<br>",
+    "props": [
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SampleAveragingLength",
+        "prop_title": "  SampleAveragingLength",
+        "prop_description": "Block length of samples to be averaged. Applied in the Averaging Mode register only when OUT_DATA_MD is set to 30-bit averaged differential modeHelp for adi.AD4030.Rx/SampleAveragingLength is inherited from superclass adi.AD463x.Base"
+      },
+      {
+        "prop_name": "SampleRate",
+        "prop_title": "  SampleRate Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4030.Rx/SampleRate is inherited from superclass adi.AD463x.Base"
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  SamplesPerFrame Samples Per Frame",
+        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4030.Rx/SamplesPerFrame is inherited from superclass adi.AD463x.Base"
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD4030.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
+  },
+  {
+    "name": "adi.AD4630_16.Rx",
+    "dec": "  adi.AD4630_16.Rx Receive data from the AD4630-16 ADC<br>    The adi.AD4630_16.Rx System object is a signal source that can receive<br>    data from the AD4630-16.<br> <br>    rx = adi.AD4630_16.Rx;<br>    rx = adi.AD4630_16.Rx('uri','192.168.2.1');<br> <br>    <a href=\"http://www.analog.com/media/en/technical-documentation/data-sheets/AD4630-16.pdf\">AD4630-16 Datasheet</a><br>    Documentation for adi.AD4630_16.Rx<br>       doc adi.AD4630_16.Rx<br>",
+    "props": [
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SampleAveragingLength",
+        "prop_title": "  SampleAveragingLength",
+        "prop_description": "Block length of samples to be averaged. Applied in the Averaging Mode register only when OUT_DATA_MD is set to 30-bit averaged differential modeHelp for adi.AD4630_16.Rx/SampleAveragingLength is inherited from superclass adi.AD463x.Base"
+      },
+      {
+        "prop_name": "SampleRate",
+        "prop_title": "  SampleRate Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4630_16.Rx/SampleRate is inherited from superclass adi.AD463x.Base"
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  SamplesPerFrame Samples Per Frame",
+        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4630_16.Rx/SamplesPerFrame is inherited from superclass adi.AD463x.Base"
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD4630_16.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
+  },
+  {
+    "name": "adi.AD4630_24.Rx",
+    "dec": "  adi.AD4630_24.Rx Receive data from the AD4630-24 ADC<br>    The adi.AD4630_24.Rx System object is a signal source that can receive<br>    data from the AD4630-24.<br> <br>    rx = adi.AD4630_24.Rx;<br>    rx = adi.AD4630_24.Rx('uri','192.168.2.1');<br> <br>    <a href=\"http://www.analog.com/media/en/technical-documentation/data-sheets/AD4630-24.pdf\">AD4630-24 Datasheet</a><br>    Documentation for adi.AD4630_24.Rx<br>       doc adi.AD4630_24.Rx<br>",
+    "props": [
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SampleAveragingLength",
+        "prop_title": "  SampleAveragingLength",
+        "prop_description": "Block length of samples to be averaged. Applied in the Averaging Mode register only when OUT_DATA_MD is set to 30-bit averaged differential modeHelp for adi.AD4630_24.Rx/SampleAveragingLength is inherited from superclass adi.AD463x.Base"
+      },
+      {
+        "prop_name": "SampleRate",
+        "prop_title": "  SampleRate Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4630_24.Rx/SampleRate is inherited from superclass adi.AD463x.Base"
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  SamplesPerFrame Samples Per Frame",
+        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4630_24.Rx/SamplesPerFrame is inherited from superclass adi.AD463x.Base"
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD4630_24.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
+  }
+]
