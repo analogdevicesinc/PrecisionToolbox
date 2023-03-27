@@ -93,6 +93,12 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
             % modification to nontunable variables at SetupImpl
 
             % obj.setDeviceAttributeRAW('sampling_frequency',num2str(obj.SampleRate));
+            contextXML = calllib(obj.libName, 'iio_context_get_xml', obj.iioCtx);
+            if ~contains(contextXML, "no-OS")
+                % It is a Linux platform that MATLAB is talking to.
+                % Changing the buffer count to a more sensible value, 4
+                obj.kernelBuffersCount = 4;
+            end
 
         end
 

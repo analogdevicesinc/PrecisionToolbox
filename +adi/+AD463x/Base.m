@@ -139,6 +139,13 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
 
             obj.set_channel_names();
 
+            contextXML = calllib(obj.libName, 'iio_context_get_xml', obj.iioCtx);
+            if ~contains(contextXML, "no-OS")
+                % It is a Linux platform that MATLAB is talking to.
+                % Changing the buffer count to a more sensible value, 4
+                obj.kernelBuffersCount = 4;
+            end
+
         end
 
         function set_channel_names(obj)
