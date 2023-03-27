@@ -28,7 +28,7 @@ classdef Rx < adi.common.Rx & adi.common.RxTx ...
 
     properties (Hidden)
         Timeout = Inf
-        kernelBuffersCount = 4
+        kernelBuffersCount = 1
         dataTypeStr = 'int32'
         phyDevName = 'ad4630-16'
         devName = 'ad4630-16'

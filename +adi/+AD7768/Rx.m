@@ -44,7 +44,7 @@ classdef Rx < adi.AD7768.Base & matlabshared.libiio.base & adi.common.Attribute
 
     properties (Nontunable, Hidden)
         Timeout = Inf
-        kernelBuffersCount = 2
+        kernelBuffersCount = 1
         dataTypeStr = 'int32'
         phyDevName = 'ad7768'
         devName = 'ad7768'
