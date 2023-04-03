@@ -1,4 +1,4 @@
-classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
+classdef Rx < adi.Base.Base
     % AD7380 Precision ADC Class
     % adi.AD7380.Rx Receives data from the AD7380 ADC
     %   The adi.AD7380.Rx System object is a signal source that can receive
@@ -19,13 +19,9 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         SamplesPerFrame = 1024
     end
 
-    properties (Hidden)
-        % Number of frames or buffers of data to capture
-        FrameCount = 1
-    end
 
     % Channel names
-    properties (Nontunable, Hidden, Constant)
+    properties (Nontunable, Hidden)
         channel_names = {
                          'voltage0'
                          'voltage1'
@@ -46,8 +42,6 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
 
     properties (Nontunable, Hidden)
         Timeout = Inf
-        kernelBuffersCount = 2
-        % dataTypeStr = 'int64';
         dataTypeStr = 'int16'
         phyDevName = 'ad7380'
         devName = 'ad7380'
@@ -61,7 +55,7 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
 
         %% Constructor
         function obj = Rx(varargin)
-            obj = obj@matlabshared.libiio.base(varargin{:});
+            obj = obj@adi.Base.Base(varargin{:});
             obj.enableExplicitPolling = false;
             obj.EnabledChannels = 1;
             obj.BufferTypeConversionEnable = true;
@@ -85,7 +79,7 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
     %% API Functions
     methods (Hidden, Access = protected)
 
-        function setupInit(obj)
+        function setupExtra(obj)
             % Write all attributes to device once connected through set
             % methods
             % Do writes directly to hardware without using set methods.
@@ -96,74 +90,7 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
 
         end
 
-        function [data, valid] = stepImpl(obj)
-            % [data,valid] = rx() returns data received from the radio
-            % hardware associated with the receiver System object, rx.
-            % The output 'valid' indicates whether the object has received
-            % data from the radio hardware. The first valid data frame can
-            % contain transient values, resulting in packets containing
-            % undefined data.
-            %
-            % The output 'data' will be an [NxM] vector where N is
-            % 'SamplesPerFrame' and M is the number of elements in
-            % 'EnabledChannels'. 'data' will be complex if the devices
-            % assumes complex data operations.
-
-            capCount = obj.FrameCount;
-
-            if obj.ComplexData
-                kd = 1;
-                ce = length(obj.EnabledChannels);
-                [dataRAW, valid] = getData(obj);
-                data = complex(zeros(obj.SamplesPerFrame, ce));
-                for k = 1:ce
-                    data(:, k) = complex(dataRAW(kd, :), dataRAW(kd + 1, :)).';
-                    kd = kd + 2;
-                end
-            else
-                if obj.BufferTypeConversionEnable
-
-                    dataRAW = zeros([length(obj.EnabledChannels) obj.SamplesPerFrame * capCount]);
-                    for count = 1:capCount
-                        [data_i, valid] = getData(obj);
-                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + ...
-                            1:count * obj.SamplesPerFrame) = data_i;
-                    end
-                    disp("Finished grabbing data. Processing it now...");
-                    % Channels must be in columns or pointer math fails
-                    dataRAW = dataRAW.';
-                    [D1, D2] = size(dataRAW);
-                    data = coder.nullcopy(zeros(D1, D2, obj.dataTypeStr));
-                    dataPtr = libpointer(obj.ptrTypeStr, data);
-                    dataRAWPtr = libpointer(obj.ptrTypeStr, dataRAW);
-                    % Convert hardware format to human format channel by
-                    % channel
-                    for l = 0:D2 - 1
-                        chanPtr = getChan(obj, obj.iioDev, ...
-                            obj.channel_names{obj.EnabledChannels(l + 1)}, false);
-                        % Pull out column
-                        tmpPtrSrc = dataRAWPtr + D1 * l;
-                        tmpPtrDst = dataPtr + D1 * l;
-                        setdatatype(tmpPtrSrc, obj.ptrTypeStr, D1, 1);
-                        setdatatype(tmpPtrDst, obj.ptrTypeStr, D1, 1);
-                        for k = 0:D1 - 1
-                            iio_channel_convert(obj, chanPtr, tmpPtrDst + k, tmpPtrSrc + k);
-                        end
-                    end
-                    data = dataPtr.Value;
-                else
-                    dataRAW = zeros([length(obj.EnabledChannels) ...
-                        obj.SamplesPerFrame * capCount]);
-                    for count = 1:capCount
-                        [data_i, valid] = getData(obj);
-                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + ...
-                            1 : count * obj.SamplesPerFrame) = data_i;
-                    end
-
-                    data = dataRAW.';
-                end
-            end
-        end
+        
 
     end
 end
