@@ -1,4 +1,4 @@
-classdef Rx < adi.AD7768.Base & matlabshared.libiio.base & adi.common.Attribute
+classdef Rx < adi.Base.Base 
     % AD7768-1 Precision ADC Class
     % adi.AD7768_1.Rx Receives data from the AD7768-1 ADC
     %   The adi.AD7768_1.Rx System object is a signal source that can receive
@@ -25,12 +25,7 @@ classdef Rx < adi.AD7768.Base & matlabshared.libiio.base & adi.common.Attribute
 
     end
 
-    properties (Hidden)
-        % Number of frames or buffers of data to capture
-        FrameCount = 1
-    end
-
-    properties (Nontunable, Hidden, Constant)
+    properties (Nontunable, Hidden)
         channel_names = { ...
                          'voltage0'}
     end
@@ -52,7 +47,6 @@ classdef Rx < adi.AD7768.Base & matlabshared.libiio.base & adi.common.Attribute
 
     properties (Nontunable, Hidden)
         Timeout = Inf
-        kernelBuffersCount = 2
         dataTypeStr = 'int32'
         phyDevName = 'ad7768-1'
         devName = 'ad7768-1'
@@ -60,14 +54,14 @@ classdef Rx < adi.AD7768.Base & matlabshared.libiio.base & adi.common.Attribute
 
     properties (Nontunable, Hidden, Constant)
         Type = 'Rx'
-
+        ComplexData = false
     end
 
     methods
 
         %% Constructor
         function obj = Rx(varargin)
-            obj = obj@matlabshared.libiio.base(varargin{:});
+            obj = obj@adi.Base.Base(varargin{:});
             obj.enableExplicitPolling = false;
             obj.EnabledChannels = 1;
             obj.BufferTypeConversionEnable = true;
@@ -110,9 +104,9 @@ classdef Rx < adi.AD7768.Base & matlabshared.libiio.base & adi.common.Attribute
     end
 
     %% API Functions
-    methods (Hidden, Access = protected)
+    methods (Hidden)
 
-        function setupInit(obj)
+        function setupExtra(obj)
             % Write all attributes to device once connected through set
             % methods
             % Do writes directly to hardware without using set methods.
