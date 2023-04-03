@@ -25,7 +25,7 @@ classdef (Abstract) Base < matlabshared.libiio.base & adi.common.Attribute &...
             phydev = getDev(obj, obj.devName);
             chanCount = obj.iio_device_get_channels_count(phydev);
             for c = 1:chanCount                
-                chanPtr = obj.iio_device_get_channel(phydev, c);
+                chanPtr = obj.iio_device_get_channel(phydev, c-1);
                 obj.channel_names{end + 1} = obj.iio_channel_get_id(chanPtr);
             end
         end
