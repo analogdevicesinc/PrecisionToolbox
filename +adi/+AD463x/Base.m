@@ -1,6 +1,5 @@
-classdef Base < adi.common.Rx & adi.common.RxTx & ...
-         matlabshared.libiio.base & adi.common.Attribute & ...
-         adi.common.RegisterReadWrite & adi.common.Channel
+classdef Base < adi.Base.Base & ...
+         adi.common.RegisterReadWrite
     % AD463x is a family of Precision ADC
     % AD4630-16 is dual channel 16bit SAR ADC with max sampling frequency
     % of 2MSPS
@@ -24,9 +23,6 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
         SampleAveragingLength = '2'
     end
 
-    properties (Abstract, Nontunable, Hidden)
-        channel_names
-    end
 
     properties (Hidden, Nontunable, Access = protected)
         isOutput = false
@@ -34,7 +30,6 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
 
     properties (Abstract, Nontunable, Hidden)
         Timeout
-        kernelBuffersCount
         dataTypeStr
         phyDevName
         devName
@@ -56,7 +51,7 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
 
         %% Constructor
         function obj = Base(varargin)
-            obj = obj@matlabshared.libiio.base(varargin{:});
+            obj = obj@adi.Base.Base(varargin{:});
             obj.enableExplicitPolling = false;
             obj.EnabledChannels = 1;
             obj.BufferTypeConversionEnable = true;
@@ -121,9 +116,9 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
     end
 
     %% API Functions
-    methods (Hidden, Access = protected)
+    methods (Hidden)
 
-        function setupInit(obj)
+        function setupExtra(obj)
             % Write all attributes to device once connected through set
             % methods
             % Do writes directly to hardware without using set methods.
@@ -137,87 +132,10 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
                                           obj.SampleAveragingLength);
             end
 
-            obj.set_channel_names();
+            obj.fetch_channel_names();
 
         end
 
-        function set_channel_names(obj)
-            obj.channel_names = {};
-            phydev = getDev(obj, obj.devName);
-            chanCount = obj.iio_device_get_channels_count(phydev);
-            for c = 1:chanCount
-                chanPtr = obj.iio_device_get_channel(phydev, c - 1);
-                obj.channel_names{end + 1} = obj.iio_channel_get_name(chanPtr);
-            end
-        end
-
-        function [data, valid] = stepImpl(obj)
-            % [data,valid] = rx() returns data received from the radio
-            % hardware associated with the receiver System object, rx.
-            % The output 'valid' indicates whether the object has received
-            % data from the radio hardware. The first valid data frame can
-            % contain transient values, resulting in packets containing
-            % undefined data.
-            %
-            % The output 'data' will be an [NxM] vector where N is
-            % 'SamplesPerFrame' and M is the number of elements in
-            % 'EnabledChannels'. 'data' will be complex if the devices
-            % assumes complex data operations.
-
-            capCount = obj.FrameCount;
-
-            if obj.ComplexData
-                kd = 1;
-                ce = length(obj.EnabledChannels);
-                [dataRAW, valid] = getData(obj);
-                data = complex(zeros(obj.SamplesPerFrame, ce));
-                for k = 1:ce
-                    data(:, k) = complex(dataRAW(kd, :), dataRAW(kd + 1, :)).';
-                    kd = kd + 2;
-                end
-            else
-                if obj.BufferTypeConversionEnable
-
-                    dataRAW = zeros([length(obj.EnabledChannels) ...
-                                     obj.SamplesPerFrame * capCount]);
-                    for count = 1:capCount
-                        [data_i, valid] = getData(obj);
-                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + ...
-                                1:count * obj.SamplesPerFrame) = data_i;
-                    end
-                    disp("Finished grabbing data. Processing it now...");
-                    % Channels must be in columns or pointer math fails
-                    dataRAW = dataRAW.';
-                    [D1, D2] = size(dataRAW);
-                    data = coder.nullcopy(zeros(D1, D2, obj.dataTypeStr));
-                    dataPtr = libpointer(obj.ptrTypeStr, data);
-                    dataRAWPtr = libpointer(obj.ptrTypeStr, dataRAW);
-                    % Convert hardware format to human format channel by
-                    % channel
-                    for l = 0:D2 - 1
-                        chanPtr = getChan(obj, obj.iioDev, ...
-                                          obj.channel_names{obj.EnabledChannels(l + 1)}, false);
-                        % Pull out column
-                        tmpPtrSrc = dataRAWPtr + D1 * l;
-                        tmpPtrDst = dataPtr + D1 * l;
-                        setdatatype(tmpPtrSrc, obj.ptrTypeStr, D1, 1);
-                        setdatatype(tmpPtrDst, obj.ptrTypeStr, D1, 1);
-                        for k = 0:D1 - 1
-                            iio_channel_convert(obj, chanPtr, tmpPtrDst + k, tmpPtrSrc + k);
-                        end
-                    end
-                    data = dataPtr.Value;
-                else
-                    dataRAW = zeros([length(obj.EnabledChannels) obj.SamplesPerFrame * capCount]);
-                    for count = 1:capCount
-                        [data_i, valid] = getData(obj);
-                        dataRAW(:, obj.SamplesPerFrame * (count - 1) + ...
-                                1:count * obj.SamplesPerFrame) = data_i;
-                    end
-                    data = dataRAW.';
-                end
-            end
-        end
 
     end
 

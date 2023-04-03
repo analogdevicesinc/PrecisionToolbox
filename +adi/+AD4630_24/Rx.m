@@ -15,10 +15,7 @@ classdef Rx < adi.common.Rx ...
         Type = 'Rx'
     end
 
-    properties (Hidden)
-        % Number of frames or buffers of data to capture
-        FrameCount = 1
-    end
+
 
     properties (Nontunable, Hidden)
         % Channels present with default register settings -
@@ -27,7 +24,6 @@ classdef Rx < adi.common.Rx ...
 
     properties (Hidden)
         Timeout = Inf
-        kernelBuffersCount = 4
         dataTypeStr = 'int32'
         phyDevName = 'ad4630-24'
         devName = 'ad4630-24'

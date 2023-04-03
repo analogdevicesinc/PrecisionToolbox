@@ -15,10 +15,6 @@ classdef Rx < adi.common.Rx & adi.common.RxTx ...
         Type = 'Rx'
     end
 
-    properties (Hidden)
-        % Number of frames or buffers of data to capture
-        FrameCount = 1
-    end
 
     properties (Nontunable, Hidden)
 
@@ -28,7 +24,6 @@ classdef Rx < adi.common.Rx & adi.common.RxTx ...
 
     properties (Hidden)
         Timeout = Inf
-        kernelBuffersCount = 4
         dataTypeStr = 'int32'
         phyDevName = 'ad4630-16'
         devName = 'ad4630-16'
