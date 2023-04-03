@@ -34,12 +34,14 @@ classdef (Abstract) Base < matlabshared.libiio.base & adi.common.Attribute &...
     methods (Hidden, Access = protected)
 
         function setupInit(obj)        
-            xmlString = calllib(obj.libName, 'iio_context_get_xml', obj.iioCtx);
-            if ~contains(xmlString, "no-OS")
-                % It is a Linux platform that MATLAB is talking to. 
-                disp("Changed kernel buffer count to 4")
+            try
+                % Presence of 'local,kernel' context attribute would
+                % indicate usage of Linux platform
+                val = obj.iio_context_get_attr_value(obj.iioCtx, 'local,kernel');
                 obj.kernelBuffersCount = 4;
-            end   
+                disp("Detected Linux platform. Changing buffer count to 4..")
+            catch              
+            end
 
             obj.setupExtra();
         end
