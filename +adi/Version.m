@@ -2,9 +2,9 @@ classdef Version
     %Version
     %   BSP Version information
     properties(Constant)
-        HDL = 'hdl_2021_r1';
-        Vivado = '2021.1';
-        MATLAB = 'R2021b';
+        HDL = 'master';
+        Vivado = '2022.2';
+        MATLAB = 'R2022a';
         Release = '21.2.1';
         AppName = 'Analog Devices, Inc. Precision Toolbox';
         ToolboxName = 'PrecisionToolbox';
