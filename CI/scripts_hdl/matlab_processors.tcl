@@ -11,8 +11,8 @@ proc preprocess_bd {project carrier rxtx} {
 	    delete_bd_objs [get_bd_nets axi_ltc2387_3_adc_data]
 
 
-        set sys_cstring "matlab $rxtx"
-        sysid_gen_sys_init_file $sys_cstring
+            set sys_cstring "matlab $rxtx"
+            sysid_gen_sys_init_file $sys_cstring
 
             #Disconnect adc_valid
             delete_bd_objs [get_bd_nets axi_ltc2387_0_adc_valid]
@@ -45,16 +45,14 @@ proc preprocess_bd {project carrier rxtx} {
             connect_bd_net [get_bd_pins axi_ad3552r_0/valid_in_a] [get_bd_pins axi_ad3552r_0/valid_in_b]
             connect_bd_net [get_bd_pins axi_ad3552r_0/valid_in_a] [get_bd_pins axi_ad3552r_1/valid_in_a]
             connect_bd_net [get_bd_pins axi_ad3552r_0/valid_in_a] [get_bd_pins axi_ad3552r_1/valid_in_b]
-              if {$rxtx == "tx"} {
-                connect_bd_net [get_bd_pins axi_ltc2387_0/adc_valid] [get_bd_pins util_ltc2387_adc_pack/fifo_wr_en]
-              }
-	    }
+	   }
 	    switch $carrier {
               zed {
                     set_property -dict [list CONFIG.NUM_MI {21}] [get_bd_cells axi_cpu_interconnect]
                     connect_bd_net [get_bd_pins axi_cpu_interconnect/M20_ACLK]    [get_bd_pins axi_clkgen/clk_0]
                     connect_bd_net [get_bd_pins axi_cpu_interconnect/M20_ARESETN] [get_bd_pins sampling_clk_rstgen/peripheral_aresetn]
                   }
-            }
+             }
+        }
     }
 }
