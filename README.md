@@ -2,7 +2,7 @@
 
 Toolbox created by ADI to be used with MATLAB and Simulink with ADI Precision products.
 
-License : [![License](https://img.shields.io/badge/license-LGPL2-blue.svg)](https://github.com/analogdevicesinc/PrecisionToolbox/blob/master/LICENSE)
+License : [![License](https://img.shields.io/badge/license-BSD-blue.svg)](https://github.com/analogdevicesinc/PrecisionToolbox/blob/master/LICENSE)
 Latest Release : [![GitHub release](https://img.shields.io/github/release/analogdevicesinc/PrecisionToolbox.svg)](https://github.com/analogdevicesinc/PrecisionToolbox/releases/latest)
 Downloads :  [![Github All Releases](https://img.shields.io/github/downloads/analogdevicesinc/PrecisionToolbox/total.svg)](https://github.com/analogdevicesinc/PrecisionToolbox/releases/latest) Direct Installer: [![View Analog Devices, Inc. Precision Toolbox on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/125890-analog-devices-inc-precision-toolbox)
 
