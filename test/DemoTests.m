@@ -56,18 +56,5 @@ classdef DemoTests < matlab.uitest.TestCase
         end
     end
     
-    methods(Test)
-        %function buildHDLDAQ2ZCU102_BOOTBIN(testCase)
-        %    cd(fullfile(testCase.root,'test'));
-        %    out = hdlworkflow_daq2_zcu102_rx('2018.2');
-        %    if ~isempty(out)
-        %        disp(out.message);
-        %    end
-        %    % Check for BOOT.BIN
-        %    if exist('hdl_prj/vivado_ip_prj/boot/BOOT.BIN', 'file') ~= 2
-        %        error('BOOT.BIN Failed');
-        %    end
-        %end
-    end
-    
 end
+
