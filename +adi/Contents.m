@@ -61,7 +61,7 @@
 %   <a href="matlab:help adi.AD7985            ">AD7985</a>         - ADC
 %   <a href="matlab:help adi.AD7986            ">AD7986</a>         - ADC
 %   <a href="matlab:help adi.AD2S1210          ">AD2S1210</a>       - Resolver-to-Digital Converter
-%   <a href="matlab:help adi.AD3530r            ">AD3530r</a>       - DAC
+%   <a href="matlab:help adi.AD3530r           ">AD3530r</a>       - DAC
 %   <a href="matlab:help adi.AD5760            ">AD5760</a>         - DAC
 %   <a href="matlab:help adi.AD5780            ">AD5780</a>         - DAC
 %   <a href="matlab:help adi.AD5781            ">AD5781</a>         - DAC
@@ -72,3 +72,10 @@
 %   <a href="matlab:help adi.AD4080            ">AD4080</a>         - ADC
 %   <a href="matlab:help adi.AD5592r           ">AD5592r</a>        - ADC
 %   <a href="matlab:help adi.AD5593r           ">AD5593r</a>        - ADC
+%   <a href="matlab:help adi.AD4020            ">AD4020</a>         - ADC
+%   <a href="matlab:help adi.AD3552R           ">AD43552R</a>       - DAC
+%   <a href="matlab:help adi.LTC2387           ">LTC2387</a>        - DAC
+%
+% Boards and Platforms
+% -----------------------
+%   <a href="matlab:help adi.CN0585            ">CN0585</a>         - FMC development board for precision data acquisition
