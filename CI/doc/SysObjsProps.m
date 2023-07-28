@@ -6,4 +6,5 @@
 % * AD4030 <AD4030_Rx.html Rx>
 % * AD463x <AD463x_Rx.html Rx>
 % * AD7768 <AD7768_Rx.html Rx>
+% * AD7768 <AD4858_Rx.html Rx>
 
