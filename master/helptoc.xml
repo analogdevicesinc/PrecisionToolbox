@@ -3,8 +3,8 @@
    <tocitem target="index.html">Analog Devices, Inc Precision Toolbox
       <tocitem target="install/index.html">Install</tocitem>
       <tocitem target="streaming/index.html">Streaming</tocitem>
-      <tocitem target="support/index.html">Support</tocitem>
       <tocitem target="limitations/index.html">Limitations</tocitem>
+      <tocitem target="support/index.html">Support</tocitem>
       <tocitem target="examples/index.html">Examples</tocitem>
       
       <tocitem target="objects/index.html">Hardware Interface APIs
