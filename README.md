@@ -23,7 +23,7 @@ We provide support across two releases of MATLAB. This does not mean older relea
 
 ## Support and Documentation
 
-All support questions should be posted in our [EngineerZone](https://ez.analog.com/data_converters/precision_adcs) forums. Documentation is included within the toolbox but additional documentation is available on the [ADI Wiki](https://wiki.analog.com/resources/tools-software).
+All support questions should be posted in our [EngineerZone](https://ez.analog.com/data_converters/precision_adcs) forums. Documentation is included within the toolbox but additional documentation is available on the [ADI Wiki](https://wiki.analog.com/resources/tools-software/pcx-toolbox).
 
 ## Building & Installing
 
