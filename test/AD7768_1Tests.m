@@ -1,13 +1,17 @@
 classdef AD7768_1Tests < HardwareTests
 
     properties
-        uri = 'ip:analog';
+        uri = 'ip:192.168.10.170';
         author = 'ADI';
         m2k_uri = 'usb:1.59.5'
     end
 
     properties(TestParameter)
         signal_frequency = {2000,3000,4000,5000,6000};
+%         sample_rate = {'256000', '128000', '64000', ...
+%          '32000', '16000', '8000', '4000', ...
+%          '2000', '1000'}
+        sample_rate = {'128000'}
     end
 
     methods(TestClassSetup)
@@ -49,7 +53,7 @@ classdef AD7768_1Tests < HardwareTests
             rx.uri = testCase.uri;
 
             % Iterate here
-            for k = 1:length(signal_frequency)
+            for k = 1:length(signal_frequency) % loop is unnecessary
                 frequency = signal_frequency(k);
                 m2k_class.control(siggen, 0, [frequency, 0.5, 0, 0]);
                 data = rx();
@@ -66,6 +70,18 @@ classdef AD7768_1Tests < HardwareTests
             m2k_class.contextClose();
         end
         
+        function testAD7768_1Attr(testCase, sample_rate)
+            % ADC setup
+            rx = adi.AD7768_1.Rx;
+            rx.uri = testCase.uri;
+
+            val = sample_rate;
+            rx.SampleRate = val;
+            rx();
+            ret_val = rx.getDeviceAttributeRAW('sampling_frequency');
+            rx.release();
+            testCase.assertTrue(val==ret_val);
+        end
     end
     
 end
