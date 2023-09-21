@@ -78,36 +78,35 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
             obj.BufferTypeConversionEnable = true;
         end
 
-        %% Flush the buffer
-        function flush(obj)
-            flushBuffers(obj);
-        end
-
         %% Check Angle
-        function getAngle(obj)
+        function rValue = get.Angle(obj)
             if obj.ConnectedToDevice
-                obj.Angle = obj.getAttributeRAW('angl0', 'raw', obj.isOutput);
+                rValue = obj.getAttributeRAW('angl0', 'raw', obj.isOutput);
+                obj.Angle = rValue;
             end
         end
 
         %% Check Angular Scale
-        function getAngleScale(obj)
+        function rValue = get.AngleScale(obj)
             if obj.ConnectedToDevice
-                obj.AngleScale = obj.getAttributeDouble('angl0', 'scale', obj.isOutput);
+                rValue = obj.getAttributeDouble('angl0', 'scale', obj.isOutput);
+                obj.AngleScale = rValue;
             end
         end
 
         %% Check Velocity
-        function getVelocity(obj)
+        function rValue = get.Velocity(obj)
             if obj.ConnectedToDevice
-                obj.Velocity = obj.getAttributeRAW('anglvel0','raw', obj.isOutput);
+                rValue = obj.getAttributeRAW('anglvel0','raw', obj.isOutput);
+                obj.Velocity = rValue;
             end
         end
 
         %% Check Velocity Scale
-        function getVelocityScale(obj)
+        function rValue = get.VelocityScale(obj)
             if obj.ConnectedToDevice
-                obj.VelocityScale = obj.getAttributeDouble('anglvel0', 'scale', obj.isOutput);
+                rValue = obj.getAttributeDouble('anglvel0', 'scale', obj.isOutput);
+                obj.VelocityScale = rValue;
             end
         end
     end

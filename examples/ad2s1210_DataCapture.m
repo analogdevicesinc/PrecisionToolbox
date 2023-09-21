@@ -6,11 +6,11 @@ rx = adi.AD2S1210.Rx('uri','ip:analog.local');
 % Connect to device and initialize data
 rx();
 
-% Retrieve resolver angle and angular velocity
-rx.getAngle();
-rx.getAngleScale();
-rx.getVelocity();
-rx.getVelocityScale();
+% Retrieve and print resolver angle, angular velocity and scale
+rx.Angle();
+rx.AngleScale();
+rx.Velocity();
+rx.VelocityScale();
 
 % Print system object properties
 rx
