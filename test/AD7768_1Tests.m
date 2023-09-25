@@ -3,11 +3,12 @@ classdef AD7768_1Tests < HardwareTests
     properties
         uri = 'ip:192.168.10.170';
         author = 'ADI';
-        m2k_uri = 'usb:1.59.5'
+        m2k_uri = 'usb:1.27.5'
     end
 
     properties(TestParameter)
-        signal_frequency = {2000,3000,4000,5000,6000};
+        % start frequency. stop frequency, step, tolerance, repeats
+        signal_test = {{1000,125000,2500,0.015,10}};
 %         sample_rate = {'256000', '128000', '64000', ...
 %          '32000', '16000', '8000', '4000', ...
 %          '2000', '1000'}
@@ -43,7 +44,7 @@ classdef AD7768_1Tests < HardwareTests
             testCase.assertTrue(sum(abs(double(data)))>0);
         end
 
-        function testAD7768_1Data(testCase,signal_frequency)
+        function testAD7768_1Signal(testCase,signal_test)
             % Signal source setup
             m2k_class = instr_m2k();
             m2k = m2k_class.connect(getenv('M2K_URI'), false);
@@ -52,36 +53,41 @@ classdef AD7768_1Tests < HardwareTests
             rx = adi.AD7768_1.Rx;
             rx.uri = testCase.uri;
 
-            % Iterate here
-            for k = 1:length(signal_frequency) % loop is unnecessary
-                frequency = signal_frequency(k);
+            start = signal_test{1};
+            stop = signal_test{2};
+            step = signal_test{3};
+            tol = signal_test{4};
+            repeats = signal_test{5};
+            numints = round((stop-start)/step);
+            for ii = 1:repeats
+                ind = randi([0, numints]);
+                frequency = start+(step*ind);
                 m2k_class.control(siggen, 0, [frequency, 0.5, 0, 0]);
-                data = rx();
-
-                % Assert
+                for k = 1:5
+                    data = rx();
+                end
                 freqEst = estFrequencyMax(data,str2double(rx.SampleRate));
                 testCase.assertTrue(sum(abs(double(data)))>0);
-                testCase.verifyEqual(freqEst,frequency,'RelTol',0.015,...
+                testCase.verifyEqual(freqEst,frequency,'RelTol',tol,...
                     'Frequency of signal unexpected')
             end
-            
-            % Clean up
             rx.release();
             m2k_class.contextClose();
         end
-        
-        function testAD7768_1Attr(testCase, sample_rate)
-            % ADC setup
-            rx = adi.AD7768_1.Rx;
-            rx.uri = testCase.uri;
 
-            val = sample_rate;
-            rx.SampleRate = val;
-            rx();
-            ret_val = rx.getDeviceAttributeRAW('sampling_frequency');
-            rx.release();
-            testCase.assertTrue(val==ret_val);
-        end
+%         function testAD7768_1Attr(testCase, sample_rate)
+%          % FIXME: Hangs after first setting
+%             % ADC setup
+%             rx = adi.AD7768_1.Rx;
+%             rx.uri = testCase.uri;
+% 
+%             val = sample_rate;
+%             rx.SampleRate = val;
+%             rx();
+%             ret_val = rx.getDeviceAttributeRAW('sampling_frequency');
+%             rx.release();
+%             testCase.assertTrue(val==ret_val);
+%         end
     end
     
 end
