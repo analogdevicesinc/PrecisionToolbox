@@ -6,7 +6,7 @@ rx = adi.AD2S1210.Rx('uri','ip:analog.local');
 % Connect to device and initialize data
 rx();
 
-% Retrieve and print resolver angle, angular velocity and scale
+% Retrieve resolver angle, velocity and associated scales
 rx.Angle();
 rx.AngleScale();
 rx.Velocity();
