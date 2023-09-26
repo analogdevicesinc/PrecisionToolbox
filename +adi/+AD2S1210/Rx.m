@@ -16,26 +16,28 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         SamplesPerFrame = 4096
     end
 
-    properties
+    properties (Dependent)
         % Angle
         %   Resolver angle in Degrees.
-        Angle = 0
+        Angle
 
         % AngleScale Angular Scale
         %   Resolver angle scale.
-        AngleScale = 0
+        AngleScale
 
         % Velocity Angular Velocity
         %   Resolver velocity in revolutions per second.
-        Velocity = 0
+        Velocity
 
         % VelocityScale Velocity Angular Scale
         %   Resolver velocityscale.
-        VelocityScale = 0
+        VelocityScale
+    end
 
+    properties
         % ExcitationFrequency Excitation Frequency
         %   Resolver excitation frequency in Hertz.
-        ExcitationFrequency = 0
+        ExcitationFrequency = 0;
     end
 
     properties (Hidden)
@@ -82,7 +84,8 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         function rValue = get.Angle(obj)
             if obj.ConnectedToDevice
                 rValue = obj.getAttributeRAW('angl0', 'raw', obj.isOutput);
-                obj.Angle = rValue;
+            else
+                rValue = NaN;
             end
         end
 
@@ -90,7 +93,8 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         function rValue = get.AngleScale(obj)
             if obj.ConnectedToDevice
                 rValue = obj.getAttributeDouble('angl0', 'scale', obj.isOutput);
-                obj.AngleScale = rValue;
+            else
+                rValue = NaN;
             end
         end
 
@@ -98,7 +102,8 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         function rValue = get.Velocity(obj)
             if obj.ConnectedToDevice
                 rValue = obj.getAttributeRAW('anglvel0','raw', obj.isOutput);
-                obj.Velocity = rValue;
+            else
+                rValue = NaN;
             end
         end
 
@@ -106,7 +111,8 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         function rValue = get.VelocityScale(obj)
             if obj.ConnectedToDevice
                 rValue = obj.getAttributeDouble('anglvel0', 'scale', obj.isOutput);
-                obj.VelocityScale = rValue;
+            else
+                rValue = NaN;
             end
         end
     end
@@ -115,7 +121,7 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
     methods (Hidden, Access = protected)
 
         function setupInit(obj)
-            % Read excitation frequency attribute from device once connected.
+            % Write excitation frequency attribute from device once connected.
 
             obj.ExcitationFrequency = obj.getDeviceAttributeLongLong('excitation_frequency');
         end
