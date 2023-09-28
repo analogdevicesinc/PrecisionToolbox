@@ -1,18 +1,16 @@
 classdef AD7768_1Tests < HardwareTests
 
     properties
-        uri = 'ip:192.168.10.170';
+        uri = 'ip:localhost';
         author = 'ADI';
-        m2k_uri = 'usb:1.27.5'
     end
 
     properties(TestParameter)
         % start frequency. stop frequency, step, tolerance, repeats
         signal_test = {{1000,125000,2500,0.015,10}};
-%         sample_rate = {'256000', '128000', '64000', ...
-%          '32000', '16000', '8000', '4000', ...
-%          '2000', '1000'}
-        sample_rate = {'128000'}
+        sample_rate = {'256000', '128000', '64000', ...
+                     '32000', '16000', '8000', '4000', ...
+                     '2000', '1000'};
     end
 
     methods(TestClassSetup)
@@ -50,8 +48,8 @@ classdef AD7768_1Tests < HardwareTests
             m2k = m2k_class.connect(getenv('M2K_URI'), false);
             siggen = m2k_class.create_instr(m2k, "siggen");
             % ADC setup
-            rx = adi.AD7768_1.Rx;
-            rx.uri = testCase.uri;
+            adc = adi.AD7768_1.Rx;
+            adc.uri = testCase.uri;
 
             start = signal_test{1};
             stop = signal_test{2};
@@ -64,30 +62,28 @@ classdef AD7768_1Tests < HardwareTests
                 frequency = start+(step*ind);
                 m2k_class.control(siggen, 0, [frequency, 0.5, 0, 0]);
                 for k = 1:5
-                    data = rx();
+                    data = adc();
                 end
-                freqEst = estFrequencyMax(data,str2double(rx.SampleRate));
+                freqEst = estFrequencyMax(data,str2double(adc.SampleRate));
                 testCase.assertTrue(sum(abs(double(data)))>0);
                 testCase.verifyEqual(freqEst,frequency,'RelTol',tol,...
                     'Frequency of signal unexpected')
             end
-            rx.release();
+            adc.release();
             m2k_class.contextClose();
         end
 
-%         function testAD7768_1Attr(testCase, sample_rate)
-%          % FIXME: Hangs after first setting
-%             % ADC setup
-%             rx = adi.AD7768_1.Rx;
-%             rx.uri = testCase.uri;
-% 
-%             val = sample_rate;
-%             rx.SampleRate = val;
-%             rx();
-%             ret_val = rx.getDeviceAttributeRAW('sampling_frequency');
-%             rx.release();
-%             testCase.assertTrue(val==ret_val);
-%         end
+        function testAD7768_1Attr(testCase,sample_rate)
+         % FIXME: Hangs unless board is rebooted
+            adc = adi.AD7768_1.Rx;
+            adc.uri = testCase.uri;
+            val = sample_rate;
+            adc.SampleRate = val;
+            adc();
+            ret_val = adc.getDeviceAttributeRAW('sampling_frequency',8);
+            adc.release();
+            testCase.assertTrue(strcmp(val,string(ret_val)));
+        end
     end
     
 end
