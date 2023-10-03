@@ -7,7 +7,7 @@ classdef AD7768Tests < HardwareTests
 
     properties(TestParameter)
         % start frequency. stop frequency, step, tolerance, repeats
-        signal_test = {{1000,100000,2500,0.015,1}};
+        signal_test = {{1000,100000,2500,0.025,10}};
         sample_rate = {'256000', '128000', '64000', ...
                      '32000', '16000', '8000', '4000', ...
                      '2000', '1000'};
@@ -41,7 +41,7 @@ classdef AD7768Tests < HardwareTests
             testCase.assertTrue(sum(abs(double(data)))>0);
         end
 
-        function testAD7768_Signal(testCase,signal_test)
+        function testAD7768Signal(testCase,signal_test)
             % Signal source setup
             m2k_class = instr_m2k();
             m2k = m2k_class.connect(getenv('M2K_URI'), false);
@@ -66,9 +66,8 @@ classdef AD7768Tests < HardwareTests
                     data = adc();
                 end
                 for ch = adc.EnabledChannels
-                    %FIXME: estFrequencyMax returns 'MATLAB:UndefinedFunction'
-                    freqEst = estFrequencyMax(double(data(ch)),str2double(adc.SampleRate));
-                    testCase.assertTrue(sum(abs(double(data(ch))))>0);
+                    freqEst = testCase.estFrequencyMax(data(:,ch),str2double(adc.SampleRate));
+                    testCase.assertTrue(sum(abs(double(data(:,ch))))>0);
                     testCase.verifyEqual(freqEst,frequency,'RelTol',tol,...
                         'Frequency of signal unexpected')
                 end

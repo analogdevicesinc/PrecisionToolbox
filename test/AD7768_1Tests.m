@@ -64,7 +64,7 @@ classdef AD7768_1Tests < HardwareTests
                 for k = 1:5
                     data = adc();
                 end
-                freqEst = estFrequencyMax(data,str2double(adc.SampleRate));
+                freqEst = testCase.estFrequencyMax(data,str2double(adc.SampleRate));
                 testCase.assertTrue(sum(abs(double(data)))>0);
                 testCase.verifyEqual(freqEst,frequency,'RelTol',tol,...
                     'Frequency of signal unexpected')
