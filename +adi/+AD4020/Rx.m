@@ -9,13 +9,6 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
     %
     %   <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad4020-4021-4022.pdf">AD4020 Datasheet</a>
 
-    properties (Nontunable)
-        % SamplesPerFrame Samples Per Frame
-        %   Number of samples per frame, specified as an even positive
-        %   integer.
-        SamplesPerFrame = 4096
-    end
-
     properties (Dependent)
         % Voltage
         %   ADC Voltage in mV
