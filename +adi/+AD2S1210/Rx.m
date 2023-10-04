@@ -34,12 +34,6 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         VelocityScale
     end
 
-    properties
-        % ExcitationFrequency Excitation Frequency
-        %   Resolver excitation frequency in Hertz.
-        ExcitationFrequency = 0;
-    end
-
     properties (Hidden)
         % Number of frames or buffers of data to capture
         FrameCount = 1
@@ -119,11 +113,7 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
 
     %% API Functions
     methods (Hidden, Access = protected)
-
-        function setupInit(obj)
-            % Write excitation frequency attribute from device once connected.
-
-            obj.ExcitationFrequency = obj.getDeviceAttributeLongLong('excitation_frequency');
+        function setupInit(~)
         end
     end
 end
