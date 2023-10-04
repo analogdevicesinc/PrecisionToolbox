@@ -34,11 +34,6 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         VelocityScale
     end
 
-    properties (Hidden)
-        % Number of frames or buffers of data to capture
-        FrameCount = 1
-    end
-
     % Channel names
     properties (Nontunable, Hidden, Constant)
         channel_names = {'angl0', 'anglvel0'}
