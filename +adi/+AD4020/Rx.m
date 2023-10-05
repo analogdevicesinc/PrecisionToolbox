@@ -30,12 +30,6 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         VoltageOffset
     end
 
-    properties
-        % SamplingFrequency
-        %   Sampling Frequency in Hertz.
-        SamplingFrequency = 0
-    end
-
     % Channel names
     properties (Nontunable, Hidden, Constant)
         channel_names = {'voltage0'}
@@ -101,11 +95,7 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
 
     %% API Functions
     methods (Hidden, Access = protected)
-
-        function setupInit(obj)
-            % Write sampling frequency attribute from device once connected.
-
-            obj.SamplingFrequency = obj.getDeviceAttributeLongLong('sampling_frequency');
+        function setupInit(~)
         end
     end
 end
