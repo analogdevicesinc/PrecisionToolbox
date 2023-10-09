@@ -8,9 +8,14 @@ classdef AD7768_1Tests < HardwareTests
     properties(TestParameter)
         % start frequency. stop frequency, step, tolerance, repeats
         signal_test = {{1000,125000,2500,0.015,10}};
+        samples_per_frame = {{2^1,2^24,2^8,0.0,10}};
+        common_mode_volts
         sample_rate = {'256000', '128000', '64000', ...
                      '32000', '16000', '8000', '4000', ...
                      '2000', '1000'};
+        common_mode_voltage = { '(AVDD1-AVSS)/2','2V5', ...
+                     '2V05','1V9','1V65','1V1','0V9', ...
+                     'OFF'};
     end
 
     methods(TestClassSetup)
@@ -37,8 +42,9 @@ classdef AD7768_1Tests < HardwareTests
         function testAD7768_1Smoke(testCase)
             adc = adi.AD7768_1.Rx;
             adc.uri = testCase.uri;
-            data = adc();
+            [data,valid] = adc();
             adc.release();
+            testCase.assertTrue(valid);
             testCase.assertTrue(sum(abs(double(data)))>0);
         end
 
@@ -62,9 +68,10 @@ classdef AD7768_1Tests < HardwareTests
                 frequency = start+(step*ind);
                 m2k_class.control(siggen, 0, [frequency, 0.5, 0, 0]);
                 for k = 1:5
-                    data = adc();
+                    [data,valid] = adc();
                 end
                 freqEst = testCase.estFrequencyMax(data,str2double(adc.SampleRate));
+                testCase.assertTrue(valid);
                 testCase.assertTrue(sum(abs(double(data)))>0);
                 testCase.verifyEqual(freqEst,frequency,'RelTol',tol,...
                     'Frequency of signal unexpected')
@@ -73,16 +80,57 @@ classdef AD7768_1Tests < HardwareTests
             m2k_class.contextClose();
         end
 
-        function testAD7768_1Attr(testCase,sample_rate)
-         % FIXME: Hangs unless board is rebooted
+        function testAD7768_1AttrSampleRate(testCase,sample_rate)
+        % FIXME: Hangs unless board is rebooted
             adc = adi.AD7768_1.Rx;
             adc.uri = testCase.uri;
             val = sample_rate;
             adc.SampleRate = val;
-            adc();
+            [data,valid] = adc();
             ret_val = adc.getDeviceAttributeRAW('sampling_frequency',8);
             adc.release();
+            testCase.assertTrue(valid);
+            testCase.assertTrue(sum(abs(double(data)))>0);
             testCase.assertTrue(strcmp(val,string(ret_val)));
+        end
+
+        function testAD7768_1AttrCommonModeVolage(testCase,common_mode_voltage)
+        % FIXME: Hangs unless board is rebooted
+            adc = adi.AD7768_1.Rx;
+            adc.uri = testCase.uri;
+            val = common_mode_voltage;
+            adc.CommonModeVolts = val;
+            [data,valid] = adc();
+            ret_val = adc.getDeviceAttributeRAW('common_mode_voltage',8);
+            adc.release();
+            testCase.assertTrue(valid);
+            testCase.assertTrue(sum(abs(double(data)))>0);
+            testCase.assertTrue(strcmp(val,string(ret_val)));
+        end
+
+        function testAD7768_1AttrSamplesPerFrame(testCase,samples_per_frame)
+        % This is not written to the device. Should this even be tested?
+            adc = adi.AD7768_1.Rx;
+            adc.uri = testCase.uri;
+
+            start = samples_per_frame{1};
+            stop = samples_per_frame{2};
+            step = samples_per_frame{3};
+            tol = samples_per_frame{4};
+            repeats = samples_per_frame{5};
+            numints = round((stop-start)/step);
+            for ii = 1:repeats
+                ind = randi([0, numints]);
+                val = start+(step*ind);
+                adc.SamplesPerFrame = val;
+                [data, valid] = adc();
+                [ret_val,~] = size(data);
+                adc.release();
+                testCase.assertTrue(valid);
+                testCase.assertTrue(sum(abs(double(data)))>0);
+                testCase.verifyEqual(ret_val,val,'RelTol',tol,...
+                    'Frequency of signal unexpected')
+            end
         end
     end
     
