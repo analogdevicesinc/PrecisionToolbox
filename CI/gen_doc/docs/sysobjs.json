@@ -5,7 +5,7 @@
     "props": [
       {
         "prop_name": "EnabledChannels",
-        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_title": " EnabledChannels Enabled Channels",
         "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
       },
       {
@@ -31,7 +31,7 @@
     "props": [
       {
         "prop_name": "EnabledChannels",
-        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_title": " EnabledChannels Enabled Channels",
         "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
       },
       {
@@ -62,7 +62,7 @@
       },
       {
         "prop_name": "EnabledChannels",
-        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_title": " EnabledChannels Enabled Channels",
         "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
       },
       {
@@ -88,7 +88,7 @@
     "props": [
       {
         "prop_name": "EnabledChannels",
-        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_title": " EnabledChannels Enabled Channels",
         "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
       },
       {
@@ -119,7 +119,7 @@
     "props": [
       {
         "prop_name": "EnabledChannels",
-        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_title": " EnabledChannels Enabled Channels",
         "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
       },
       {
@@ -150,7 +150,7 @@
     "props": [
       {
         "prop_name": "EnabledChannels",
-        "prop_title": "  EnabledChannels Enabled Channels",
+        "prop_title": " EnabledChannels Enabled Channels",
         "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
       },
       {
@@ -172,6 +172,32 @@
         "prop_name": "uri",
         "prop_title": "  URI - remote host URI",
         "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD4630_24.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
+  },
+  {
+    "name": "adi.AD4858.Rx",
+    "dec": "  adi.AD4858.Rx Receives data from the AD4858 ADC<br>    The adi.AD4858.Rx System object is a signal source that can receive<br>    data from the AD4858.<br> <br>    rx = adi.AD4858.Rx;<br>    rx = adi.AD4858.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4858.pdf\">AD4858 Datasheet</a><br>    Documentation for adi.AD4858.Rx<br>       doc adi.AD4858.Rx<br>",
+    "props": [
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": " EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SampleRate",
+        "prop_title": "  SampleRate Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  SamplesPerFrame Samples Per Frame",
+        "prop_description": "Number of samples per frame, specified as an even positive integer."
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD4858.Rx/uri is inherited from superclass matlabshared.libiio.base"
       }
     ]
   }
