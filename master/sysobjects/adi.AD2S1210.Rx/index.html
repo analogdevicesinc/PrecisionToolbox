@@ -9,6 +9,8 @@
       
       
       
+        <link rel="prev" href="../adi.AD4858.Rx/">
+      
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -16,7 +18,7 @@
     
     
       
-        <title>adi.DAQ2.Rx - Analog Devices, Inc. Precision Toolbox</title>
+        <title>adi.AD2S1210.Rx - Analog Devices, Inc. Precision Toolbox</title>
       
     
     
@@ -105,7 +107,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              adi.DAQ2.Rx
+              adi.AD2S1210.Rx
             
           </span>
         </div>
@@ -190,9 +192,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -329,17 +329,19 @@
       
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
             
@@ -352,7 +354,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             Reference API
@@ -363,17 +365,19 @@
                 
   
   
+    
+  
   
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7_1" checked>
         
           <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
             
@@ -386,7 +390,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7_1">
             <span class="md-nav__icon md-icon"></span>
             Device Interfaces
@@ -537,9 +541,16 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../adi.AD2S1210.Rx/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -548,6 +559,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -576,9 +588,7 @@
             
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" hidden>
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -601,9 +611,9 @@
                   
 
 
-  <h1>adi.DAQ2.Rx</h1>
+  <h1>adi.AD2S1210.Rx</h1>
 
-<!-- <div class="sysobj_h1">adi.DAQ2.Rx</div> -->
+<!-- <div class="sysobj_h1">adi.AD2S1210.Rx</div> -->
 
 <!-- <div class="sysobj_top_desc">
 Receive data from Analog Devices AD9361 transceiver
@@ -613,7 +623,7 @@ Receive data from Analog Devices AD9361 transceiver
 
 <div class="sysobj_desc_txt">
 <span>
-    The adi.DAQ2.Rx System object is a signal source that can <br>    receive complex data from the DAQ2.<br> <br>    rx = adi.DAQ2.Rx;<br>    rx = adi.DAQ2.Rx('uri','ip:192.168.2.1');<br> <br>    <a href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcdaq2-ebz">User Guide</a><br> <br>
+  adi.AD2S1210.Rx Receives data from the AD2S1210 Resolver<br>    The adi.AD2S1210.Rx System object is a signal source that can receive<br>    data from the AD2S1210.<br> <br>    rx = adi.AD2S1210.Rx;<br>    rx = adi.AD2S1210.Rx('uri','192.168.2.1');<br> <br>    <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad2s1210.pdf">AD2S1210 Datasheet</a><br>
 </span>
 
 </div>
@@ -621,8 +631,8 @@ Receive data from Analog Devices AD9361 transceiver
 <div class="sysobj_desc_title">Creation</div>
 
 <p>The class can be instantiated in the following way with and without property name value pairs.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">dev</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adi</span><span class="p">.</span><span class="n">DAQ2</span><span class="p">.</span><span class="n">Rx</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">dev</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adi</span><span class="p">.</span><span class="n">DAQ2</span><span class="p">.</span><span class="n">Rx</span><span class="p">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p">)</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">dev</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adi</span><span class="p">.</span><span class="n">AD2S1210</span><span class="p">.</span><span class="n">Rx</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">dev</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">adi</span><span class="p">.</span><span class="n">AD2S1210</span><span class="p">.</span><span class="n">Rx</span><span class="p">(</span><span class="n">Name</span><span class="p">,</span><span class="w"> </span><span class="n">Value</span><span class="p">)</span>
 </code></pre></div>
 <div class="sysobj_desc_title">Properties</div>
 
@@ -636,9 +646,9 @@ For more information on changing property values, see <a href="https://www.mathw
 </span>
 </div>
 <div class="property">
-  <button type="button" onclick="collapse('SamplingRate')" class="collapsible-property collapsible-property-SamplingRate">SamplingRate <span style="text-align:right" class="plus-SamplingRate">+</span></button>
-  <div class="content content-SamplingRate" style="display: none;">
-    <p style="padding: 0px;">Baseband sampling rate in Hz, specified as a scalar in samples per second. This value is constantHelp for adi.DAQ2.Rx.SamplingRate is inherited from superclass ADI.AD9680.RX</p>
+  <button type="button" onclick="collapse('Angle')" class="collapsible-property collapsible-property-Angle">Angle <span style="text-align:right" class="plus-Angle">+</span></button>
+  <div class="content content-Angle" style="display: none;">
+    <p style="padding: 0px;">Resolver angle in Degrees.</p>
   </div>
   </div>
 <div class="property">
@@ -648,54 +658,50 @@ For more information on changing property values, see <a href="https://www.mathw
   </div>
   </div>
 <div class="property">
+  <button type="button" onclick="collapse('Resolution')" class="collapsible-property collapsible-property-Resolution">Resolution <span style="text-align:right" class="plus-Resolution">+</span></button>
+  <div class="content content-Resolution" style="display: none;">
+    <p style="padding: 0px;">Resolver resolution in bits.</p>
+  </div>
+  </div>
+<div class="property">
+  <button type="button" onclick="collapse('SamplesPerFrame')" class="collapsible-property collapsible-property-SamplesPerFrame">SamplesPerFrame <span style="text-align:right" class="plus-SamplesPerFrame">+</span></button>
+  <div class="content content-SamplesPerFrame" style="display: none;">
+    <p style="padding: 0px;">Number of samples per frame, specified as an even positive integer.</p>
+  </div>
+  </div>
+<div class="property">
+  <button type="button" onclick="collapse('Velocity')" class="collapsible-property collapsible-property-Velocity">Velocity <span style="text-align:right" class="plus-Velocity">+</span></button>
+  <div class="content content-Velocity" style="display: none;">
+    <p style="padding: 0px;">Resolver velocity in revolutions per second.</p>
+  </div>
+  </div>
+<div class="property">
   <button type="button" onclick="collapse('uri')" class="collapsible-property collapsible-property-uri">uri <span style="text-align:right" class="plus-uri">+</span></button>
   <div class="content content-uri" style="display: none;">
-    <p style="padding: 0px;">Hostname or IP address of remote libIIO deviceHelp for adi.DAQ2.Rx/uri is inherited from superclass MATLABSHARED.LIBIIO.BASE</p>
-  </div>
-  </div>
-<div class="property">
-  <button type="button" onclick="collapse('SamplesPerFrame')" class="collapsible-property collapsible-property-SamplesPerFrame">SamplesPerFrame <span style="text-align:right" class="plus-SamplesPerFrame">+</span></button>
-  <div class="content content-SamplesPerFrame" style="display: none;">
-    <p style="padding: 0px;">Number of samples per frame, specified as an even positive integer from 2 to 16,777,216. Using values less than 3660 can yield poor performance.Help for adi.DAQ2.Rx/SamplesPerFrame is inherited from superclass ADI.AD9680.BASE</p>
-  </div>
-  </div>
-<div class="property">
-  <button type="button" onclick="collapse('kernelBuffersCount')" class="collapsible-property collapsible-property-kernelBuffersCount">kernelBuffersCount <span style="text-align:right" class="plus-kernelBuffersCount">+</span></button>
-  <div class="content content-kernelBuffersCount" style="display: none;">
-    <p style="padding: 0px;">The number of buffers allocated in the kernel for data transfersHelp for adi.DAQ2.Rx/kernelBuffersCount is inherited from superclass MATLABSHARED.LIBIIO.BASE</p>
-  </div>
-  </div>
-<div class="property">
-  <button type="button" onclick="collapse('dataTypeStr')" class="collapsible-property collapsible-property-dataTypeStr">dataTypeStr <span style="text-align:right" class="plus-dataTypeStr">+</span></button>
-  <div class="content content-dataTypeStr" style="display: none;">
-    <p style="padding: 0px;">A String Representing the data typeHelp for adi.DAQ2.Rx/dataTypeStr is inherited from superclass MATLABSHARED.LIBIIO.BASE</p>
-  </div>
-  </div>
-<div class="property">
-  <button type="button" onclick="collapse('SamplesPerFrame')" class="collapsible-property collapsible-property-SamplesPerFrame">SamplesPerFrame <span style="text-align:right" class="plus-SamplesPerFrame">+</span></button>
-  <div class="content content-SamplesPerFrame" style="display: none;">
-    <p style="padding: 0px;">Number of samples per frame, specified as an even positive integer from 2 to 16,777,216. Using values less than 3660 can yield poor performance.Help for adi.DAQ2.Rx/SamplesPerFrame is inherited from superclass ADI.AD9680.BASE</p>
+    <p style="padding: 0px;">Hostname or IP address of remote libIIO deviceHelp for adi.AD2S1210.Rx/uri is inherited from superclass matlabshared.libiio.base</p>
   </div>
   </div>
 
 <div class="sysobj_desc_title">Example Usage</div>
 
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>%% Rx set up
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>rx = adi.adi.DAQ2.Rx.Rx(&#39;uri&#39;,&#39;ip:analog.local&#39;);
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>rx.CenterFrequency = 1e9;
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>rx = adi.AD2S1210.Rx(&#39;uri&#39;,&#39;ip:analog.local&#39;);
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>rx.SamplesPerFrame = 2^14;
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>rx.EnabledChannels = 1;
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>%% Run
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>for k=1:10
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    valid = false;
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    while ~valid
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        [out, valid] = rx();
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    end
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>end
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>%% Run
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>for k=1:10
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    valid = false;
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    while ~valid
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        [out, valid] = rx();
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    end
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>end
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>%% Cleanup
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>release(rx)
 </code></pre></div>
 
 
-
-  
 
 
 
