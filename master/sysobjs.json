@@ -236,5 +236,46 @@
         "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD2S1210.Rx/uri is inherited from superclass matlabshared.libiio.base"
       }
     ]
+  },
+  {
+    "name": "adi.AD4020.Rx",
+    "dec": "  adi.AD4020.Rx Receives data from the AD4020 ADC<br>    The adi.AD4020.Rx System object is a signal source that can receive<br>    data from the AD4020.<br> <br>    rx = adi.AD4020.Rx;<br>    rx = adi.AD4020.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4020-4021-4022.pdf\">AD4020 Datasheet</a><br>    Documentation for adi.AD4020.Rx<br>       doc adi.AD4020.Rx<br>",
+    "props": [
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": " EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4020.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
+      },
+      {
+        "prop_name": "SamplingFrequency",
+        "prop_title": "  SamplingFrequency",
+        "prop_description": "Sampling Frequency in Hertz."
+      },
+      {
+        "prop_name": "Voltage",
+        "prop_title": "  Voltage",
+        "prop_description": "ADC Voltage in mV"
+      },
+      {
+        "prop_name": "VoltageOffset",
+        "prop_title": "  VoltageOffset Voltage Offset",
+        "prop_description": "ADC Voltage offset."
+      },
+      {
+        "prop_name": "VoltageScale",
+        "prop_title": "  VoltageScale Voltage Scale",
+        "prop_description": "ADC Voltage scale."
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD4020.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
   }
 ]
