@@ -1,7 +1,7 @@
 [
   {
     "name": "adi.AD7380.Rx",
-    "dec": "  adi.AD7380.Rx Receives data from the AD7380 ADC<br>    The adi.AD7380.Rx System object is a signal source that can receive<br>    data from the AD7380.<br> <br>    rx = adi.AD7380.Rx;<br>    rx = adi.AD7380.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad7380-7381.pdf\">AD7380 Datasheet</a><br>    Documentation for adi.AD7380.Rx<br>       doc adi.AD7380.Rx<br>",
+    "dec": " <br>  adi.AD7380.Rx Receives data from the AD7380 ADC.<br>  The adi.AD7380.Rx System object is a signal source that can receive<br>  data from the AD7380.<br> <br>  `rx = adi.AD7380.Rx;`<br>  `rx = adi.AD7380.Rx('uri','192.168.2.1');`<br> <br>  `AD7380 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7380-7381.pdf>`_<br>    Documentation for adi.AD7380.Rx<br>       doc adi.AD7380.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -26,8 +26,152 @@
     ]
   },
   {
+    "name": "adi.AD7625.Rx",
+    "dec": "  <br>  adi.AD7625.Rx Receives data from the AD7625 ADC<br>  The adi.AD7625.Rx System object is a signal source that can receive<br>  data from the AD7625.<br> <br>    `rx = adi.AD7625.Rx;`<br>    `rx = adi.AD7625.Rx('uri','192.168.2.1');`<br> <br>  `AD7625 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/AD7625.pdf>`_<br>    Documentation for adi.AD7625.Rx<br>       doc adi.AD7625.Rx<br>",
+    "props": [
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": " EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SampleRate",
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD7625.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
+      },
+      {
+        "prop_name": "VoltageOffset",
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
+      },
+      {
+        "prop_name": "VoltageScale",
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD7625.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
+  },
+  {
+    "name": "adi.AD7626.Rx",
+    "dec": "  <br>  adi.AD7626.Rx Receives data from the AD7626 ADC<br>  The adi.AD7626.Rx System object is a signal source that can receive<br>  data from the AD7626.<br> <br>    `rx = adi.AD7626.Rx;`<br>    `rx = adi.AD7626.Rx('uri','192.168.2.1');`<br> <br>  `AD7626 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/AD7626.pdf>`_<br>    Documentation for adi.AD7626.Rx<br>       doc adi.AD7626.Rx<br>",
+    "props": [
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": " EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SampleRate",
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD7626.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
+      },
+      {
+        "prop_name": "VoltageOffset",
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
+      },
+      {
+        "prop_name": "VoltageScale",
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD7626.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
+  },
+  {
+    "name": "adi.AD7960.Rx",
+    "dec": "  <br>  adi.AD7960.Rx Receives data from the AD7960 ADC<br>  The adi.AD7960.Rx System object is a signal source that can receive<br>  data from the AD7960.<br> <br>    `rx = adi.AD7960.Rx;`<br>    `rx = adi.AD7960.Rx('uri','192.168.2.1');`<br> <br>  `AD7960 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7960.pdf>`_<br>    Documentation for adi.AD7960.Rx<br>       doc adi.AD7960.Rx<br>",
+    "props": [
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": " EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SampleRate",
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD7960.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
+      },
+      {
+        "prop_name": "VoltageOffset",
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
+      },
+      {
+        "prop_name": "VoltageScale",
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD7960.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
+  },
+  {
+    "name": "adi.AD7961.Rx",
+    "dec": "  <br>  adi.AD7961.Rx Receives data from the AD7961 ADC<br>  The adi.AD7961.Rx System object is a signal source that can receive<br>  data from the AD7961.<br> <br>    `rx = adi.AD7961.Rx;`<br>    `rx = adi.AD7961.Rx('uri','192.168.2.1');`<br> <br>  `AD7961 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7961.pdf>`_<br>    Documentation for adi.AD7961.Rx<br>       doc adi.AD7961.Rx<br>",
+    "props": [
+      {
+        "prop_name": "EnabledChannels",
+        "prop_title": " EnabledChannels Enabled Channels",
+        "prop_description": "Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant"
+      },
+      {
+        "prop_name": "SampleRate",
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
+      },
+      {
+        "prop_name": "SamplesPerFrame",
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD7961.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
+      },
+      {
+        "prop_name": "VoltageOffset",
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
+      },
+      {
+        "prop_name": "VoltageScale",
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
+      },
+      {
+        "prop_name": "uri",
+        "prop_title": "  URI - remote host URI",
+        "prop_description": "Hostname or IP address of remote libIIO deviceHelp for adi.AD7961.Rx/uri is inherited from superclass matlabshared.libiio.base"
+      }
+    ]
+  },
+  {
     "name": "adi.AD7768.Rx",
-    "dec": "  adi.AD7768.Rx Receives data from the AD7768 ADC<br>    The adi.AD7768.Rx System object is a signal source that can receive<br>    data from the AD7768.<br> <br>    rx = adi.AD7768.Rx;<br>    rx = adi.AD7768.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad7768-7768-4.pdf\">AD7768 Datasheet</a><br>    Documentation for adi.AD7768.Rx<br>       doc adi.AD7768.Rx<br>",
+    "dec": "  <br>  adi.AD7768.Rx Receives data from the AD7768 ADC<br>  The adi.AD7768.Rx System object is a signal source that can receive<br>  data from the AD7768.<br> <br>    `rx = adi.AD7768.Rx;`<br>    `rx = adi.AD7768.Rx('uri','192.168.2.1');`<br> <br>  `AD7768 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7768-7768-4.pdf>`_<br>    Documentation for adi.AD7768.Rx<br>       doc adi.AD7768.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -53,7 +197,7 @@
   },
   {
     "name": "adi.AD7768_1.Rx",
-    "dec": "  adi.AD7768_1.Rx Receives data from the AD7768-1 ADC<br>    The adi.AD7768_1.Rx System object is a signal source that can receive<br>    data from the AD7768-1.<br> <br>    rx = adi.AD7768_1.Rx;<br>    rx = adi.AD7768_1.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad7768-1.pdf\">AD7768-1 Datasheet</a><br>    Documentation for adi.AD7768_1.Rx<br>       doc adi.AD7768_1.Rx<br>",
+    "dec": " <br>  adi.AD7768_1.Rx Receives data from the AD7768-1 ADC<br>  The adi.AD7768_1.Rx System object is a signal source that can receive<br>  data from the AD7768-1.<br> <br>    `rx = adi.AD7768_1.Rx;`<br>    `rx = adi.AD7768_1.Rx('uri','192.168.2.1');`<br> <br>  `AD7768-1 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7768-1.pdf>`_<br>    Documentation for adi.AD7768_1.Rx<br>       doc adi.AD7768_1.Rx<br>",
     "props": [
       {
         "prop_name": "CommonModeVolts",
@@ -84,7 +228,7 @@
   },
   {
     "name": "adi.AD4030.Rx",
-    "dec": "  adi.AD4030.Rx Receives data from the AD4030-24 ADC<br>    The adi.AD4030.Rx System object is a signal source that can receive<br>    data from the AD4030-24.<br> <br>    rx = adi.AD4030.Rx;<br>    rx = adi.AD4030.Rx('uri','192.168.2.1');<br> <br>    <a href=\"http://www.analog.com/media/en/technical-documentation/data-sheets/AD4030-24.pdf\">AD4030-24 Datasheet</a><br>    Documentation for adi.AD4030.Rx<br>       doc adi.AD4030.Rx<br>",
+    "dec": "  <br>  adi.AD4030.Rx Receives data from the AD4030-24 ADC<br>  The adi.AD4030.Rx System object is a signal source that can receive<br>  data from the AD4030-24.<br> <br>    `rx = adi.AD4030.Rx;`<br>    `rx = adi.AD4030.Rx('uri','192.168.2.1');`<br> <br>  `AD4030-24 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD4030-24.pdf>`_<br>    Documentation for adi.AD4030.Rx<br>       doc adi.AD4030.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -93,18 +237,18 @@
       },
       {
         "prop_name": "SampleAveragingLength",
-        "prop_title": "  SampleAveragingLength",
-        "prop_description": "Block length of samples to be averaged. Applied in the Averaging Mode register only when OUT_DATA_MD is set to 30-bit averaged differential modeHelp for adi.AD4030.Rx/SampleAveragingLength is inherited from superclass adi.AD463x.Base"
+        "prop_title": "SampleAveragingLength",
+        "prop_description": "Block length of samples to be averaged. Applied in the Averaging Mode register only when OUT_DATA_MD is set to 30-bit averaged differential mode"
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4030.Rx/SampleRate is inherited from superclass adi.AD463x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4030.Rx/SamplesPerFrame is inherited from superclass adi.AD463x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4030.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "uri",
@@ -115,7 +259,7 @@
   },
   {
     "name": "adi.AD4630_16.Rx",
-    "dec": "  adi.AD4630_16.Rx Receive data from the AD4630-16 ADC<br>    The adi.AD4630_16.Rx System object is a signal source that can receive<br>    data from the AD4630-16.<br> <br>    rx = adi.AD4630_16.Rx;<br>    rx = adi.AD4630_16.Rx('uri','192.168.2.1');<br> <br>    <a href=\"http://www.analog.com/media/en/technical-documentation/data-sheets/AD4630-16.pdf\">AD4630-16 Datasheet</a><br>    Documentation for adi.AD4630_16.Rx<br>       doc adi.AD4630_16.Rx<br>",
+    "dec": "  <br>  adi.AD4630_16.Rx Receive data from the AD4630-16 ADC<br>  The adi.AD4630_16.Rx System object is a signal source that can receive<br>  data from the AD4630-16.<br> <br>    `rx = adi.AD4630_16.Rx;`<br>    `rx = adi.AD4630_16.Rx('uri','192.168.2.1');`<br> <br>  `AD4630-16 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD4630-16.pdf>`_<br>    Documentation for adi.AD4630_16.Rx<br>       doc adi.AD4630_16.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -124,18 +268,18 @@
       },
       {
         "prop_name": "SampleAveragingLength",
-        "prop_title": "  SampleAveragingLength",
-        "prop_description": "Block length of samples to be averaged. Applied in the Averaging Mode register only when OUT_DATA_MD is set to 30-bit averaged differential modeHelp for adi.AD4630_16.Rx/SampleAveragingLength is inherited from superclass adi.AD463x.Base"
+        "prop_title": "SampleAveragingLength",
+        "prop_description": "Block length of samples to be averaged. Applied in the Averaging Mode register only when OUT_DATA_MD is set to 30-bit averaged differential mode"
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4630_16.Rx/SampleRate is inherited from superclass adi.AD463x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4630_16.Rx/SamplesPerFrame is inherited from superclass adi.AD463x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4630_16.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "uri",
@@ -146,7 +290,7 @@
   },
   {
     "name": "adi.AD4630_24.Rx",
-    "dec": "  adi.AD4630_24.Rx Receive data from the AD4630-24 ADC<br>    The adi.AD4630_24.Rx System object is a signal source that can receive<br>    data from the AD4630-24.<br> <br>    rx = adi.AD4630_24.Rx;<br>    rx = adi.AD4630_24.Rx('uri','192.168.2.1');<br> <br>    <a href=\"http://www.analog.com/media/en/technical-documentation/data-sheets/AD4630-24.pdf\">AD4630-24 Datasheet</a><br>    Documentation for adi.AD4630_24.Rx<br>       doc adi.AD4630_24.Rx<br>",
+    "dec": "  <br>  adi.AD4630_24.Rx Receive data from the AD4630-24 ADC<br>  The adi.AD4630_24.Rx System object is a signal source that can receive<br>  data from the AD4630-24.<br> <br>    `rx = adi.AD4630_24.Rx;`<br>    `rx = adi.AD4630_24.Rx('uri','192.168.2.1');`<br> <br>  `AD4630-24 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD4630-24.pdf>`_<br>    Documentation for adi.AD4630_24.Rx<br>       doc adi.AD4630_24.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -155,18 +299,18 @@
       },
       {
         "prop_name": "SampleAveragingLength",
-        "prop_title": "  SampleAveragingLength",
-        "prop_description": "Block length of samples to be averaged. Applied in the Averaging Mode register only when OUT_DATA_MD is set to 30-bit averaged differential modeHelp for adi.AD4630_24.Rx/SampleAveragingLength is inherited from superclass adi.AD463x.Base"
+        "prop_title": "SampleAveragingLength",
+        "prop_description": "Block length of samples to be averaged. Applied in the Averaging Mode register only when OUT_DATA_MD is set to 30-bit averaged differential mode"
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4630_24.Rx/SampleRate is inherited from superclass adi.AD463x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4630_24.Rx/SamplesPerFrame is inherited from superclass adi.AD463x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4630_24.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "uri",
@@ -177,7 +321,7 @@
   },
   {
     "name": "adi.AD4858.Rx",
-    "dec": "  adi.AD4858.Rx Receives data from the AD4858 ADC<br>    The adi.AD4858.Rx System object is a signal source that can receive<br>    data from the AD4858.<br> <br>    rx = adi.AD4858.Rx;<br>    rx = adi.AD4858.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4858.pdf\">AD4858 Datasheet</a><br>    Documentation for adi.AD4858.Rx<br>       doc adi.AD4858.Rx<br>",
+    "dec": "  <br>  adi.AD4858.Rx Receives data from the AD4858 ADC<br>  The adi.AD4858.Rx System object is a signal source that can receive<br>  data from the AD4858.<br> <br>    `rx = adi.AD4858.Rx;`<br>    `rx = adi.AD4858.Rx('uri','192.168.2.1');`<br> <br>  `AD4858 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4858.pdf>`_<br>    Documentation for adi.AD4858.Rx<br>       doc adi.AD4858.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -203,7 +347,7 @@
   },
   {
     "name": "adi.AD2S1210.Rx",
-    "dec": "  adi.AD2S1210.Rx Receives data from the AD2S1210 Resolver<br>    The adi.AD2S1210.Rx System object is a signal source that can receive<br>    data from the AD2S1210.<br> <br>    rx = adi.AD2S1210.Rx;<br>    rx = adi.AD2S1210.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad2s1210.pdf\">AD2S1210 Datasheet</a><br>    Documentation for adi.AD2S1210.Rx<br>       doc adi.AD2S1210.Rx<br>",
+    "dec": "  <br>  adi.AD2S1210.Rx Receives data from the AD2S1210 Resolver<br>  The adi.AD2S1210.Rx System object is a signal source that can receive<br>  data from the AD2S1210.<br> <br>    `rx = adi.AD2S1210.Rx;`<br>    `rx = adi.AD2S1210.Rx('uri','192.168.2.1');`<br> <br>  `AD2S1210 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad2s1210.pdf>`_<br>    Documentation for adi.AD2S1210.Rx<br>       doc adi.AD2S1210.Rx<br>",
     "props": [
       {
         "prop_name": "Angle",
@@ -244,7 +388,7 @@
   },
   {
     "name": "adi.AD4000.Rx",
-    "dec": "  adi.AD4000.Rx Receives data from the AD4000 ADC<br>    The adi.AD4000.Rx System object is a signal source that can receive<br>    data from the AD4000.<br> <br>    rx = adi.AD4000.Rx;<br>    rx = adi.AD4000.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4000-4004-4008.pdf\">AD4000 Datasheet</a><br>    Documentation for adi.AD4000.Rx<br>       doc adi.AD4000.Rx<br>",
+    "dec": "  <br>  adi.AD4000.Rx Receives data from the AD4000 ADC<br>  The adi.AD4000.Rx System object is a signal source that can receive<br>  data from the AD4000.<br> <br>    `rx = adi.AD4000.Rx;`<br>    `rx = adi.AD4000.Rx('uri','192.168.2.1');`<br> <br>  `AD4000 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4000-4004-4008.pdf>`_<br>    Documentation for adi.AD4000.Rx<br>       doc adi.AD4000.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -253,23 +397,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4000.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4000.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4000.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4000.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4000.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -280,7 +424,7 @@
   },
   {
     "name": "adi.AD4001.Rx",
-    "dec": "  adi.AD4001.Rx Receives data from the AD4001 ADC<br>    The adi.AD4001.Rx System object is a signal source that can receive<br>    data from the AD4001.<br> <br>    rx = adi.AD4001.Rx;<br>    rx = adi.AD4001.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4001-4005.pdf\">AD4001 Datasheet</a><br>    Documentation for adi.AD4001.Rx<br>       doc adi.AD4001.Rx<br>",
+    "dec": "  <br>  adi.AD4001.Rx Receives data from the AD4001 ADC<br>  The adi.AD4001.Rx System object is a signal source that can receive<br>  data from the AD4001.<br> <br>    `rx = adi.AD4001.Rx;`<br>    `rx = adi.AD4001.Rx('uri','192.168.2.1');`<br> <br>  `AD4001 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4001-4005.pdf>`_<br>    Documentation for adi.AD4001.Rx<br>       doc adi.AD4001.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -289,23 +433,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4001.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4001.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4001.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4001.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4001.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -316,7 +460,7 @@
   },
   {
     "name": "adi.AD4002.Rx",
-    "dec": "  adi.AD4002.Rx Receives data from the AD4002 ADC<br>    The adi.AD4002.Rx System object is a signal source that can receive<br>    data from the AD4002.<br> <br>    rx = adi.AD4002.Rx;<br>    rx = adi.AD4002.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4002-4006-4010.pdf\">AD4002 Datasheet</a><br>    Documentation for adi.AD4002.Rx<br>       doc adi.AD4002.Rx<br>",
+    "dec": "  <br>  adi.AD4002.Rx Receives data from the AD4002 ADC<br>  The adi.AD4002.Rx System object is a signal source that can receive<br>  data from the AD4002.<br> <br>    `rx = adi.AD4002.Rx;`<br>    `rx = adi.AD4002.Rx('uri','192.168.2.1');`<br> <br>  `AD4002 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4002-4006-4010.pdf>`_<br>    Documentation for adi.AD4002.Rx<br>       doc adi.AD4002.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -325,23 +469,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4002.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4002.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4002.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4002.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4002.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -352,7 +496,7 @@
   },
   {
     "name": "adi.AD4003.Rx",
-    "dec": "  adi.AD4003.Rx Receives data from the AD4003 ADC<br>    The adi.AD4003.Rx System object is a signal source that can receive<br>    data from the AD4003.<br> <br>    rx = adi.AD4003.Rx;<br>    rx = adi.AD4003.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4003-4007-4011.pdf\">AD4003 Datasheet</a><br>    Documentation for adi.AD4003.Rx<br>       doc adi.AD4003.Rx<br>",
+    "dec": "  <br>  adi.AD4003.Rx Receives data from the AD4003 ADC<br>  The adi.AD4003.Rx System object is a signal source that can receive<br>  data from the AD4003.<br> <br>    `rx = adi.AD4003.Rx;`<br>    `rx = adi.AD4003.Rx('uri','192.168.2.1');`<br> <br>  `AD4003 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4003-4007-4011.pdf>`_<br>    Documentation for adi.AD4003.Rx<br>       doc adi.AD4003.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -361,23 +505,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4003.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4003.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4003.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4003.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4003.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -388,7 +532,7 @@
   },
   {
     "name": "adi.AD4004.Rx",
-    "dec": "  adi.AD4004.Rx Receives data from the AD4004 ADC<br>    The adi.AD4004.Rx System object is a signal source that can receive<br>    data from the AD4004.<br> <br>    rx = adi.AD4004.Rx;<br>    rx = adi.AD4004.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4000-4004-4008.pdf\">AD4004 Datasheet</a><br>    Documentation for adi.AD4004.Rx<br>       doc adi.AD4004.Rx<br>",
+    "dec": "  <br>  adi.AD4004.Rx Receives data from the AD4004 ADC<br>  The adi.AD4004.Rx System object is a signal source that can receive<br>  data from the AD4004.<br> <br>    `rx = adi.AD4004.Rx;`<br>    `rx = adi.AD4004.Rx('uri','192.168.2.1');`<br> <br>  `AD4004 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4000-4004-4008.pdf>`_<br>    Documentation for adi.AD4004.Rx<br>       doc adi.AD4004.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -397,23 +541,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4004.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4004.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4004.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4004.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4004.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -424,7 +568,7 @@
   },
   {
     "name": "adi.AD4005.Rx",
-    "dec": "  adi.AD4005.Rx Receives data from the AD4005 ADC<br>    The adi.AD4005.Rx System object is a signal source that can receive<br>    data from the AD4005.<br> <br>    rx = adi.AD4005.Rx;<br>    rx = adi.AD4005.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4001-4005.pdf\">AD4005 Datasheet</a><br>    Documentation for adi.AD4005.Rx<br>       doc adi.AD4005.Rx<br>",
+    "dec": "  <br>  adi.AD4005.Rx Receives data from the AD4005 ADC<br>  The adi.AD4005.Rx System object is a signal source that can receive<br>  data from the AD4005.<br> <br>    `rx = adi.AD4005.Rx;`<br>    `rx = adi.AD4005.Rx('uri','192.168.2.1');`<br> <br>  `AD4005 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4001-4005.pdf>`_<br>    Documentation for adi.AD4005.Rx<br>       doc adi.AD4005.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -433,23 +577,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4005.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4005.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4005.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4005.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4005.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -460,7 +604,7 @@
   },
   {
     "name": "adi.AD4006.Rx",
-    "dec": "  adi.AD4006.Rx Receives data from the AD4006 ADC<br>    The adi.AD4006.Rx System object is a signal source that can receive<br>    data from the AD4006.<br> <br>    rx = adi.AD4006.Rx;<br>    rx = adi.AD4006.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4002-4006-4010.pdf\">AD4006 Datasheet</a><br>    Documentation for adi.AD4006.Rx<br>       doc adi.AD4006.Rx<br>",
+    "dec": "  <br>  adi.AD4006.Rx Receives data from the AD4006 ADC<br>  The adi.AD4006.Rx System object is a signal source that can receive<br>  data from the AD4006.<br> <br>    `rx = adi.AD4006.Rx;`<br>    `rx = adi.AD4006.Rx('uri','192.168.2.1');`<br> <br>  `AD4006 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4002-4006-4010.pdf>`_<br>    Documentation for adi.AD4006.Rx<br>       doc adi.AD4006.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -469,23 +613,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4006.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4006.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4006.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4006.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4006.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -496,7 +640,7 @@
   },
   {
     "name": "adi.AD4007.Rx",
-    "dec": "  adi.AD4007.Rx Receives data from the AD4007 ADC<br>    The adi.AD4007.Rx System object is a signal source that can receive<br>    data from the AD4007.<br> <br>    rx = adi.AD4007.Rx;<br>    rx = adi.AD4007.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4003-4007-4011.pdf\">AD4007 Datasheet</a><br>    Documentation for adi.AD4007.Rx<br>       doc adi.AD4007.Rx<br>",
+    "dec": "  <br>  adi.AD4007.Rx Receives data from the AD4007 ADC<br>  The adi.AD4007.Rx System object is a signal source that can receive<br>  data from the AD4007.<br> <br>    `rx = adi.AD4007.Rx;`<br>    `rx = adi.AD4007.Rx('uri','192.168.2.1');`<br> <br>  `AD4007 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4003-4007-4011.pdf>`_<br>    Documentation for adi.AD4007.Rx<br>       doc adi.AD4007.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -505,23 +649,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4007.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4007.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4007.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4007.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4007.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -532,7 +676,7 @@
   },
   {
     "name": "adi.AD4008.Rx",
-    "dec": "  adi.AD4008.Rx Receives data from the AD4008 ADC<br>    The adi.AD4008.Rx System object is a signal source that can receive<br>    data from the AD4008.<br> <br>    rx = adi.AD4008.Rx;<br>    rx = adi.AD4008.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4000-4004-4008.pdf\">AD4008 Datasheet</a><br>    Documentation for adi.AD4008.Rx<br>       doc adi.AD4008.Rx<br>",
+    "dec": "  <br>  adi.AD4008.Rx Receives data from the AD4008 ADC<br>  The adi.AD4008.Rx System object is a signal source that can receive<br>  data from the AD4008.<br> <br>    `rx = adi.AD4008.Rx;`<br>    `rx = adi.AD4008.Rx('uri','192.168.2.1');`<br> <br>  `AD4008 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4000-4004-4008.pdf>`_<br>    Documentation for adi.AD4008.Rx<br>       doc adi.AD4008.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -541,23 +685,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4008.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4008.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4008.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4008.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4008.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -568,7 +712,7 @@
   },
   {
     "name": "adi.AD4010.Rx",
-    "dec": "  adi.AD4010.Rx Receives data from the AD4010 ADC<br>    The adi.AD4010.Rx System object is a signal source that can receive<br>    data from the AD4010.<br> <br>    rx = adi.AD4010.Rx;<br>    rx = adi.AD4010.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4002-4006-4010.pdf\">AD4010 Datasheet</a><br>    Documentation for adi.AD4010.Rx<br>       doc adi.AD4010.Rx<br>",
+    "dec": "  <br>  adi.AD4010.Rx Receives data from the AD4010 ADC<br>  The adi.AD4010.Rx System object is a signal source that can receive<br>  data from the AD4010.<br> <br>    `rx = adi.AD4010.Rx;`<br>    `rx = adi.AD4010.Rx('uri','192.168.2.1');`<br> <br>  `AD4010 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4002-4006-4010.pdf>`_<br>    Documentation for adi.AD4010.Rx<br>       doc adi.AD4010.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -577,23 +721,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4010.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4010.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4010.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4010.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4010.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -604,7 +748,7 @@
   },
   {
     "name": "adi.AD4011.Rx",
-    "dec": "  adi.AD4011.Rx Receives data from the AD4011 ADC<br>    The adi.AD4011.Rx System object is a signal source that can receive<br>    data from the AD4011.<br> <br>    rx = adi.AD4011.Rx;<br>    rx = adi.AD4011.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4003-4007-4011.pdf\">AD4011 Datasheet</a><br>    Documentation for adi.AD4011.Rx<br>       doc adi.AD4011.Rx<br>",
+    "dec": "  <br>  adi.AD4011.Rx Receives data from the AD4011 ADC<br>  The adi.AD4011.Rx System object is a signal source that can receive<br>  data from the AD4011.<br> <br>    `rx = adi.AD4011.Rx;`<br>    `rx = adi.AD4011.Rx('uri','192.168.2.1');`<br> <br>  `AD4011 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4003-4007-4011.pdf>`_<br>    Documentation for adi.AD4011.Rx<br>       doc adi.AD4011.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -613,23 +757,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4011.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4011.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4011.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4011.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4011.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -640,7 +784,7 @@
   },
   {
     "name": "adi.AD4020.Rx",
-    "dec": "  adi.AD4020.Rx Receives data from the AD4020 ADC<br>    The adi.AD4020.Rx System object is a signal source that can receive<br>    data from the AD4020.<br> <br>    rx = adi.AD4020.Rx;<br>    rx = adi.AD4020.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4020-4021-4022.pdf\">AD4020 Datasheet</a><br>    Documentation for adi.AD4020.Rx<br>       doc adi.AD4020.Rx<br>",
+    "dec": "  <br>  adi.AD4020.Rx Receives data from the AD4020 ADC<br>  The adi.AD4020.Rx System object is a signal source that can receive<br>  data from the AD4020.<br> <br>    rx = adi.AD4020.Rx;<br>    rx = adi.AD4020.Rx('uri','192.168.2.1');<br> <br>  `AD4020 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4020-4021-4022.pdf>`_<br>    Documentation for adi.AD4020.Rx<br>       doc adi.AD4020.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -649,23 +793,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4020.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4020.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4020.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4020.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4020.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -676,7 +820,7 @@
   },
   {
     "name": "adi.AD4021.Rx",
-    "dec": "  adi.AD4021.Rx Receives data from the AD4021 ADC<br>    The adi.AD4021.Rx System object is a signal source that can receive<br>    data from the AD4021.<br> <br>    rx = adi.AD4021.Rx;<br>    rx = adi.AD4021.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4020-4021-4022.pdf\">AD4021 Datasheet</a><br>    Documentation for adi.AD4021.Rx<br>       doc adi.AD4021.Rx<br>",
+    "dec": "  <br>  adi.AD4021.Rx Receives data from the AD4021 ADC<br>  The adi.AD4021.Rx System object is a signal source that can receive<br>  data from the AD4021.<br> <br>    `rx = adi.AD4021.Rx;`<br>    `rx = adi.AD4021.Rx('uri','192.168.2.1');`<br> <br>  `AD4021 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4020-4021-4022.pdf>`_<br>    Documentation for adi.AD4021.Rx<br>       doc adi.AD4021.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -685,23 +829,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4021.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4021.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4021.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4021.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4021.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -712,7 +856,7 @@
   },
   {
     "name": "adi.AD4022.Rx",
-    "dec": "  adi.AD4022.Rx Receives data from the AD4022 ADC<br>    The adi.AD4022.Rx System object is a signal source that can receive<br>    data from the AD4022.<br> <br>    rx = adi.AD4022.Rx;<br>    rx = adi.AD4022.Rx('uri','192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad4020-4021-4022.pdf\">AD4022 Datasheet</a><br>    Documentation for adi.AD4022.Rx<br>       doc adi.AD4022.Rx<br>",
+    "dec": "  <br>  adi.AD4022.Rx Receives data from the AD4022 ADC<br>  The adi.AD4022.Rx System object is a signal source that can receive<br>  data from the AD4022.<br> <br>    `rx = adi.AD4022.Rx;`<br>    `rx = adi.AD4022.Rx('uri','192.168.2.1');`<br> <br>  `AD4022 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4020-4021-4022.pdf>`_<br>    Documentation for adi.AD4022.Rx<br>       doc adi.AD4022.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -721,23 +865,23 @@
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4022.Rx/SampleRate is inherited from superclass adi.AD400x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer.Help for adi.AD4022.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD4022.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "VoltageOffset",
-        "prop_title": "  VoltageOffset Voltage Offset",
-        "prop_description": "ADC Voltage offset.Help for adi.AD4022.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageOffset - Voltage Offset",
+        "prop_description": "ADC Voltage offset."
       },
       {
         "prop_name": "VoltageScale",
-        "prop_title": "  VoltageScale Voltage Scale",
-        "prop_description": "ADC Voltage scale.Help for adi.AD4022.Rx/VoltageScale is inherited from superclass adi.AD400x.Base"
+        "prop_title": "VoltageScale - Voltage Scale",
+        "prop_description": "ADC Voltage scale."
       },
       {
         "prop_name": "uri",
@@ -748,12 +892,12 @@
   },
   {
     "name": "adi.AD5760.Tx",
-    "dec": "  adi.AD5760.Tx Transmits data to the AD5760 DAC<br>    The adi.AD5760.Tx System object is a signal sink that can transmit<br>    data to the AD5760.<br> <br>    tx = adi.AD5760.Tx;<br>    tx = adi.AD5760.Tx('uri','ip:192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad5760.pdf\">AD5760 Datasheet</a><br>    Documentation for adi.AD5760.Tx<br>       doc adi.AD5760.Tx<br>",
+    "dec": "  <br>  adi.AD5760.Tx Transmits data to the AD5760 DAC<br>  The adi.AD5760.Tx System object is a signal sink that can transmit<br>  data to the AD5760.<br> <br>    `tx = adi.AD5760.Tx;`<br>    `tx = adi.AD5760.Tx('uri','ip:192.168.2.1');`<br> <br>  `AD5760 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad5760.pdf>`_<br>    Documentation for adi.AD5760.Tx<br>       doc adi.AD5760.Tx<br>",
     "props": [
       {
         "prop_name": "CodeSelect",
-        "prop_title": "  CodeSelect Code Select",
-        "prop_description": "Set to 2s_complement/offset_binaryHelp for adi.AD5760.Tx/CodeSelect is inherited from superclass adi.AD579x.Base"
+        "prop_title": "CodeSelect - Code Select",
+        "prop_description": "Set to 2s_complement/offset_binary"
       },
       {
         "prop_name": "DDSFrequencies",
@@ -787,23 +931,23 @@
       },
       {
         "prop_name": "PowerDown",
-        "prop_title": "  PowerDown Power Down",
-        "prop_description": "Set to true/false to power-up/power-down the device channelsHelp for adi.AD5760.Tx/PowerDown is inherited from superclass adi.AD579x.Base"
+        "prop_title": "PowerDown - Power Down",
+        "prop_description": "Set to true/false to power-up/power-down the device channels"
       },
       {
         "prop_name": "Raw",
-        "prop_title": "  Raw Channel Raw Value",
-        "prop_description": "Help for adi.AD5760.Tx/Raw is inherited from superclass adi.AD579x.Base"
+        "prop_title": "Raw - Channel Raw Value",
+        "prop_description": ""
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second. Help for adi.AD5760.Tx/SampleRate is inherited from superclass adi.AD579x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer. Help for adi.AD5760.Tx/SamplesPerFrame is inherited from superclass adi.AD579x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD5760.Tx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "uri",
@@ -814,12 +958,12 @@
   },
   {
     "name": "adi.AD5780.Tx",
-    "dec": "  adi.AD5780.Tx Transmits data to the AD5780 DAC<br>    The adi.AD5780.Tx System object is a signal sink that can transmit<br>    data to the AD5780.<br> <br>    tx = adi.AD5780.Tx;<br>    tx = adi.AD5780.Tx('uri','ip:192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad5780.pdf\">AD5780 Datasheet</a><br>    Documentation for adi.AD5780.Tx<br>       doc adi.AD5780.Tx<br>",
+    "dec": "  <br>  adi.AD5780.Tx Transmits data to the AD5780 DAC<br>  The adi.AD5780.Tx System object is a signal sink that can transmit<br>  data to the AD5780.<br> <br>    `tx = adi.AD5780.Tx;`<br>    `tx = adi.AD5780.Tx('uri','ip:192.168.2.1');`<br> <br>  `AD5780 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad5780.pdf>`_<br>    Documentation for adi.AD5780.Tx<br>       doc adi.AD5780.Tx<br>",
     "props": [
       {
         "prop_name": "CodeSelect",
-        "prop_title": "  CodeSelect Code Select",
-        "prop_description": "Set to 2s_complement/offset_binaryHelp for adi.AD5780.Tx/CodeSelect is inherited from superclass adi.AD579x.Base"
+        "prop_title": "CodeSelect - Code Select",
+        "prop_description": "Set to 2s_complement/offset_binary"
       },
       {
         "prop_name": "DDSFrequencies",
@@ -853,23 +997,23 @@
       },
       {
         "prop_name": "PowerDown",
-        "prop_title": "  PowerDown Power Down",
-        "prop_description": "Set to true/false to power-up/power-down the device channelsHelp for adi.AD5780.Tx/PowerDown is inherited from superclass adi.AD579x.Base"
+        "prop_title": "PowerDown - Power Down",
+        "prop_description": "Set to true/false to power-up/power-down the device channels"
       },
       {
         "prop_name": "Raw",
-        "prop_title": "  Raw Channel Raw Value",
-        "prop_description": "Help for adi.AD5780.Tx/Raw is inherited from superclass adi.AD579x.Base"
+        "prop_title": "Raw - Channel Raw Value",
+        "prop_description": ""
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second. Help for adi.AD5780.Tx/SampleRate is inherited from superclass adi.AD579x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer. Help for adi.AD5780.Tx/SamplesPerFrame is inherited from superclass adi.AD579x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD5780.Tx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "uri",
@@ -880,12 +1024,12 @@
   },
   {
     "name": "adi.AD5781.Tx",
-    "dec": "  adi.AD5781.Tx Transmits data to the AD5781 DAC<br>    The adi.AD5781.Tx System object is a signal sink that can transmit<br>    data to the AD5781.<br> <br>    tx = adi.AD5781.Tx;<br>    tx = adi.AD5781.Tx('uri','ip:192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad5781.pdf\">AD5781 Datasheet</a><br>    Documentation for adi.AD5781.Tx<br>       doc adi.AD5781.Tx<br>",
+    "dec": "  <br>  adi.AD5781.Tx Transmits data to the AD5781 DAC<br>  The adi.AD5781.Tx System object is a signal sink that can transmit<br>  data to the AD5781.<br> <br>    `tx = adi.AD5781.Tx;`<br>    `tx = adi.AD5781.Tx('uri','ip:192.168.2.1');`<br> <br>  `AD5781 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad5781.pdf>`_<br>    Documentation for adi.AD5781.Tx<br>       doc adi.AD5781.Tx<br>",
     "props": [
       {
         "prop_name": "CodeSelect",
-        "prop_title": "  CodeSelect Code Select",
-        "prop_description": "Set to 2s_complement/offset_binaryHelp for adi.AD5781.Tx/CodeSelect is inherited from superclass adi.AD579x.Base"
+        "prop_title": "CodeSelect - Code Select",
+        "prop_description": "Set to 2s_complement/offset_binary"
       },
       {
         "prop_name": "DDSFrequencies",
@@ -919,23 +1063,23 @@
       },
       {
         "prop_name": "PowerDown",
-        "prop_title": "  PowerDown Power Down",
-        "prop_description": "Set to true/false to power-up/power-down the device channelsHelp for adi.AD5781.Tx/PowerDown is inherited from superclass adi.AD579x.Base"
+        "prop_title": "PowerDown - Power Down",
+        "prop_description": "Set to true/false to power-up/power-down the device channels"
       },
       {
         "prop_name": "Raw",
-        "prop_title": "  Raw Channel Raw Value",
-        "prop_description": "Help for adi.AD5781.Tx/Raw is inherited from superclass adi.AD579x.Base"
+        "prop_title": "Raw - Channel Raw Value",
+        "prop_description": ""
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second. Help for adi.AD5781.Tx/SampleRate is inherited from superclass adi.AD579x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer. Help for adi.AD5781.Tx/SamplesPerFrame is inherited from superclass adi.AD579x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD5781.Tx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "uri",
@@ -946,12 +1090,12 @@
   },
   {
     "name": "adi.AD5790.Tx",
-    "dec": "  adi.AD5790.Tx Transmits data to the AD5790 DAC<br>    The adi.AD5790.Tx System object is a signal sink that can transmit<br>    data to the AD5790.<br> <br>    tx = adi.AD5790.Tx;<br>    tx = adi.AD5790.Tx('uri','ip:192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad5790.pdf\">AD5790 Datasheet</a><br>    Documentation for adi.AD5790.Tx<br>       doc adi.AD5790.Tx<br>",
+    "dec": "  <br>  adi.AD5790.Tx Transmits data to the AD5790 DAC<br>  The adi.AD5790.Tx System object is a signal sink that can transmit<br>  data to the AD5790.<br> <br>    `tx = adi.AD5790.Tx;`<br>    `tx = adi.AD5790.Tx('uri','ip:192.168.2.1');`<br> <br>  `AD5790 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad5790.pdf>`_<br>    Documentation for adi.AD5790.Tx<br>       doc adi.AD5790.Tx<br>",
     "props": [
       {
         "prop_name": "CodeSelect",
-        "prop_title": "  CodeSelect Code Select",
-        "prop_description": "Set to 2s_complement/offset_binaryHelp for adi.AD5790.Tx/CodeSelect is inherited from superclass adi.AD579x.Base"
+        "prop_title": "CodeSelect - Code Select",
+        "prop_description": "Set to 2s_complement/offset_binary"
       },
       {
         "prop_name": "DDSFrequencies",
@@ -985,23 +1129,23 @@
       },
       {
         "prop_name": "PowerDown",
-        "prop_title": "  PowerDown Power Down",
-        "prop_description": "Set to true/false to power-up/power-down the device channelsHelp for adi.AD5790.Tx/PowerDown is inherited from superclass adi.AD579x.Base"
+        "prop_title": "PowerDown - Power Down",
+        "prop_description": "Set to true/false to power-up/power-down the device channels"
       },
       {
         "prop_name": "Raw",
-        "prop_title": "  Raw Channel Raw Value",
-        "prop_description": "Help for adi.AD5790.Tx/Raw is inherited from superclass adi.AD579x.Base"
+        "prop_title": "Raw - Channel Raw Value",
+        "prop_description": ""
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second. Help for adi.AD5790.Tx/SampleRate is inherited from superclass adi.AD579x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer. Help for adi.AD5790.Tx/SamplesPerFrame is inherited from superclass adi.AD579x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD5790.Tx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "uri",
@@ -1012,12 +1156,12 @@
   },
   {
     "name": "adi.AD5791.Tx",
-    "dec": "  adi.AD5791.Tx Transmits data to the AD5791 DAC<br>    The adi.AD5791.Tx System object is a signal sink that can transmit<br>    data to the AD5791.<br> <br>    tx = adi.AD5791.Tx;<br>    tx = adi.AD5791.Tx('uri','ip:192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad5791.pdf\">AD5791 Datasheet</a><br>    Documentation for adi.AD5791.Tx<br>       doc adi.AD5791.Tx<br>",
+    "dec": "  <br>  adi.AD5791.Tx Transmits data to the AD5791 DAC<br>  The adi.AD5791.Tx System object is a signal sink that can transmit<br>  data to the AD5791.<br> <br>    `tx = adi.AD5791.Tx;`<br>    `tx = adi.AD5791.Tx('uri','ip:192.168.2.1');`<br> <br>  `AD5791 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad5791.pdf>`_<br>    Documentation for adi.AD5791.Tx<br>       doc adi.AD5791.Tx<br>",
     "props": [
       {
         "prop_name": "CodeSelect",
-        "prop_title": "  CodeSelect Code Select",
-        "prop_description": "Set to 2s_complement/offset_binaryHelp for adi.AD5791.Tx/CodeSelect is inherited from superclass adi.AD579x.Base"
+        "prop_title": "CodeSelect - Code Select",
+        "prop_description": "Set to 2s_complement/offset_binary"
       },
       {
         "prop_name": "DDSFrequencies",
@@ -1051,23 +1195,23 @@
       },
       {
         "prop_name": "PowerDown",
-        "prop_title": "  PowerDown Power Down",
-        "prop_description": "Set to true/false to power-up/power-down the device channelsHelp for adi.AD5791.Tx/PowerDown is inherited from superclass adi.AD579x.Base"
+        "prop_title": "PowerDown - Power Down",
+        "prop_description": "Set to true/false to power-up/power-down the device channels"
       },
       {
         "prop_name": "Raw",
-        "prop_title": "  Raw Channel Raw Value",
-        "prop_description": "Help for adi.AD5791.Tx/Raw is inherited from superclass adi.AD579x.Base"
+        "prop_title": "Raw - Channel Raw Value",
+        "prop_description": ""
       },
       {
         "prop_name": "SampleRate",
-        "prop_title": "  SampleRate Sample Rate",
-        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second. Help for adi.AD5791.Tx/SampleRate is inherited from superclass adi.AD579x.Base"
+        "prop_title": "SampleRate - Sample Rate",
+        "prop_description": "Baseband sampling rate in Hz, specified as a scalar in samples per second."
       },
       {
         "prop_name": "SamplesPerFrame",
-        "prop_title": "  SamplesPerFrame Samples Per Frame",
-        "prop_description": "Number of samples per frame, specified as an even positive integer. Help for adi.AD5791.Tx/SamplesPerFrame is inherited from superclass adi.AD579x.Base"
+        "prop_title": "  Frame size",
+        "prop_description": "Size of the frame in samplesHelp for adi.AD5791.Tx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base"
       },
       {
         "prop_name": "uri",
@@ -1078,7 +1222,7 @@
   },
   {
     "name": "adi.AD7124_4.Rx",
-    "dec": "  adi.AD7124-4.Rx Receives data from the AD7124 ADC<br>    The adi.AD7124-4.Rx System object is a signal source that can receive<br>    data from the AD7124-4.<br> <br>    rx = adi.AD7124_4.Rx;<br>    rx = adi.AD7124_4.Rx('uri','ip:192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad7124-4.pdf\">AD7124-4 Datasheet</a><br>    Documentation for adi.AD7124_4.Rx<br>       doc adi.AD7124_4.Rx<br>",
+    "dec": "  <br>  adi.AD7124-4.Rx Receives data from the AD7124 ADC<br>  The adi.AD7124-4.Rx System object is a signal source that can receive<br>  data from the AD7124-4.<br> <br>    `rx = adi.AD7124_4.Rx;`<br>    `rx = adi.AD7124_4.Rx('uri','ip:192.168.2.1');`<br> <br>  `AD7124-4 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7124-4.pdf>`_<br>    Documentation for adi.AD7124_4.Rx<br>       doc adi.AD7124_4.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
@@ -1119,7 +1263,7 @@
   },
   {
     "name": "adi.AD7124_8.Rx",
-    "dec": "  adi.AD7124-8.Rx Receives data from the AD7124 ADC<br>    The adi.AD7124-8.Rx System object is a signal source that can receive<br>    data from the AD7124-8.<br> <br>    rx = adi.AD7124_8.Rx;<br>    rx = adi.AD7124_8.Rx('uri','ip:192.168.2.1');<br> <br>    <a href=\"https://www.analog.com/media/en/technical-documentation/data-sheets/ad7124-8.pdf\">AD7124-8 Datasheet</a><br>    Documentation for adi.AD7124_8.Rx<br>       doc adi.AD7124_8.Rx<br>",
+    "dec": "  <br>  adi.AD7124-8.Rx Receives data from the AD7124 ADC<br>  The adi.AD7124-8.Rx System object is a signal source that can receive<br>  data from the AD7124-8.<br> <br>    `rx = adi.AD7124_8.Rx;`<br>    `rx = adi.AD7124_8.Rx('uri','ip:192.168.2.1');`<br> <br>  `AD7124-8 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7124-8.pdf>`_<br>    Documentation for adi.AD7124_8.Rx<br>       doc adi.AD7124_8.Rx<br>",
     "props": [
       {
         "prop_name": "EnabledChannels",
