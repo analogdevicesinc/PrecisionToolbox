@@ -63,7 +63,6 @@ classdef Rx < adi.AD7768.Base & matlabshared.libiio.base & adi.common.Attribute
             obj.enableExplicitPolling = false;
             obj.EnabledChannels = 1;
             obj.BufferTypeConversionEnable = true;
-            obj.uri = 'ip:analog.local';
         end
 
         function flush(obj)

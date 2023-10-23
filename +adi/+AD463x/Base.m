@@ -61,25 +61,6 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
             obj.EnabledChannels = 1;
             obj.BufferTypeConversionEnable = true;
 
-            % Check if uri has been specified, else throw an error
-            uriFound = 0;
-            for i = 1:length(varargin)
-                if isequal(varargin{i}, 'uri')
-                    if i == length(varargin)
-                        break
-                    else
-                        uriArgIndex = find(contains([varargin{:}], 'uri'));
-                        obj.uri = varargin{uriArgIndex + 1};
-                        uriFound = 1;
-                    end
-                end
-            end
-            if uriFound == 0
-                error("Error. \nUri was not supplied. Supply it in the" + ...
-                      " following manner \n    %s", ...
-                      "adi.ADXXXX.Rx('uri', <insert uri>)");
-            end
-
             % Connects to device temporarily and fetches the channel names
             obj.setup();
             release(obj);
