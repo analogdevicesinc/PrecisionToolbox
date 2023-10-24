@@ -9,7 +9,6 @@ classdef AD7768_1Tests < HardwareTests
         % start frequency. stop frequency, step, tolerance, repeats
         signal_test = {{1000,125000,2500,0.015,10}};
         samples_per_frame = {{2^1,2^24,2^8,0.0,10}};
-        common_mode_volts
         sample_rate = {'256000', '128000', '64000', ...
                      '32000', '16000', '8000', '4000', ...
                      '2000', '1000'};
