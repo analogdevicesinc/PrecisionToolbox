@@ -1,6 +1,6 @@
 // Pipeline
 lock('nuc04') {
-    @Library('sdgtt-lib@nuc4-libm2k') _ // Not necessary when we turn on global libraries :)
+    @Library('sdgtt-lib@adgt-test-harness') _ // Not necessary when we turn on global libraries :)
     def hdlBranch = "NA"
     def linuxBranch = "NA"
     def bootPartitionBranch = "2021_r2"
@@ -39,6 +39,7 @@ lock('nuc04') {
     harness.update_agents()
   
     //Set other test parameters
+    harness.set_env('docker_image', 'tfcollins/test-harness-ci:libm2k')
     harness.set_nebula_debug(true)
     harness.set_enable_docker(true)
     harness.set_docker_host_mode(false)
