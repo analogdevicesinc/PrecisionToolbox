@@ -32,6 +32,8 @@ def update_hdl_refdesigns():
             objs[obj]["rd_image"] = "ad9361"
         elif objs[obj]["name"] in ["adrv9002"]:
             objs[obj]["rd_image"] = "adrv9001"
+        elif objs[obj]["name"] in ["cn0585"]:
+            objs[obj]["rd_image"] = "cn0585"
         else:
             objs[obj]["rd_image"] = "jesd"
 
