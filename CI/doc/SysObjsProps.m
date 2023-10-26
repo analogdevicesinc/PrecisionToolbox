@@ -29,3 +29,4 @@
 % * AD7985 <AD7985_Rx.html Rx>
 % * AD7986 <AD7986_Rx.html Rx>
 % * AD2S1210 <AD2S1210_Rx.html Rx>
+% * CN0585 <CN0585_Tx.html Tx> and <CN0585_Rx.html Rx>
