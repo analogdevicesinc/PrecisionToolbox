@@ -16,6 +16,7 @@ rootClasses = {...
     , {'AD4858', {'Rx'}}...
     , {'AD2S1210', {'Rx'}}...
     , {'AD4020', {'Rx'}}...
+    , {'CN0585', {'Rx','Tx'}}...
     %{'QuadMxFE',{'Rx','Tx'}}...
     };
 
@@ -24,9 +25,9 @@ for ii = 1:numel(rootClasses)
     for jj = 1:numel(rootClasses{ii}{2})
         part = rootClasses{ii}{1};
         tmp = rootClasses{ii}{2};
-        trx_file = tmp{jj};
+        pcx_file = tmp{jj};
         all_props = [];
-        dotmfilename = strcat(mfiledir, '.', part, '.', trx_file);
+        dotmfilename = strcat(mfiledir, '.', part, '.', pcx_file);
         props = unique(properties(dotmfilename));
         for prop = 1:length(props)
 
