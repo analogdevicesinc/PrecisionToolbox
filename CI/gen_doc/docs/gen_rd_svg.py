@@ -1,7 +1,7 @@
 import os
 
 def gen_rd_svg():
-    refs = ["rd_ad9361","rd_adrv9001","rd_jesd"]
+    refs = ["rd_ad9361","rd_adrv9001","rd_cn0585","rd_jesd"]
     css_out = ""
 
     for ref in refs:
@@ -10,8 +10,10 @@ def gen_rd_svg():
             svg = f.read()
 
         selectable_boxes = {
+            "AXIAD3552RBox": {"link": "https://wiki.analog.com/resources/fpga/docs/axi_ad3552r"},
             "AXIAD9361Box": {"link": "https://wiki.analog.com/resources/fpga/docs/axi_ad9361"},
             "AXIADRV9002Box": {"link": "https://wiki.analog.com/resources/eval/user-guides/adrv9002/axi_adrv9002"},
+            "AXILTC2387Box": {"link": "https://wiki.analog.com/resources/fpga/docs/axi_ltc2387"},
             "TxDMAEngineBox": {"link": "https://wiki.analog.com/resources/fpga/docs/axi_dmac"},
             "TxUPACKBox": {"link": "https://wiki.analog.com/resources/fpga/docs/util_upack"},
             "TxFIFOBox": {"link": "https://wiki.analog.com/resources/fpga/docs/util_rfifo"},
