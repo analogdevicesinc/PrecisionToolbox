@@ -5,15 +5,15 @@
 rx = adi.Generic.Rx("devName", 'ad4630-24', 'phyDevName', 'ad4630-24',...
     'uri', 'ip:analog.local');
 
-rx.SamplesPerFrame = 4096;  % Using values less than 3660 can yield poor 
-% performance, generally
+% Specify number of samples to fetch using buffered capture
+rx.SamplesPerFrame = 4096;
 
 % Enable channels for data capture
 rx.EnabledChannels = [1];
 
-% Display device and channel attribute names
-rx.DeviceAttributeNames
-rx.ChannelAttributeNames
+% Uncomment to display device and channel attribute names
+%rx.DeviceAttributeNames
+%rx.ChannelAttributeNames
 
 % Read and write attribute values
 % For example, with ad4630-24
