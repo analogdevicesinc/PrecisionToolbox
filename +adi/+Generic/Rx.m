@@ -6,7 +6,6 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & ...
     %   data from any generic ADI precision ADC.
     %
     %   rx = adi.Generic.Rx('adxxxx', 'ip:analog.local');
-    %
 
     properties
         % DeviceAttributeNames Device Attribute Names
@@ -15,7 +14,7 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & ...
         %   at initialization time
         DeviceAttributeNames
 
-        % ChannelAttributeNames Device Attribute Names
+        % ChannelAttributeNames Channel Attribute Names
         %   Array of channel IIO attribute names as defined in the
         %   driver/firmware, and queried from the hardware
         %   at initialization time
@@ -30,11 +29,27 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & ...
     end
 
     properties (Nontunable, Hidden)
+        % channel_names Channel Names
         channel_names = {'voltage0'}
+
+        % Timeout Timeout for the IIO client
         Timeout = Inf
+
+        % kernelBuffersCount Kernel Buffers Count
+        %   For Tinyiiod firmware, set the value to 1.
+        %   For Linux platforms, value can be greater than 1 aa well
         kernelBuffersCount = 1
+
+        % dataTypeStr Data Type String
+        %   Data type to store the samples
         dataTypeStr = 'int32'
+
+        % phyDevName Physical Device Name
+        %   Set this to match the IIO device name
         phyDevName = 'adxxxx'
+
+        % devName Device Name
+        %   Set this to match the IIO device name
         devName = 'adxxxx'
     end
 
@@ -48,6 +63,9 @@ classdef Rx < adi.common.Rx & matlabshared.libiio.base & ...
     end
 
     properties(Hidden, Access = protected)
+        % cachedAttrWrites Cached Attribute Writes
+        %   Stores the attr write values locally until hardware is
+        %   connected.
         cachedAttrWrites = {}
     end
 
