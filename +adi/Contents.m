@@ -14,3 +14,10 @@
 %   <a href="matlab:help adi.AD4858            ">AD4858</a>         - ADC
 %   <a href="matlab:help adi.AD2S1210          ">AD2S1210</a>       - Resolver-to-Digital Converter
 %   <a href="matlab:help adi.AD4020            ">AD4020</a>         - ADC
+%   <a href="matlab:help adi.AD3552R           ">AD43552R</a>       - DAC
+%   <a href="matlab:help adi.LTC2387           ">LTC2387</a>        - DAC
+%
+% Boards and Platforms
+% -----------------------
+%   <a href="matlab:help adi.CN0585            ">CN0585</a>         - FMC development board for precision data acquisition
+
