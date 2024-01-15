@@ -16,7 +16,7 @@ classdef AD4630_24Tests < HardwareTests
     methods(TestClassSetup)
         % Check hardware connected
         function CheckForHardware(testCase)
-            Device = @()adi.AD4630_24.Rx;
+            Device = @()adi.AD4630_24.Rx('uri',testCase.uri);
             testCase.CheckDevice('ip',Device,testCase.uri(4:end),false);
         end
     end
