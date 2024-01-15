@@ -3,20 +3,22 @@ lock(label: 'adgt_test_harness_boards') {
     @Library('sdgtt-lib@adgt-test-harness') _ // Not necessary when we turn on global libraries :)
     def hdlBranch = "NA"
     def linuxBranch = "NA"
-    def bootPartitionBranch = "release"
+    def bootPartitionBranch = "2021_r2"
     def firmwareVersion = 'v0.34'
     def bootfile_source = 'artifactory' // options: sftp, artifactory, http, local
     def harness = getGauntlet(hdlBranch, linuxBranch, bootPartitionBranch, firmwareVersion, bootfile_source)
   
-    //Udpate repos
-    harness.set_env('nebula_repo', 'https://github.com/sdgtt/nebula.git')
+    //Update repos
+    harness.set_env('libiio_repo', 'http://gateway.englab:3000/mirrors/libiio.git')
+    harness.set_env('libiio_branch', 'v0.25')
+    harness.set_env('nebula_repo', 'http://gateway.englab:3000/mirrors/nebula.git')
     harness.set_env('nebula_branch','dev')
     harness.set_env('nebula_config_branch','release')
-    harness.set_env('libiio_branch', 'v0.23')
-    harness.set_env('telemetry_repo', 'https://github.com/sdgtt/telemetry.git')
-    harness.set_env('telemetry_branch', 'master')
-    harness.set_env('matlab_repo', 'https://github.com/analogdevicesinc/TransceiverToolbox.git') // Not necessary when using checkout scm
+    // harness.set_env('telemetry_repo', 'http://gateway.englab:3000/mirrors/telemetry.git')
+    // harness.set_env('telemetry_branch', 'master')
+    harness.set_env('matlab_repo', 'https://github.com/analogdevicesinc/PrecisionToolbox.git') // Not necessary when using checkout scm
     harness.set_env('matlab_release','R2021b')
+    harness.set_matlab_timeout('30m')
   
     //Update nebula config from netbox
     harness.set_update_nebula_config(true)
@@ -28,7 +30,7 @@ lock(label: 'adgt_test_harness_boards') {
     harness.set_env('netbox_devices_tag','active')
     
     //Update agent with required deps
-    harness.set_required_agent(["sdg-nuc-01","sdg-nuc-02"])
+    harness.set_required_agent(["sdg-nuc-01"])
     harness.update_agents()
   
     //Set other test parameters
