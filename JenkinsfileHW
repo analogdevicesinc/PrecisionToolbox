@@ -1,6 +1,6 @@
 // Pipeline
 lock('nuc04') {
-    @Library('sdgtt-lib@adgt-test-harness') _ // Not necessary when we turn on global libraries :)
+    @Library('sdgtt-lib@nuc4-libm2k') _ // Not necessary when we turn on global libraries :)
     def hdlBranch = "NA"
     def linuxBranch = "NA"
     def bootPartitionBranch = "2021_r2"
