@@ -57,6 +57,9 @@
 %   <a href="matlab:help adi.AD7606C_18        ">AD7606C_18</a>     - ADC
 %   <a href="matlab:help adi.AD7768            ">AD7768</a>         - ADC
 %   <a href="matlab:help adi.AD7768_1          ">AD7768-1</a>       - ADC
+%   <a href="matlab:help adi.AD7944            ">AD7944</a>         - ADC
+%   <a href="matlab:help adi.AD7985            ">AD7985</a>         - ADC
+%   <a href="matlab:help adi.AD7986            ">AD7986</a>         - ADC
 %   <a href="matlab:help adi.AD2S1210          ">AD2S1210</a>       - Resolver-to-Digital Converter
 %   <a href="matlab:help adi.AD3530r            ">AD3530r</a>       - DAC
 %   <a href="matlab:help adi.AD5760            ">AD5760</a>         - DAC

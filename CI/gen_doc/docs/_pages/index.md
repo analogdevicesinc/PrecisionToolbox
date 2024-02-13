@@ -34,6 +34,9 @@ The following have device-specific implementations in MATLAB and Simulink. If a 
 | AD7961    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD7768    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD7768-1  | Zedboard  | Yes   | No    | ADI (2021b) |
+| AD7944    | Zedboard  | Yes   | No    | ADI (2021b) |
+| AD7985    | Zedboard  | Yes   | No    | ADI (2021b) |
+| AD7986    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD4030-24 | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD4630-16 | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD4630-24 | Zedboard  | Yes   | No    | ADI (2021b) |
@@ -53,11 +56,10 @@ The following have device-specific implementations in MATLAB and Simulink. If a 
 | AD4020    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD4021    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD4022    | Zedboard  | Yes   | No    | ADI (2021b) |
+| AD4080    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD4170    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD4190    | Zedboard  | Yes   | No    | ADI (2021b) |
-| AD7124-4  | Zedboard  | Yes   | No    | ADI (2021b) |
-| AD7124-8  | Zedboard  | Yes   | No    | ADI (2021b) |
-| AD4080    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD5592r   | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD5593r   | Zedboard  | Yes   | No    | ADI (2021b) |
-=======
+| AD7124-4  | Zedboard  | Yes   | No    | ADI (2021b) |
+| AD7124-8  | Zedboard  | Yes   | No    | ADI (2021b) |
