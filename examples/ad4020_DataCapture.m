@@ -6,8 +6,7 @@ rx = adi.AD4020.Rx('uri','ip:analog.local');
 % Connect to device and initialize data
 rx();
 
-% Retrieve ADC voltage, scale and offset
-rx.Voltage();
+% Retrieve ADC scale and offset
 rx.VoltageScale();
 rx.VoltageOffset();
 
