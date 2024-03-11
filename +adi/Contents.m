@@ -32,3 +32,5 @@
 %   <a href="matlab:help adi.AD5781            ">AD5781</a>         - DAC
 %   <a href="matlab:help adi.AD5790            ">AD5790</a>         - DAC
 %   <a href="matlab:help adi.AD5791            ">AD5791</a>         - DAC
+%   <a href="matlab:help adi.AD7124_4          ">AD7124_4</a>       - ADC
+%   <a href="matlab:help adi.AD7124_8          ">AD7124_8</a>       - ADC
