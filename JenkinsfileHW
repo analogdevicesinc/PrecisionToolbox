@@ -57,7 +57,8 @@ lock('nuc04') {
     // harness.set_required_hardware(["zynq-zed-adv7511-ad7768-1-evb-precision",
     //                                 "zynq-zed-adv7511-ad4630-24-precision",
     //                                 "zynq-zed-adv7511-ad7768-axi-adc-precision"])
-    harness.set_required_hardware(["zynq-zed-adv7511-ad7768-1-evb-precision"])
+    // harness.set_required_hardware(["zynq-zed-adv7511-ad7768-1-evb-precision"])
+    harness.set_required_hardware(["zynq-zed-adv7511-ad4630-24-precision"])
     harness.set_docker_args(['Vivado', 'MATLAB'])
     harness.set_nebula_local_fs_source_root("artifactory.analog.com")
   
