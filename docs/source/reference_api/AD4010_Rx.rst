@@ -1,0 +1,35 @@
+adi.AD4010.Rx
+-------------
+
+**AD4010 Precision ADC Class**
+
+adi.AD4010.Rx Receives data from the AD4010 ADC
+The adi.AD4010.Rx System object is a signal source that can receive
+data from the AD4010.
+
+`rx = adi.AD4010.Rx;`
+`rx = adi.AD4010.Rx('uri','192.168.2.1');`
+
+`AD4010 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4002-4006-4010.pdf>`_
+
+Class Properties
+================
+
+**EnabledChannels Enabled Channels**
+   Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant
+
+**SampleRate Sample Rate**
+   Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4010.Rx/SampleRate is inherited from superclass adi.AD400x.Base
+
+**SamplesPerFrame Samples Per Frame**
+   Number of samples per frame, specified as an even positive integer.Help for adi.AD4010.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base
+
+**VoltageOffset Voltage Offset**
+   ADC Voltage offset.Help for adi.AD4010.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base
+
+**VoltageScale Voltage Scale**
+   ADC Voltage scale.Help for adi.AD4010.Rx/VoltageScale is inherited from superclass adi.AD400x.Base
+
+**URI - remote host URI**
+   Hostname or IP address of remote libIIO deviceHelp for adi.AD4010.Rx/uri is inherited from superclass matlabshared.libiio.base
+

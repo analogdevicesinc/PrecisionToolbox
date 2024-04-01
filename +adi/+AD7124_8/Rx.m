@@ -1,14 +1,15 @@
 classdef Rx < adi.common.Rx & adi.common.RxTx ...
         & adi.AD7124.Base
     % AD7124-8 Precision ADC Class
+    % 
     % adi.AD7124-8.Rx Receives data from the AD7124 ADC
-    %   The adi.AD7124-8.Rx System object is a signal source that can receive
-    %   data from the AD7124-8.
+    % The adi.AD7124-8.Rx System object is a signal source that can receive
+    % data from the AD7124-8.
     %
-    %   rx = adi.AD7124_8.Rx;
-    %   rx = adi.AD7124_8.Rx('uri','ip:192.168.2.1');
+    %   `rx = adi.AD7124_8.Rx;`
+    %   `rx = adi.AD7124_8.Rx('uri','ip:192.168.2.1');`
     %
-    %   <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad7124-8.pdf">AD7124-8 Datasheet</a>
+    % `AD7124-8 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7124-8.pdf>`_
 
     
     properties (Nontunable, Hidden)

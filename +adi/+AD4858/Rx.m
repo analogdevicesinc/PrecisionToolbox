@@ -1,13 +1,14 @@
 classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
     % AD4858 Precision ADC Class
+    % 
     % adi.AD4858.Rx Receives data from the AD4858 ADC
-    %   The adi.AD4858.Rx System object is a signal source that can receive
-    %   data from the AD4858.
+    % The adi.AD4858.Rx System object is a signal source that can receive
+    % data from the AD4858.
     %
-    %   rx = adi.AD4858.Rx;
-    %   rx = adi.AD4858.Rx('uri','192.168.2.1');
+    %   `rx = adi.AD4858.Rx;`
+    %   `rx = adi.AD4858.Rx('uri','192.168.2.1');`
     %
-    %   <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad4858.pdf">AD4858 Datasheet</a>
+    % `AD4858 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4858.pdf>`_
 
     properties (Nontunable)
         % SampleRate Sample Rate

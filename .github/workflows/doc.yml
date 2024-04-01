@@ -8,6 +8,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          submodules: recursive
       - name: Set up Python 3.7
         uses: actions/setup-python@v2
         with:
@@ -17,12 +19,17 @@ jobs:
         run: |
           sudo apt install -y python3-numpy
           pip install -r requirements_doc.txt
+          python -m pip install sphinx-toolbox
+          pip install sphinx myst_parser
+          sudo apt-get install doxygen graphviz -y
+              
       - name: Check doc build
         run: |
-          make -C CI/gen_doc doc
+          cd docs
+          make html
       - name: Publish master doc
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./doc
+          publish_dir: ./docs/build/html
