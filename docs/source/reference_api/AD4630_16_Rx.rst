@@ -1,0 +1,32 @@
+adi.AD4630_16.Rx
+----------------
+
+**AD4630-16 Precision ADC Class**
+
+adi.AD4630_16.Rx Receive data from the AD4630-16 ADC
+The adi.AD4630_16.Rx System object is a signal source that can receive
+data from the AD4630-16.
+
+`rx = adi.AD4630_16.Rx;`
+`rx = adi.AD4630_16.Rx('uri','192.168.2.1');`
+
+`AD4630-16 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD4630-16.pdf>`_
+
+Class Properties
+================
+
+**EnabledChannels Enabled Channels**
+   Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant
+
+**SampleAveragingLength**
+   Block length of samples to be averaged. Applied in the Averaging Mode register only when OUT_DATA_MD is set to 30-bit averaged differential modeHelp for adi.AD4630_16.Rx/SampleAveragingLength is inherited from superclass adi.AD463x.Base
+
+**SampleRate Sample Rate**
+   Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4630_16.Rx/SampleRate is inherited from superclass adi.AD463x.Base
+
+**SamplesPerFrame Samples Per Frame**
+   Number of samples per frame, specified as an even positive integer.Help for adi.AD4630_16.Rx/SamplesPerFrame is inherited from superclass adi.AD463x.Base
+
+**URI - remote host URI**
+   Hostname or IP address of remote libIIO deviceHelp for adi.AD4630_16.Rx/uri is inherited from superclass matlabshared.libiio.base
+

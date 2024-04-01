@@ -1,0 +1,38 @@
+adi.AD2S1210.Rx
+---------------
+
+**AD2S1210 Resolver-to-Digital Converter Class**
+
+adi.AD2S1210.Rx Receives data from the AD2S1210 Resolver
+The adi.AD2S1210.Rx System object is a signal source that can receive
+data from the AD2S1210.
+
+`rx = adi.AD2S1210.Rx;`
+`rx = adi.AD2S1210.Rx('uri','192.168.2.1');`
+
+`AD2S1210 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad2s1210.pdf>`_
+
+Class Properties
+================
+
+**Angle**
+   Resolver angle in Degrees.
+
+**AngleScale Angular Scale**
+   Resolver angle scale.
+
+**EnabledChannels Enabled Channels**
+   Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant
+
+**SamplesPerFrame Samples Per Frame**
+   Number of samples per frame, specified as an even positive integer.
+
+**Velocity Angular Velocity**
+   Resolver velocity in revolutions per second.
+
+**VelocityScale Velocity Angular Scale**
+   Resolver velocityscale.
+
+**URI - remote host URI**
+   Hostname or IP address of remote libIIO deviceHelp for adi.AD2S1210.Rx/uri is inherited from superclass matlabshared.libiio.base
+

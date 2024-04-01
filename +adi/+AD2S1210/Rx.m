@@ -1,13 +1,14 @@
 classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
     % AD2S1210 Resolver-to-Digital Converter Class
+    % 
     % adi.AD2S1210.Rx Receives data from the AD2S1210 Resolver
-    %   The adi.AD2S1210.Rx System object is a signal source that can receive
-    %   data from the AD2S1210.
+    % The adi.AD2S1210.Rx System object is a signal source that can receive
+    % data from the AD2S1210.
     %
-    %   rx = adi.AD2S1210.Rx;
-    %   rx = adi.AD2S1210.Rx('uri','192.168.2.1');
+    %   `rx = adi.AD2S1210.Rx;`
+    %   `rx = adi.AD2S1210.Rx('uri','192.168.2.1');`
     %
-    %   <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad2s1210.pdf">AD2S1210 Datasheet</a>
+    % `AD2S1210 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad2s1210.pdf>`_
 
     properties (Nontunable)
         % SamplesPerFrame Samples Per Frame

@@ -1,13 +1,14 @@
 classdef Rx < adi.AD7768.Base & matlabshared.libiio.base & adi.common.Attribute
     % AD7768-1 Precision ADC Class
+    %
     % adi.AD7768_1.Rx Receives data from the AD7768-1 ADC
-    %   The adi.AD7768_1.Rx System object is a signal source that can receive
-    %   data from the AD7768-1.
+    % The adi.AD7768_1.Rx System object is a signal source that can receive
+    % data from the AD7768-1.
     %
-    %   rx = adi.AD7768_1.Rx;
-    %   rx = adi.AD7768_1.Rx('uri','192.168.2.1');
+    %   `rx = adi.AD7768_1.Rx;`
+    %   `rx = adi.AD7768_1.Rx('uri','192.168.2.1');`
     %
-    %   <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad7768-1.pdf">AD7768-1 Datasheet</a>
+    % `AD7768-1 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7768-1.pdf>`_
 
     properties (Nontunable)
         % SampleRate Sample Rate

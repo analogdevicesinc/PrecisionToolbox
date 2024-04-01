@@ -1,0 +1,29 @@
+adi.AD7768.Rx
+-------------
+
+**AD7768 Precision ADC Class**
+
+adi.AD7768.Rx Receives data from the AD7768 ADC
+The adi.AD7768.Rx System object is a signal source that can receive
+data from the AD7768.
+
+`rx = adi.AD7768.Rx;`
+`rx = adi.AD7768.Rx('uri','192.168.2.1');`
+
+`AD7768 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7768-7768-4.pdf>`_
+
+Class Properties
+================
+
+**EnabledChannels Enabled Channels**
+   Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant
+
+**SampleRate Sample Rate**
+   Baseband sampling rate in Hz, specified as a scalar in samples per second. Options are: '256000','128000','64000','32000','16000','8000','4000', '2000','1000'
+
+**SamplesPerFrame Samples Per Frame**
+   Number of samples per frame, specified as an even positive integer from 2 to 16,777,216. Using values less than 3660 can yield poor performance.
+
+**URI - remote host URI**
+   Hostname or IP address of remote libIIO deviceHelp for adi.AD7768.Rx/uri is inherited from superclass matlabshared.libiio.base
+

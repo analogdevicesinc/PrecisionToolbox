@@ -1,0 +1,29 @@
+adi.AD4858.Rx
+-------------
+
+**AD4858 Precision ADC Class**
+
+adi.AD4858.Rx Receives data from the AD4858 ADC
+The adi.AD4858.Rx System object is a signal source that can receive
+data from the AD4858.
+
+`rx = adi.AD4858.Rx;`
+`rx = adi.AD4858.Rx('uri','192.168.2.1');`
+
+`AD4858 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4858.pdf>`_
+
+Class Properties
+================
+
+**EnabledChannels Enabled Channels**
+   Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant
+
+**SampleRate Sample Rate**
+   Baseband sampling rate in Hz, specified as a scalar in samples per second.
+
+**SamplesPerFrame Samples Per Frame**
+   Number of samples per frame, specified as an even positive integer.
+
+**URI - remote host URI**
+   Hostname or IP address of remote libIIO deviceHelp for adi.AD4858.Rx/uri is inherited from superclass matlabshared.libiio.base
+

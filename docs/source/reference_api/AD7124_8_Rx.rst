@@ -1,0 +1,38 @@
+adi.AD7124_8.Rx
+---------------
+
+**AD7124-8 Precision ADC Class**
+
+adi.AD7124-8.Rx Receives data from the AD7124 ADC
+The adi.AD7124-8.Rx System object is a signal source that can receive
+data from the AD7124-8.
+
+`rx = adi.AD7124_8.Rx;`
+`rx = adi.AD7124_8.Rx('uri','ip:192.168.2.1');`
+
+`AD7124-8 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7124-8.pdf>`_
+
+Class Properties
+================
+
+**EnabledChannels Enabled Channels**
+   Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant
+
+**SampleRate Sample Rate**
+   Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD7124_8.Rx/SampleRate is inherited from superclass adi.AD7124.Base
+
+**SamplesPerFrame Samples Per Frame**
+   Number of samples per frame, specified as an even positive integer.Help for adi.AD7124_8.Rx/SamplesPerFrame is inherited from superclass adi.AD7124.Base
+
+**Data type for the output data**
+   A String Representing the data typeHelp for adi.AD7124_8.Rx/dataTypeStr is inherited from superclass matlabshared.libiio.base
+
+**Device name**
+   Name of the libIIO deviceHelp for adi.AD7124_8.Rx/devName is inherited from superclass matlabshared.libiio.base
+
+**Kernel buffers count**
+   The number of buffers allocated in the kernel for data transfersHelp for adi.AD7124_8.Rx/kernelBuffersCount is inherited from superclass matlabshared.libiio.base
+
+**URI - remote host URI**
+   Hostname or IP address of remote libIIO deviceHelp for adi.AD7124_8.Rx/uri is inherited from superclass matlabshared.libiio.base
+
