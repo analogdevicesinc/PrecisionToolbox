@@ -1,0 +1,186 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Installation &#8212; Precision Toolbox for MATLAB  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Data Streaming" href="data_streaming.html" />
+    <link rel="prev" title="Precision Toolbox for MATLAB" href="../index.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="data_streaming.html" title="Data Streaming"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Precision Toolbox for MATLAB"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Precision Toolbox for MATLAB  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Installation</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">¶</a></h1>
+<section id="dependencies">
+<h2>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this heading">¶</a></h2>
+<p>The toolbox has different dependencies based on the features required. The base dependencies for streaming data are listed below.</p>
+<p>The base dependencies for the toolbox requires libiio and the libiio MATLAB bindings. There are three options for this install with different required MathWorks Toolboxes:</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt><a class="reference external" href="https://www.mathworks.com/help/supportpkg/xilinxzynqbasedradio/index.html">Communications Toolbox Support Package for Xilinx Zynq-Based Radio</a></dt><dd><ul>
+<li><p>Communications Toolbox</p></li>
+<li><p>Signal Processing Toolbox <sup>TM</sup></p></li>
+<li><p>DSP System Toolbox <sup>TM</sup></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://www.mathworks.com/help/supportpkg/plutoradio/index.html">Communications Toolbox Support Package for Analog Devices ADALM-Pluto Radio</a></dt><dd><ul>
+<li><p>Communications Toolbox</p></li>
+<li><p>Signal Processing Toolbox <sup>TM</sup></p></li>
+<li><p>DSP System Toolbox <sup>TM</sup></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt><a class="reference external" href="https://github.com/mathworks/buildroot/releases/download/mathworks_zynq_R21.2.0/libiio.mlpkginstall">libiio MATLAB Binding Standalone Installer (R2021b+)</a></dt><dd><ul>
+<li><p>Signal Processing Toolbox <sup>TM</sup></p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</section>
+<section id="precision-toolbox-install">
+<h2>Precision Toolbox Install<a class="headerlink" href="#precision-toolbox-install" title="Permalink to this heading">¶</a></h2>
+<p>The Precision Toolbox itself can be installed either from:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.mathworks.com/products/matlab/add-on-explorer.html">MATLAB’s Add-On Explorer</a></p></li>
+<li><p><a class="reference external" href="https://github.com/analogdevicesinc/PrecisionToolbox/releases">GitHub Releases page</a></p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Before installing Precision Toolbox check the <a class="reference external" href="https://github.com/analogdevicesinc/PrecisionToolbox/releases">Release Page</a> to check for the latest supported version of MATLAB. The latest version is the one which is available in <a class="reference external" href="https://www.mathworks.com/products/matlab/add-on-explorer.html">Add-on Explorer</a> , since Add-On Explorer does not currently support hosting multiple versions. If you have an older release of MATLAB, download the MLTBX installer from matching release on the <a class="reference external" href="https://github.com/analogdevicesinc/PrecisionToolbox/releases">Release Page</a> .</p>
+</div>
+</section>
+<section id="add-on-explorer-walkthrough">
+<h2>Add-On Explorer Walkthrough<a class="headerlink" href="#add-on-explorer-walkthrough" title="Permalink to this heading">¶</a></h2>
+<p>To install the toolbox from within MATLAB using the Add-On Explorer:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Launch the Add-Ons Explorer from MATLAB’s Home tab</p></li>
+<li><p>Search for ‘Precision Toolbox’</p></li>
+<li><p>Select Precision Toolbox from Analog Devices, Inc. from the results:</p></li>
+<li><p>Install the toolbox</p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/adi_logo.png" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Installation</a><ul>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#precision-toolbox-install">Precision Toolbox Install</a></li>
+<li><a class="reference internal" href="#add-on-explorer-walkthrough">Add-On Explorer Walkthrough</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../index.html"
+                          title="previous chapter">Precision Toolbox for MATLAB</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="data_streaming.html"
+                          title="next chapter">Data Streaming</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/common/installation.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="data_streaming.html" title="Data Streaming"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../index.html" title="Precision Toolbox for MATLAB"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Precision Toolbox for MATLAB  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Installation</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Analog Devices Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>

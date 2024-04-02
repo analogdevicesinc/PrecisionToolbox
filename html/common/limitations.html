@@ -1,0 +1,142 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>Limitations &#8212; Precision Toolbox for MATLAB  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Support" href="support.html" />
+    <link rel="prev" title="Examples" href="examples.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="support.html" title="Support"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="examples.html" title="Examples"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Precision Toolbox for MATLAB  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Limitations</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="limitations">
+<h1>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">¶</a></h1>
+<section id="known-limitations-bugs-and-quirks">
+<h2>Known Limitations, Bugs and Quirks<a class="headerlink" href="#known-limitations-bugs-and-quirks" title="Permalink to this heading">¶</a></h2>
+<p>Some limitations and bugs are known to be present in the support for the ADCs relevant to the Precision Toolbox. They have been summarized below.</p>
+<p><strong>Libiio backend</strong></p>
+<p>Currently only ethernet/IP backends are supported for all the parts in the toolbox. For AD4030-24, AD4630-16 and AD4630-24 the usb backend can also be used. Serial backends are not supported.</p>
+<p><strong>AD7380</strong></p>
+<p>Trigger setup needs to be done before running any of the toolbox scripts that interact with the AD7380. Refer to the <a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad738x#trigger_management">Trigger Management section on the AD738x Linux IIO driver wiki page</a></p>
+<p><strong>AD7768</strong></p>
+<p>The Linux IIO driver for the AD7768 returns data for all the channels whenever a data capture is requested. So, in order to get sensible outputs, ensure that the EnabledChannels array consists of indices for all the channels.</p>
+<p><strong>AD4030-24. AD4630-16, AD4630-24</strong></p>
+<p>The Linux IIO driver for the three parts (there’s a common Linux driver that addresses all three parts) returns data for all the channels whenever a data capture is requested. In order to have sensible outputs, ensure that the EnabledChannels array consists of indices for all the channels.</p>
+<p>Another known issue here has to do with the case where the ADC sends out common mode voltage data along with the differential voltage data. The EnabledChannel property values that consist of more than two indices (even when there are 4 IIO channels), are not ‘valid’. Of the possible groupings with two channel indices, the ones that correspond to {differential0, common_voltage0} and {differential1, common_voltage1} are also not ‘valid’</p>
+<p>It is possible to get data (common-mode and differential) for all the ADC channels, by using a ‘valid’ channel grouping, setting the BufferTypeConversionEnable property to ‘false’ in the Base class for the AD463x family, and adding custom parsing logic to extract the data for all IIO channels, from the 32-bit raw words you get from the data capture.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/adi_logo.png" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Limitations</a><ul>
+<li><a class="reference internal" href="#known-limitations-bugs-and-quirks">Known Limitations, Bugs and Quirks</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="examples.html"
+                          title="previous chapter">Examples</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="support.html"
+                          title="next chapter">Support</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/common/limitations.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="support.html" title="Support"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="examples.html" title="Examples"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Precision Toolbox for MATLAB  documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Limitations</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Analog Devices Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>
