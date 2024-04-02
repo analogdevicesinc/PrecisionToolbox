@@ -1,0 +1,152 @@
+
+
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>adi.AD4630_16.Rx &#8212; Precision Toolbox for MATLAB  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/bizstyle.css" />
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="adi.AD4630_24.Rx" href="AD4630_24_Rx.html" />
+    <link rel="prev" title="adi.AD4030.Rx" href="AD4030_Rx.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="AD4630_24_Rx.html" title="adi.AD4630_24.Rx"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="AD4030_Rx.html" title="adi.AD4030.Rx"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Precision Toolbox for MATLAB  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Reference APIs</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">adi.AD4630_16.Rx</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="adi-ad4630-16-rx">
+<h1>adi.AD4630_16.Rx<a class="headerlink" href="#adi-ad4630-16-rx" title="Permalink to this heading">¶</a></h1>
+<p><strong>AD4630-16 Precision ADC Class</strong></p>
+<p>adi.AD4630_16.Rx Receive data from the AD4630-16 ADC
+The adi.AD4630_16.Rx System object is a signal source that can receive
+data from the AD4630-16.</p>
+<p><cite>rx = adi.AD4630_16.Rx;</cite>
+<cite>rx = adi.AD4630_16.Rx(‘uri’,’192.168.2.1’);</cite></p>
+<p><a class="reference external" href="http://www.analog.com/media/en/technical-documentation/data-sheets/AD4630-16.pdf">AD4630-16 Datasheet</a></p>
+<section id="class-properties">
+<h2>Class Properties<a class="headerlink" href="#class-properties" title="Permalink to this heading">¶</a></h2>
+<dl class="simple">
+<dt><strong>EnabledChannels Enabled Channels</strong></dt><dd><p>Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant</p>
+</dd>
+<dt><strong>SampleAveragingLength</strong></dt><dd><p>Block length of samples to be averaged. Applied in the Averaging Mode register only when OUT_DATA_MD is set to 30-bit averaged differential modeHelp for adi.AD4630_16.Rx/SampleAveragingLength is inherited from superclass adi.AD463x.Base</p>
+</dd>
+<dt><strong>SampleRate Sample Rate</strong></dt><dd><p>Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4630_16.Rx/SampleRate is inherited from superclass adi.AD463x.Base</p>
+</dd>
+<dt><strong>SamplesPerFrame Samples Per Frame</strong></dt><dd><p>Number of samples per frame, specified as an even positive integer.Help for adi.AD4630_16.Rx/SamplesPerFrame is inherited from superclass adi.AD463x.Base</p>
+</dd>
+<dt><strong>URI - remote host URI</strong></dt><dd><p>Hostname or IP address of remote libIIO deviceHelp for adi.AD4630_16.Rx/uri is inherited from superclass matlabshared.libiio.base</p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="../index.html">
+              <img class="logo" src="../_static/adi_logo.png" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">adi.AD4630_16.Rx</a><ul>
+<li><a class="reference internal" href="#class-properties">Class Properties</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="AD4030_Rx.html"
+                          title="previous chapter">adi.AD4030.Rx</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="AD4630_24_Rx.html"
+                          title="next chapter">adi.AD4630_24.Rx</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="../_sources/reference_api/AD4630_16_Rx.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="AD4630_24_Rx.html" title="adi.AD4630_24.Rx"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="AD4030_Rx.html" title="adi.AD4030.Rx"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Precision Toolbox for MATLAB  documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Reference APIs</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">adi.AD4630_16.Rx</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Analog Devices Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>
