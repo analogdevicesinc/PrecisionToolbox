@@ -9,11 +9,11 @@ Precision Toolbox for MATLAB
   .. image:: /pctlbxLogo.png
       :width: 600
 
-ADI maintains a set of tools to interface with ADI precision converters within MATLAB and Simulink. These are combined into a single toolbox. Currently, the toolbox supports only configuration and data streaming.
+ADI maintains a set of tools to interface with ADI precision converters within MATLAB and Simulink. These are combined into a single toolbox. Currently, the toolbox supports only converter configuration and data streaming.
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   :caption: Index:
 
    /common/installation.rst
    /common/data_streaming.rst
