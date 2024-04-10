@@ -17,10 +17,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          sudo apt install -y python3-numpy
-          pip install -r requirements_doc.txt
-          python -m pip install sphinx-toolbox
-          pip install sphinx myst_parser
+          pip install -r docs/source/requirements.txt
           sudo apt-get install doxygen graphviz -y
               
       - name: Check doc build
