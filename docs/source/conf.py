@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Precision Toolbox for MATLAB'
-copyright = '2023, Analog Devices Inc.'
-author = 'Analog Devices Inc.'
+repository = 'PrecisionToolbox'
+project = 'Precision Toolbox'
+copyright = '2023-2024, Analog Devices Inc.'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
@@ -28,18 +28,17 @@ author = 'Analog Devices Inc.'
 
 
 extensions = [
-    'sphinx_toolbox.collapse'
+    'adi_doctools'
     ]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 
-
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "bizstyle"
-html_static_path = ['_static']
+html_theme = "cosmic"
+html_static_path = []
 
-html_logo = "adi_logo.png"
+#html_logo = "adi_logo.png"
