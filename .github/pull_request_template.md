@@ -15,4 +15,4 @@ If this PR contains a breaking change, list dependent PRs and try to push all re
 - [ ] I have build all projects affected by the changes in this PR
 - [ ] I have tested in hardware affected projects, at the relevant boards
 - [ ] I have signed off all commits from this PR
-- [ ] I have updated the documentation by running CI/gen_doc/docs/gen_sysobj_doc.m script locally, if applies.
+- [ ] I have updated the documentation by running /docs/source/reference_api/gen_sysobj_doc.m script locally, if applies.
