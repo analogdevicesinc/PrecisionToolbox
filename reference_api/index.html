@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>adi.AD7124_4.Rx &#8212; Precision Toolbox  documentation</title>
+    <title>Reference APIs &#8212; Precision Toolbox  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../_static/style.min.css?v=b4b07c60" />
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
@@ -14,8 +14,8 @@
     <script defer="" src="../_static/app.umd.js?v=7e1fdd13"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="adi.AD7124_8.Rx" href="AD7124_8_Rx.html" />
-    <link rel="prev" title="adi.AD5791.Tx" href="AD5791_Tx.html" />
+    <link rel="next" title="adi.AD7380.Rx" href="AD7380_Rx.html" />
+    <link rel="prev" title="Support" href="../common/support.html" />
    
   
     <meta name="robots" content="noindex">
@@ -96,10 +96,7 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">adi.AD7124_4.Rx</a><ul>
-<li><a class="reference internal" href="#class-properties">Class Properties</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">Reference APIs</a></li>
 </ul>
 
         </nav>
@@ -140,7 +137,7 @@ Content on this topic
 <li class="toctree-l1"><a class="reference internal" href="../common/examples.html">Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../common/limitations.html">Limitations</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../common/support.html">Support</a></li>
-<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Reference APIs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Reference APIs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="AD7380_Rx.html">adi.AD7380.Rx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD7768_Rx.html">adi.AD7768.Rx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD7768_1_Rx.html">adi.AD7768_1.Rx</a></li>
@@ -168,7 +165,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="AD5781_Tx.html">adi.AD5781.Tx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD5790_Tx.html">adi.AD5790.Tx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD5791_Tx.html">adi.AD5791.Tx</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">adi.AD7124_4.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AD7124_4_Rx.html">adi.AD7124_4.Rx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD7124_8_Rx.html">adi.AD7124_8.Rx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD4052_Rx.html">adi.AD4052.Rx</a></li>
 </ul>
@@ -186,42 +183,51 @@ Content on this topic
         <div class="bodywrapper" id="top-anchor">
           <div class="body" role="main">
             
-  <section id="adi-ad7124-4-rx">
-<h1>adi.AD7124_4.Rx<a class="headerlink" href="#adi-ad7124-4-rx" title="Link to this heading">¶</a></h1>
-<p><strong>AD7124-4 Precision ADC Class</strong></p>
-<p>adi.AD7124-4.Rx Receives data from the AD7124 ADC
-The adi.AD7124-4.Rx System object is a signal source that can receive
-data from the AD7124-4.</p>
-<p><cite>rx = adi.AD7124_4.Rx;</cite>
-<cite>rx = adi.AD7124_4.Rx(‘uri’,’ip:192.168.2.1’);</cite></p>
-<p><a class="reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad7124-4.pdf">AD7124-4 Datasheet</a></p>
-<section id="class-properties">
-<h2>Class Properties<a class="headerlink" href="#class-properties" title="Link to this heading">¶</a></h2>
-<dl class="simple">
-<dt><strong>EnabledChannels Enabled Channels</strong></dt><dd><p>Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant</p>
-</dd>
-<dt><strong>SampleRate Sample Rate</strong></dt><dd><p>Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD7124_4.Rx/SampleRate is inherited from superclass adi.AD7124.Base</p>
-</dd>
-<dt><strong>SamplesPerFrame Samples Per Frame</strong></dt><dd><p>Number of samples per frame, specified as an even positive integer.Help for adi.AD7124_4.Rx/SamplesPerFrame is inherited from superclass adi.AD7124.Base</p>
-</dd>
-<dt><strong>Data type for the output data</strong></dt><dd><p>A String Representing the data typeHelp for adi.AD7124_4.Rx/dataTypeStr is inherited from superclass matlabshared.libiio.base</p>
-</dd>
-<dt><strong>Device name</strong></dt><dd><p>Name of the libIIO deviceHelp for adi.AD7124_4.Rx/devName is inherited from superclass matlabshared.libiio.base</p>
-</dd>
-<dt><strong>Kernel buffers count</strong></dt><dd><p>The number of buffers allocated in the kernel for data transfersHelp for adi.AD7124_4.Rx/kernelBuffersCount is inherited from superclass matlabshared.libiio.base</p>
-</dd>
-<dt><strong>URI - remote host URI</strong></dt><dd><p>Hostname or IP address of remote libIIO deviceHelp for adi.AD7124_4.Rx/uri is inherited from superclass matlabshared.libiio.base</p>
-</dd>
-</dl>
-</section>
+  <section id="reference-apis">
+<h1>Reference APIs<a class="headerlink" href="#reference-apis" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Driver Classes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="AD7380_Rx.html">adi.AD7380.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD7768_Rx.html">adi.AD7768.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD7768_1_Rx.html">adi.AD7768_1.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4030_Rx.html">adi.AD4030.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4630_16_Rx.html">adi.AD4630_16.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4630_24_Rx.html">adi.AD4630_24.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4858_Rx.html">adi.AD4858.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD2S1210_Rx.html">adi.AD2S1210.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4000_Rx.html">adi.AD4000.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4001_Rx.html">adi.AD4001.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4002_Rx.html">adi.AD4002.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4003_Rx.html">adi.AD4003.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4004_Rx.html">adi.AD4004.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4005_Rx.html">adi.AD4005.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4006_Rx.html">adi.AD4006.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4007_Rx.html">adi.AD4007.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4008_Rx.html">adi.AD4008.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4010_Rx.html">adi.AD4010.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4011_Rx.html">adi.AD4011.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4020_Rx.html">adi.AD4020.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4021_Rx.html">adi.AD4021.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4022_Rx.html">adi.AD4022.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD5760_Tx.html">adi.AD5760.Tx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD5780_Tx.html">adi.AD5780.Tx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD5781_Tx.html">adi.AD5781.Tx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD5790_Tx.html">adi.AD5790.Tx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD5791_Tx.html">adi.AD5791.Tx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD7124_4_Rx.html">adi.AD7124_4.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD7124_8_Rx.html">adi.AD7124_8.Rx</a></li>
+<li class="toctree-l1"><a class="reference internal" href="AD4052_Rx.html">adi.AD4052.Rx</a></li>
+</ul>
+</div>
 </section>
 
 
           </div>
               <div class="related">
                 &nbsp;
-    <a href="AD5791_Tx.html" title="Previous document (Ctrl+LeftArrow)" class="prev">adi.AD5791.Tx</a>
-    <a href="AD7124_8_Rx.html" title="Next document (Ctrl+RightArrow)" class="next">adi.AD7124_8.Rx</a>
+    <a href="../common/support.html" title="Previous document (Ctrl+LeftArrow)" class="prev">Support</a>
+    <a href="AD7380_Rx.html" title="Next document (Ctrl+RightArrow)" class="next">adi.AD7380.Rx</a>
               </div>
           
         </div>
