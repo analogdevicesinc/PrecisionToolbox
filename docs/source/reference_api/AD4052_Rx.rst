@@ -1,0 +1,35 @@
+adi.AD4052.Rx
+-------------
+
+**AD4052 Precision ADC Class**
+
+adi.AD4052.Rx Receive data from the AD4052 ADC
+The adi.AD4052.Rx System object is a signal source that can receive
+data from the AD4052.
+
+`rx = adi.AD4052.Rx;`
+`rx = adi.AD4052.Rx('uri','serial:COM5,230400');`
+
+`AD4052 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD4052.pdf>`_
+
+Class Properties
+================
+
+**BurstAveragingLength Burst Averaging Length**
+   Length of the averaging filter in 'burst averaging mode'Help for adi.AD4052.Rx/AvgFilterLength is inherited from superclass adi.AD405x.Base
+
+**BurstSampleRate Burst Sample Rate**
+   Rate of internal averaging in 'burst averaging mode'Help for adi.AD4052.Rx/BurstSampleRate is inherited from superclass adi.AD405x.Base
+
+**EnabledChannels Enabled Channels**
+   Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant
+
+**SampleRate Sample Rate**
+   Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4052.Rx/SampleRate is inherited from superclass adi.AD405x.Base
+
+**SamplesPerFrame Samples Per Frame**
+   Number of samples per frame, specified as an even positive integer.Help for adi.AD4052.Rx/SamplesPerFrame is inherited from superclass adi.AD405x.Base
+
+**URI - remote host URI**
+   Hostname or IP address of remote libIIO deviceHelp for adi.AD4052.Rx/uri is inherited from superclass matlabshared.libiio.base
+
