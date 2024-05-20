@@ -25,7 +25,7 @@ ADI maintains a set of tools to interface with ADI precision converters within M
 The following have device-specific implementations in MATLAB and Simulink. In general, if a device has an IIO driver, MATLAB support is possible, but a device-specific MATLAB or Simulink interface may not exist yet.
 
 .. csv-table:: Supported Parts
-   :header: "Evaluation Card", "FPGA Board", "Streaming Support", "Targeting", "Variants and Minimum Supported Release"
+   :header: "Evaluation Card", "Controller Board", "Streaming Support", "Targeting", "Variants and Minimum Supported Release"
    :widths: 30, 30, 30, 30, 30
 
    "AD7380", "Zedboard", "Yes", "No", "ADI (2021b)"
@@ -57,4 +57,5 @@ The following have device-specific implementations in MATLAB and Simulink. In ge
    "AD5791", "Zedboard", "Yes", "No", "ADI (2021b)"
    "AD7124-4", "Zedboard", "Yes", "No", "ADI (2021b)"
    "AD7124-8", "Zedboard", "Yes", "No", "ADI (2021b)"
+   "AD4052", "SDP-K1", "Yes", "No", "ADI (2021b)"
 
