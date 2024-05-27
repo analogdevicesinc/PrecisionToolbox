@@ -18,7 +18,8 @@ classdef AD7768Tests < HardwareTests
     methods (Test)
         
         function testAD7768Smoke(testCase)
-            adc = adi.AD7768.Rx('uri',testCase.uri);
+            adc = adi.AD7768.Rx();
+            adc.uri = testCase.uri;
             data = adc();
             adc.release();
             testCase.assertTrue(sum(abs(double(data)))>0);
