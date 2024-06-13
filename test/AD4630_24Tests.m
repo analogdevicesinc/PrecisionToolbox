@@ -9,6 +9,13 @@ classdef AD4630_24Tests < HardwareTests
         % start frequency, stop frequency, step, tolerance, repeats
         signal_test = {{10000,250000,2500,0.05,10}};
         signal_vpp = {0.1, 0.3, 0.5};
+        sample_rate = {'10000', '50000', '100000', ...
+            '200000', '500000', '1000000', ...
+            '1760000', '2000000'};
+        sample_averaging_length = { ...
+            '2', '4', '8', '16', '32', '64', '128', '256', ...
+            '512', '1024', '2048', '4096', '8192', '16384', ...
+            '32768', '65536'};
     end
 
     methods(TestClassSetup)
@@ -110,9 +117,38 @@ classdef AD4630_24Tests < HardwareTests
             % Clean up
             adc.release();
             m2k_class.contextClose();
-
-            
         end
+
+        function testAD4630_24AttrSampleRate(testCase,sample_rate)
+            % '1760000' is set as '1754386'
+                adc = adi.AD4630_24.Rx('uri',testCase.uri);
+                adc.uri = testCase.uri;
+                val = sample_rate;
+                adc.SampleRate = val;
+                [data,valid] = adc();
+                ret_val = adc.getDeviceAttributeRAW('sampling_frequency',9);
+                adc.release();
+                testCase.assertTrue(valid);
+                testCase.assertTrue(sum(abs(double(data)))>0);
+    %             testCase.assertTrue(strcmp(val,string(ret_val)), ...
+    %                 'Sample rate unexpected')
+                testCase.verifyEqual(str2double(ret_val),str2double(val), ...
+                    'RelTol',0.01,'Sample rate unexpected')
+            end
+    
+            % function testAD4630_24AttrSampleAveragingLength(testCase,sample_averaging_length)
+            % % The average mode works only with the output data mode set to 30-bit average
+            % % Skip test for now since it causes ERROR:READ LINE: -32 in iio_info
+            %     adc = adi.AD4630_24.Rx('uri',testCase.uri);
+            %     val = sample_averaging_length;
+            %     adc.SampleAveragingLength = val;
+            %     [data,valid] = adc();
+            %     ret_val = adc.getDeviceAttributeRAW('sample_averaging',8);
+            %     adc.release();
+            %     testCase.assertTrue(valid);
+            %     testCase.assertTrue(sum(abs(double(data)))>0);
+            %     testCase.assertTrue(strcmp(val,string(ret_val)));
+            % end
     end
     
 end
