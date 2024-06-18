@@ -27,6 +27,7 @@ Reference APIs
    AD4020_Rx.rst
    AD4021_Rx.rst
    AD4022_Rx.rst
+   AD4170_Rx.rst
    AD5760_Tx.rst
    AD5780_Tx.rst
    AD5781_Tx.rst
