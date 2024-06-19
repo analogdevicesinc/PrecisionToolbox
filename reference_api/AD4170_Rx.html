@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>adi.AD7768_1.Rx &#8212; Precision Toolbox  documentation</title>
+    <title>adi.AD4170.Rx &#8212; Precision Toolbox  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../_static/style.min.css?v=a3ba2641" />
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
@@ -14,8 +14,8 @@
     <script defer="" src="../_static/app.umd.js?v=7e1fdd13"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="adi.AD4030.Rx" href="AD4030_Rx.html" />
-    <link rel="prev" title="adi.AD7768.Rx" href="AD7768_Rx.html" />
+    <link rel="next" title="adi.AD5760.Tx" href="AD5760_Tx.html" />
+    <link rel="prev" title="adi.AD4022.Rx" href="AD4022_Rx.html" />
    
   
     <meta name="robots" content="noindex">
@@ -96,7 +96,7 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">adi.AD7768_1.Rx</a><ul>
+<li><a class="reference internal" href="#">adi.AD4170.Rx</a><ul>
 <li><a class="reference internal" href="#class-properties">Class Properties</a></li>
 </ul>
 </li>
@@ -143,7 +143,7 @@ Content on this topic
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Reference APIs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="AD7380_Rx.html">adi.AD7380.Rx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD7768_Rx.html">adi.AD7768.Rx</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">adi.AD7768_1.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AD7768_1_Rx.html">adi.AD7768_1.Rx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD4030_Rx.html">adi.AD4030.Rx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD4630_16_Rx.html">adi.AD4630_16.Rx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD4630_24_Rx.html">adi.AD4630_24.Rx</a></li>
@@ -163,7 +163,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="AD4020_Rx.html">adi.AD4020.Rx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD4021_Rx.html">adi.AD4021.Rx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD4022_Rx.html">adi.AD4022.Rx</a></li>
-<li class="toctree-l2"><a class="reference internal" href="AD4170_Rx.html">adi.AD4170.Rx</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">adi.AD4170.Rx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD5760_Tx.html">adi.AD5760.Tx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD5780_Tx.html">adi.AD5780.Tx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AD5781_Tx.html">adi.AD5781.Tx</a></li>
@@ -187,27 +187,29 @@ Content on this topic
         <div class="bodywrapper" id="top-anchor">
           <div class="body" role="main">
             
-  <section id="adi-ad7768-1-rx">
-<h1>adi.AD7768_1.Rx<a class="headerlink" href="#adi-ad7768-1-rx" title="Link to this heading">¶</a></h1>
-<p><strong>AD7768-1 Precision ADC Class</strong></p>
-<p>adi.AD7768_1.Rx Receives data from the AD7768-1 ADC
-The adi.AD7768_1.Rx System object is a signal source that can receive
-data from the AD7768-1.</p>
-<p><cite>rx = adi.AD7768_1.Rx;</cite>
-<cite>rx = adi.AD7768_1.Rx(‘uri’,’192.168.2.1’);</cite></p>
-<p><a class="reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad7768-1.pdf">AD7768-1 Datasheet</a></p>
+  <section id="adi-ad4170-rx">
+<h1>adi.AD4170.Rx<a class="headerlink" href="#adi-ad4170-rx" title="Link to this heading">¶</a></h1>
+<p><strong>AD4170 Precision ADC Class</strong></p>
+<p>adi.AD4170.Rx Receives data from the AD4170 ADC
+The adi.AD4170.Rx System object is a signal source that can receive
+data from the AD4170.</p>
+<p><cite>rx = adi.AD4170.Rx;</cite>
+<cite>rx = adi.AD4170.Rx(‘serial:COM18,230400’);</cite></p>
+<p><a class="reference external" href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad4170.pdf">AD4170 Datasheet</a></p>
 <section id="class-properties">
 <h2>Class Properties<a class="headerlink" href="#class-properties" title="Link to this heading">¶</a></h2>
 <dl class="simple">
-<dt><strong>SCommonModeVolts Common Mode Voltage</strong></dt><dd><p>Common mode voltage in volts, specified as a string Options are: ‘(AVDD1-AVSS)/2’,’2V5’,’2V05’,’1V9’,’1V65’,’1V1’,’0V9’,’OFF’</p>
+<dt><strong>AdcMode ADC Mode</strong></dt><dd><p>ADC Mode for data capture, represented as a string. It supports the following: ‘Continuous_Conversion’, ‘Continuous_Conversion_FIR’, ‘Continuous_Conversion_IIR’, ‘Standby’, ‘Power_Down’, ‘Idle’</p>
 </dd>
 <dt><strong>EnabledChannels Enabled Channels</strong></dt><dd><p>Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant</p>
 </dd>
-<dt><strong>SampleRate Sample Rate</strong></dt><dd><p>Baseband sampling rate in Hz, specified as a scalar in samples per second. Options are: ‘256000’,’128000’,’64000’,’32000’,’16000’,’8000’,’4000’, ‘2000’,’1000’</p>
+<dt><strong>Fs Fs</strong></dt><dd><p>Fs for configuring the sampling rate of the device. It supports a numeric value. Please refer to the DS for more details on configuring FS</p>
 </dd>
-<dt><strong>SamplesPerFrame Samples Per Frame</strong></dt><dd><p>Number of samples per frame, specified as an even positive integer from 2 to 16,777,216. Using values less than 3660 can yield poor performance.</p>
+<dt><strong>SampleRate Sample Rate</strong></dt><dd><p>Baseband sampling rate in Hz, specified as a scalar in samples per second.</p>
 </dd>
-<dt><strong>URI - remote host URI</strong></dt><dd><p>Hostname or IP address of remote libIIO deviceHelp for adi.AD7768_1.Rx/uri is inherited from superclass matlabshared.libiio.base</p>
+<dt><strong>SamplesPerFrame Samples Per Frame</strong></dt><dd><p>Number of samples per frame, specified as an even positive integer.</p>
+</dd>
+<dt><strong>URI - remote host URI</strong></dt><dd><p>Hostname or IP address of remote libIIO deviceHelp for adi.AD4170.Rx/uri is inherited from superclass matlabshared.libiio.base</p>
 </dd>
 </dl>
 </section>
@@ -217,8 +219,8 @@ data from the AD7768-1.</p>
           </div>
               <div class="related">
                 &nbsp;
-    <a href="AD7768_Rx.html" title="Previous document (Ctrl+LeftArrow)" class="prev">adi.AD7768.Rx</a>
-    <a href="AD4030_Rx.html" title="Next document (Ctrl+RightArrow)" class="next">adi.AD4030.Rx</a>
+    <a href="AD4022_Rx.html" title="Previous document (Ctrl+LeftArrow)" class="prev">adi.AD4022.Rx</a>
+    <a href="AD5760_Tx.html" title="Next document (Ctrl+RightArrow)" class="next">adi.AD5760.Tx</a>
               </div>
           
         </div>
