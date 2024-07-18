@@ -2,7 +2,7 @@
 set -x
 cd "$(dirname "$0")"
 if [ -z "${HDLBRANCH}" ]; then
-HDLBRANCH='cn0585_pr'
+HDLBRANCH='main'
 fi
 
 # Script is designed to run from specific location
