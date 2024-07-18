@@ -3,12 +3,12 @@ proc preprocess_bd {project carrier rxtx} {
     puts "Preprocessing $project $carrier $rxtx"
 
     switch $project {
-        cn0585_fmcz {
+        cn0585 {
             # Disconnect the ADC PACK pins
             delete_bd_objs [get_bd_nets axi_ltc2387_0_adc_data]
-	        delete_bd_objs [get_bd_nets axi_ltc2387_1_adc_data]
-	        delete_bd_objs [get_bd_nets axi_ltc2387_2_adc_data]
-	        delete_bd_objs [get_bd_nets axi_ltc2387_3_adc_data]
+	    delete_bd_objs [get_bd_nets axi_ltc2387_1_adc_data]
+	    delete_bd_objs [get_bd_nets axi_ltc2387_2_adc_data]
+	    delete_bd_objs [get_bd_nets axi_ltc2387_3_adc_data]
 
             set sys_cstring "matlab $rxtx"
             sysid_gen_sys_init_file $sys_cstring
