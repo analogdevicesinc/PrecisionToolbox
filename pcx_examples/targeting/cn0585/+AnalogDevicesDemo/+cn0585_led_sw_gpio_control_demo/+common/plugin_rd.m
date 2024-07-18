@@ -6,7 +6,7 @@ function hRD = plugin_rd(board, design)
 % pname = upper(project);
 % ppath = project;
 % if strcmpi(project, 'cn0585')
-%     ppath = 'cn0585_fmcz';	
+%     ppath = 'cn0585';	
 % end
 
 board = 'zed';
@@ -21,7 +21,7 @@ hRD.ReferenceDesignName = sprintf('%s (%s)', upper(board), design);
 hRD.BoardName = sprintf('AnalogDevices CN0585 GPIO Control');
 
 % Tool information
-hRD.SupportedToolVersion = {'2022.2'};
+hRD.SupportedToolVersion = {'2023.2'};
 
 % Get the root directories
 rootDirExample = fileparts(strtok(mfilename('fullpath'), '+'));
@@ -42,7 +42,7 @@ hRD.SharedRDFolder = rootDir;
 hRD.addParameter( ...
     'ParameterID',   'project', ...
     'DisplayName',   'HDL Project Subfolder', ...
-    'DefaultValue',  'cn0585_fmcz');
+    'DefaultValue',  'cn0585');
 
 hRD.addParameter( ...
     'ParameterID',   'carrier', ...
@@ -51,7 +51,7 @@ hRD.addParameter( ...
 
 %% Add custom design files
 hRD.addCustomVivadoDesign( ...
-    'CustomBlockDesignTcl', fullfile('pcx_examples', 'targeting', 'cn0585_fmcz', 'cn0585_hdl', 'system_project_rxtx.tcl'));
+    'CustomBlockDesignTcl', fullfile('pcx_examples', 'targeting', 'cn0585', 'cn0585_hdl', 'system_project_rxtx.tcl'));
 
 %% Standard reference design pieces
 hRD.BlockDesignName = 'system';
@@ -70,10 +70,10 @@ hRD.CustomFiles = {...
 	fullfile(rootDirBSP, 'library','xilinx')...,
 	fullfile(rootDirBSP, 'projects','common')...,
 	fullfile(rootDirBSP, 'projects','scripts')...,
-	fullfile(rootDirBSP, 'projects','cn0585_fmcz')...,
-	fullfile(rootDirBSP, 'projects','cn0585_fmcz', 'common')...,
-    fullfile(rootDirBSP, 'projects','cn0585_fmcz', 'zed')...,
-    fullfile('pcx_examples', 'targeting', 'cn0585_fmcz', 'cn0585_hdl')...,
+	fullfile(rootDirBSP, 'projects','cn0585')...,
+	fullfile(rootDirBSP, 'projects','cn0585', 'common')...,
+    fullfile(rootDirBSP, 'projects','cn0585', 'zed')...,
+    fullfile('pcx_examples', 'targeting', 'cn0585', 'cn0585_hdl')...,
     };	    
 
 hRD.addParameter( ...
@@ -93,7 +93,7 @@ hRD.addParameter( ...
 hRD.addParameter( ...
     'ParameterID',   'preprocess_script', ...
     'DisplayName',   'Preprocess Script', ...
-    'DefaultValue',  fullfile('pcx_examples', 'targeting', 'cn0585_fmcz','cn0585_hdl','fh_preprocess.tcl'));
+    'DefaultValue',  fullfile('pcx_examples', 'targeting', 'cn0585','cn0585_hdl','fh_preprocess.tcl'));
 
 hRD.addParameter( ...
     'ParameterID',   'postprocess', ...

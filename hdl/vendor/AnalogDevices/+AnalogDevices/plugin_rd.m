@@ -6,7 +6,7 @@ function hRD = plugin_rd(project, board, design)
 pname = upper(project);
 ppath = project;
 if strcmpi(project, 'cn0585')
-    ppath = 'cn0585_fmcz';	
+    ppath = 'cn0585';	
 end
 
 % Construct reference design object
