@@ -1,5 +1,5 @@
 // Pipeline
-lock(label: 'adgt_test_harness_boards') {
+lock(label: 'sdg_nuc_04') {
     @Library('sdgtt-lib@adgt-test-harness') _ // Not necessary when we turn on global libraries :)
     def hdlBranch = "NA"
     def linuxBranch = "NA"
