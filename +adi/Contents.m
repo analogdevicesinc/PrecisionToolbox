@@ -24,6 +24,13 @@
 %   <a href="matlab:help adi.AD4630_24         ">AD4630-24</a>      - ADC
 %   <a href="matlab:help adi.AD4858            ">AD4858</a>         - ADC
 %   <a href="matlab:help adi.AD7380            ">AD7380</a>         - ADC
+%   <a href="matlab:help adi.AD7605_4          ">AD7605_4</a>       - ADC
+%   <a href="matlab:help adi.AD7606_4          ">AD7606_4</a>       - ADC
+%   <a href="matlab:help adi.AD7606_6          ">AD7606_6</a>       - ADC
+%   <a href="matlab:help adi.AD7606_8          ">AD7606_8</a>       - ADC
+%   <a href="matlab:help adi.AD7606B           ">AD7606B</a>        - ADC
+%   <a href="matlab:help adi.AD7606C_16        ">AD7606C_16</a>     - ADC
+%   <a href="matlab:help adi.AD7606C_18        ">AD7606C_18</a>     - ADC
 %   <a href="matlab:help adi.AD7768            ">AD7768</a>         - ADC
 %   <a href="matlab:help adi.AD7768_1          ">AD7768-1</a>       - ADC
 %   <a href="matlab:help adi.AD2S1210          ">AD2S1210</a>       - Resolver-to-Digital Converter
