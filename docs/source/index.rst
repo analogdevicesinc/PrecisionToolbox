@@ -34,6 +34,7 @@ The following have device-specific implementations in MATLAB and Simulink. In ge
    "AD4030-24", "Zedboard", "Yes", "No", "ADI (2021b)"
    "AD4630-16", "Zedboard", "Yes", "No", "ADI (2021b)"
    "AD4630-24", "Zedboard", "Yes", "No", "ADI (2021b)"
+   "ADAQ4224", "Zedboard", "Yes", "No", "ADI (2021b)"
    "AD4858", "Zedboard", "Yes", "No", "ADI (2021b)"
    "AD2S1210", "Zedboard", "Yes", "No", "ADI (2021b)"
    "AD4000", "Zedboard", "Yes", "No", "ADI (2021b)"
