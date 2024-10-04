@@ -7,18 +7,17 @@
 
     <title>Precision Toolbox for MATLAB &#8212; Precision Toolbox  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="_static/style.min.css?v=a3ba2641" />
+    <link rel="stylesheet" type="text/css" href="_static/style.min.css?v=765fa3cc" />
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="_static/app.umd.js?v=7b10be7e"></script>
+    <script defer="" src="_static/app.umd.js?v=c93eadd1"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Installation" href="common/installation.html" />
    
   
-    <meta name="robots" content="noindex">
-  
+  <meta name="global_root" content="./../">
   <meta name="repo" content="PrecisionToolbox">
   
 
@@ -76,14 +75,16 @@
 
   <div class="repotoc-tree overlay">
     <root>
-  <a href="./../documentation/eval/index.html">Evaluation Boards</a>
-  <a href="./../documentation/university/index.html">University Program</a>
+  <a href="./../documentation/index.html">System Level</a>
   <a href="./../hdl/index.html">HDL</a>
-  <a href="./../no-OS/index.html">no-OS</a>
+  <a href="./../testbenches/index.html">HDL Testbenches</a>
   <a href="./../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="./../libiio/index.html">libiio</a>
+  <a href="./../no-OS/index.html">no-OS</a>
   <a href="./../precision-converters-firmware/index.html">Precision Converters Firmware</a>
-  <a href="./../doctools/index.html">Doctools</a>
   <a href="./index.html" class="current">Precision Toolbox</a>
+  <a href="./../scopy/index.html">Scopy</a>
+  <a href="./../doctools/index.html">Doctools</a>
 </root>
 
   </div>
@@ -116,14 +117,16 @@ Content on this topic
 </label>
 <div class="repotoc-tree">
   <root>
-  <a href="./../documentation/eval/index.html">Evaluation Boards</a>
-  <a href="./../documentation/university/index.html">University Program</a>
+  <a href="./../documentation/index.html">System Level</a>
   <a href="./../hdl/index.html">HDL</a>
-  <a href="./../no-OS/index.html">no-OS</a>
+  <a href="./../testbenches/index.html">HDL Testbenches</a>
   <a href="./../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="./../libiio/index.html">libiio</a>
+  <a href="./../no-OS/index.html">no-OS</a>
   <a href="./../precision-converters-firmware/index.html">Precision Converters Firmware</a>
-  <a href="./../doctools/index.html">Doctools</a>
   <a href="./index.html" class="current">Precision Toolbox</a>
+  <a href="./../scopy/index.html">Scopy</a>
+  <a href="./../doctools/index.html">Doctools</a>
 </root>
 
 </div>
@@ -184,7 +187,7 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="precision-toolbox-for-matlab">
-<h1>Precision Toolbox for MATLAB<a class="headerlink" href="#precision-toolbox-for-matlab" title="Link to this heading">¶</a></h1>
+<h1>Precision Toolbox for MATLAB<a class="headerlink" href="#precision-toolbox-for-matlab" title="Link to this heading">#</a></h1>
 <blockquote>
 <div><a class="reference internal image-reference" href="_images/pctlbxLogo.png"><img alt="_images/pctlbxLogo.png" src="_images/pctlbxLogo.png" style="width: 600px;" />
 </a>
@@ -204,7 +207,7 @@ Content on this topic
 <p>The following have device-specific implementations in MATLAB and Simulink. In general, if a device has an IIO driver, MATLAB support is possible, but a device-specific MATLAB or Simulink interface may not exist yet.</p>
 <div class="table-wrapper colwidths-given docutils container" id="id1">
 <table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Supported Parts</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<caption><span class="caption-text">Supported Parts</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
 <colgroup>
 <col style="width: 20.0%" />
 <col style="width: 20.0%" />
@@ -257,181 +260,187 @@ Content on this topic
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD4858</p></td>
+<tr class="row-even"><td><p>ADAQ4224</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD2S1210</p></td>
+<tr class="row-odd"><td><p>AD4858</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD4000</p></td>
+<tr class="row-even"><td><p>AD2S1210</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD4001</p></td>
+<tr class="row-odd"><td><p>AD4000</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD4002</p></td>
+<tr class="row-even"><td><p>AD4001</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD4003</p></td>
+<tr class="row-odd"><td><p>AD4002</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD4004</p></td>
+<tr class="row-even"><td><p>AD4003</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD4005</p></td>
+<tr class="row-odd"><td><p>AD4004</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD4006</p></td>
+<tr class="row-even"><td><p>AD4005</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD4007</p></td>
+<tr class="row-odd"><td><p>AD4006</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD4008</p></td>
+<tr class="row-even"><td><p>AD4007</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD4010</p></td>
+<tr class="row-odd"><td><p>AD4008</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD4011</p></td>
+<tr class="row-even"><td><p>AD4010</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD4020</p></td>
+<tr class="row-odd"><td><p>AD4011</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD4021</p></td>
+<tr class="row-even"><td><p>AD4020</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD4022</p></td>
+<tr class="row-odd"><td><p>AD4021</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD5760</p></td>
+<tr class="row-even"><td><p>AD4022</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD5780</p></td>
+<tr class="row-odd"><td><p>AD5760</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD5781</p></td>
+<tr class="row-even"><td><p>AD5780</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD5790</p></td>
+<tr class="row-odd"><td><p>AD5781</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD5791</p></td>
+<tr class="row-even"><td><p>AD5790</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD7124-4</p></td>
+<tr class="row-odd"><td><p>AD5791</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD7124-8</p></td>
+<tr class="row-even"><td><p>AD7124-4</p></td>
 <td><p>Zedboard</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD4052</p></td>
+<tr class="row-odd"><td><p>AD7124-8</p></td>
+<td><p>Zedboard</p></td>
+<td><p>Yes</p></td>
+<td><p>No</p></td>
+<td><p>ADI (2021b)</p></td>
+</tr>
+<tr class="row-even"><td><p>AD4052</p></td>
 <td><p>SDP-K1</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD4170</p></td>
+<tr class="row-odd"><td><p>AD4170</p></td>
 <td><p>SDP-K1</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD7190</p></td>
+<tr class="row-even"><td><p>AD7190</p></td>
 <td><p>SDP-K1</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD7192</p></td>
+<tr class="row-odd"><td><p>AD7192</p></td>
 <td><p>SDP-K1</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD7193</p></td>
+<tr class="row-even"><td><p>AD7193</p></td>
 <td><p>SDP-K1</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-even"><td><p>AD7194</p></td>
+<tr class="row-odd"><td><p>AD7194</p></td>
 <td><p>SDP-K1</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
 <td><p>ADI (2021b)</p></td>
 </tr>
-<tr class="row-odd"><td><p>AD7195</p></td>
+<tr class="row-even"><td><p>AD7195</p></td>
 <td><p>SDP-K1</p></td>
 <td><p>Yes</p></td>
 <td><p>No</p></td>
