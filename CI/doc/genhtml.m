@@ -1,6 +1,7 @@
 mfiledir = '..\..\+adi\';
 docdir = '..\..\doc\';
-parts = {'AD4630','AD4030','AD463x','AD7768','AD4858','AD2S1210','AD4000', 'AD4001', 'AD4002', 'AD4003', 'AD4004', 'AD4005', 'AD4006', 'AD4007', 'AD4008', 'AD4010', 'AD4011', 'AD4020', 'AD4021', 'AD4022'};
+parts = {'AD4630','AD4030','AD463x','AD7625', 'AD7626', 'AD7960',
+        'AD7961','AD7768','AD4858','AD2S1210','AD4000', 'AD4001', 'AD4002', 'AD4003', 'AD4004', 'AD4005', 'AD4006', 'AD4007', 'AD4008', 'AD4010', 'AD4011', 'AD4020', 'AD4021', 'AD4022'};
 trx_files = {'Rx','Base','Tx'};
 for ii = 1:numel(parts)
     for jj = 1:numel(trx_files)

@@ -28,6 +28,10 @@ The following have device-specific implementations in MATLAB and Simulink. If a 
 | Evaluation Card | FPGA Board | Streaming Support | Targeting | Variants and Minimum Supported Release |
 | --------- | --------- | --------- | --------- | --------- |
 | AD7380	| Zedboard	| Yes	| No	| ADI (2021b) |
+| AD7625    | Zedboard  | Yes   | No    | ADI (2021b) |
+| AD7626    | Zedboard  | Yes   | No    | ADI (2021b) |
+| AD7960    | Zedboard  | Yes   | No    | ADI (2021b) |
+| AD7961    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD7768    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD7768-1  | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD4030-24 | Zedboard  | Yes   | No    | ADI (2021b) |
@@ -52,3 +56,4 @@ The following have device-specific implementations in MATLAB and Simulink. If a 
 | AD7124-4  | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD7124-8  | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD4080    | Zedboard  | Yes   | No    | ADI (2021b) |
+=======
