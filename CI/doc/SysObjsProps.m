@@ -19,6 +19,10 @@
 % * AD4630 <AD4630_Rx.html Rx>
 % * AD4030 <AD4030_Rx.html Rx>
 % * AD463x <AD463x_Rx.html Rx>
+% * AD7625 <AD7625_Rx.html Rx>
+% * AD7626 <AD7626_Rx.html Rx>
+% * AD7960 <AD7960_Rx.html Rx>
+% * AD7961 <AD7961_Rx.html Rx>
 % * AD7768 <AD7768_Rx.html Rx>
 % * AD7768 <AD4858_Rx.html Rx>
 % * AD2S1210 <AD2S1210_Rx.html Rx>
