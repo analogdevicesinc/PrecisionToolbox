@@ -1,11 +1,19 @@
 %% Script for capturing and displaying a continuous set of samples from a 
-%% connected AD4052 board
+%% connected AD405x board
+
+ActiveDevice = "AD4052"; % Devices available are AD4052 and AD4050
 
 % Instantiate the system object
-rx = adi.AD4052.Rx('uri', 'serial:COM13,230400');
+if ActiveDevice == "AD4052"
+    rx = adi.AD4052.Rx('uri', 'serial:COM28,230400');
+elseif ActiveDevice == "AD4050"
+    rx = adi.AD4050.Rx('uri', 'serial:COM28,230400');
+else
+    rx = adi.AD4052.Rx('uri', 'serial:COM28,230400');
+end
+
 rx.SamplesPerFrame = 400; 
 rx.EnabledChannels = [1];
-
 rx.SampleRate = 62500; % In sample mode, the sampling rate can be as high as 1MSPS
 
 % Capture data
