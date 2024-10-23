@@ -105,7 +105,7 @@ classdef AD7768_1Tests < HardwareTests
             end
         end
 
-        function testAD7768_1AttrCommonModeVolage(testCase,common_mode_voltage)
+        function testAD7768_1AttrCommonModeVoltage(testCase,common_mode_voltage)
             % FIXME: Hangs unless board is rebooted
                 adc = adi.AD7768_1.Rx;
                 adc.uri = testCase.uri;
