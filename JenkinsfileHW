@@ -43,7 +43,6 @@ lock(label: 'sdg_nuc_04') {
     harness.set_enable_docker(true)
     harness.set_docker_host_mode(false)
     harness.set_send_telemetry(false)
-    harness.set_log_jira(false)
     harness.set_elastic_server('192.168.10.1')
     harness.set_required_hardware(["zynq-zed-adv7511-ad7768-1-evb-precision",
                                     "zynq-zed-adv7511-ad4630-24-precision",
