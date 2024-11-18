@@ -51,7 +51,6 @@ classdef Base < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
             obj.EnabledChannels = 1;
             obj.BufferTypeConversionEnable = true;
             obj.uri = 'ip:analog.local';
-            obj.kernelBuffersCount = length(obj.channel_names)
         end
 
         function flush(obj)

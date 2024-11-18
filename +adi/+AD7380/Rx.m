@@ -12,6 +12,7 @@ classdef Rx < adi.common.Rx & adi.common.RxTx ...
     % `AD7380 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad7380-7381.pdf>`_
 
     properties (Nontunable, Hidden)
+        kernelBuffersCount = 2
         channel_names = {'voltage0-voltage1','voltage2-voltage3'}
         phyDevName = 'ad7380'
         devName = 'ad7380'
