@@ -1,5 +1,5 @@
 // Pipeline
-lock(label: 'sdg_nuc_04') {
+lock(label: 'adgt_test_harness_boards', quantity: 1){
     @Library('sdgtt-lib@adgt-test-harness') _ // Not necessary when we turn on global libraries :)
     def hdlBranch = "NA"
     def linuxBranch = "NA"
@@ -41,7 +41,7 @@ lock(label: 'sdg_nuc_04') {
     //Set other test parameters
     harness.set_nebula_debug(true)
     harness.set_enable_docker(true)
-    harness.set_docker_host_mode(false)
+    harness.set_docker_host_mode(true)
     harness.set_send_telemetry(false)
     harness.set_elastic_server('192.168.10.1')
     harness.set_required_hardware(["zynq-zed-adv7511-ad7768-1-evb-precision",
