@@ -1,6 +1,6 @@
 // Pipeline
-lock(label: 'adgt_test_harness_boards', quantity: 1){
-    @Library('sdgtt-lib@adgt-test-harness') _ // Not necessary when we turn on global libraries :)
+lock(label: 'sdg_nuc_04'){
+    @Library('sdgtt-lib@fix-libiio-checkout') _ // Not necessary when we turn on global libraries :)
     def hdlBranch = "NA"
     def linuxBranch = "NA"
     def bootPartitionBranch = "2021_r2"
@@ -44,9 +44,10 @@ lock(label: 'adgt_test_harness_boards', quantity: 1){
     harness.set_docker_host_mode(true)
     harness.set_send_telemetry(false)
     harness.set_elastic_server('192.168.10.1')
-    harness.set_required_hardware(["zynq-zed-adv7511-ad7768-1-evb-precision",
-                                    "zynq-zed-adv7511-ad4630-24-precision",
-                                    "zynq-zed-adv7511-ad7768-axi-adc-precision"])
+    // harness.set_required_hardware(["zynq-zed-adv7511-ad7768-1-evb-precision",
+    //                                 "zynq-zed-adv7511-ad4630-24-precision",
+    //                                 "zynq-zed-adv7511-ad7768-axi-adc-precision"])
+    harness.set_required_hardware(["zynq-zed-adv7511-ad7768-axi-adc-precision"])
     harness.set_docker_args(['Vivado', 'MATLAB'])
     harness.set_nebula_local_fs_source_root("artifactory.analog.com")
   
