@@ -18,6 +18,7 @@ classdef AD4630_24Tests < HardwareTests
     methods (Test)
         
         function testAD4630_24Smoke(testCase)
+            disp("Clone works.");
             adc = adi.AD4630_24.Rx('uri',testCase.uri);
             data = adc();
             adc.release();
