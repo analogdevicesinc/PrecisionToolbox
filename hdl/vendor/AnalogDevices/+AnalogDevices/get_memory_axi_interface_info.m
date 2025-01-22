@@ -5,7 +5,7 @@ switch project
    case 'cn0585'
         switch fpga
             case{'ZED'}
-                InterfaceConnection = 'axi_cpu_interconnect/M20_AXI';
+                InterfaceConnection = 'axi_gp0_interconnect/M20_AXI';
                 BaseAddress = '0x43C00000';
                 MasterAddressSpace = 'sys_ps7/Data';
             otherwise
