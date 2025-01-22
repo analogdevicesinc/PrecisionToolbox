@@ -161,6 +161,8 @@ classdef BSPTestsBase < matlab.unittest.TestCase
                     pathname = ['C:\Xilinx\Vivado\',vivado,'\bin\vivado.bat'];
                 elseif isunix
                     pathname = ['/emea/mediadata/opt/Xilinx/Vivado/',vivado,'/bin/vivado'];
+                    %pathname = ['/opt/Xilinx/Vivado/',vivado,'/bin/vivado'];
+		    %pathname = getenv('vivado_settings_path');
                 end
             end
             assert(exist(pathname,'file')>0,'Correct version of Vivado is unavailable or in a non-standard location');
