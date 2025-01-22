@@ -21,7 +21,7 @@ hRD.ReferenceDesignName = sprintf('%s (%s)', upper(board), design);
 hRD.BoardName = sprintf('AnalogDevices CN0585 GPIO Control');
 
 % Tool information
-hRD.SupportedToolVersion = {'2023.2'};
+hRD.SupportedToolVersion = {getenv('req_vivado_v')};
 
 % Get the root directories
 rootDirExample = fileparts(strtok(mfilename('fullpath'), '+'));

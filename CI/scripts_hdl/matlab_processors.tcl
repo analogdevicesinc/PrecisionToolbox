@@ -47,9 +47,9 @@ proc preprocess_bd {project carrier rxtx} {
 	    }
 	  switch $carrier {
           zed {
-                set_property -dict [list CONFIG.NUM_MI {21}] [get_bd_cells axi_cpu_interconnect]
-                connect_bd_net [get_bd_pins axi_cpu_interconnect/M20_ACLK]    [get_bd_pins axi_clkgen/clk_0]
-                connect_bd_net [get_bd_pins axi_cpu_interconnect/M20_ARESETN] [get_bd_pins sampling_clk_rstgen/peripheral_aresetn]
+                set_property -dict [list CONFIG.NUM_MI {21}] [get_bd_cells axi_gp0_interconnect]
+                connect_bd_net [get_bd_pins axi_gp0_interconnect/M20_ACLK]    [get_bd_pins axi_clkgen/clk_0]
+                connect_bd_net [get_bd_pins axi_gp0_interconnect/M20_ARESETN] [get_bd_pins sampling_clk_rstgen/peripheral_aresetn]
               }
           }
         }
