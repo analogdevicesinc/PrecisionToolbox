@@ -44,8 +44,7 @@ fi
 VIVADO=${VER}
 
 # Setup
-#source /opt/Xilinx/Vivado/$VIVADO/settings64.sh
-source /emea/mediadata/opt/Xilinx/Vivado/$VIVADO/settings64.sh
+source "$vivado_settings_path"
 
 # Rename .prj files since MATLAB ignores then during packaging
 FILES=$(grep -lrn hdl/projects/common -e '.prj' | grep -v Makefile | grep -v .git)
