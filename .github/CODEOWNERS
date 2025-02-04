@@ -8,4 +8,4 @@
 # CODEOWNERS file format: <pattern> + <mail address of one or more owners>
 
 ##### Global code owners (for whole files from repo) #####
-*	ribhu.daspurkayastha@analog.com saikiran.gudla@analog.com janani.sunil@analog.com chandrakant.minajigi@analog.com
+*	disha.d@analog.com saikiran.gudla@analog.com janani.sunil@analog.com gururajendra.prasad@analog.com
