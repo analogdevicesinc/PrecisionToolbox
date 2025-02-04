@@ -2,7 +2,8 @@ classdef Version
     % Version
     %   BSP Version information
     properties (Constant)
-        MATLAB = 'R2021b'
+        Vivado = getenv('req_vivado_v')
+        MATLAB = getenv('req_matlab_v') 
         Release = '21.2.1'
         AppName = 'Analog Devices, Inc. Precision Toolbox'
         ToolboxName = 'PrecisionToolbox'
