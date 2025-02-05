@@ -19,16 +19,16 @@ Class Properties
    Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant
 
 **SampleRate Sample Rate**
-   Baseband sampling rate in Hz, specified as a scalar in samples per second.Help for adi.AD4022.Rx/SampleRate is inherited from superclass adi.AD400x.Base
+   Baseband sampling rate in Hz, specified as a scalar in samples per second.
 
-**SamplesPerFrame Samples Per Frame**
-   Number of samples per frame, specified as an even positive integer.Help for adi.AD4022.Rx/SamplesPerFrame is inherited from superclass adi.AD400x.Base
+**Frame size**
+   Size of the frame in samplesHelp for adi.AD4022.Rx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base
 
-**VoltageOffset Voltage Offset**
-   ADC Voltage offset.Help for adi.AD4022.Rx/VoltageOffset is inherited from superclass adi.AD400x.Base
+**VoltageOffset - Voltage Offset**
+   ADC Voltage offset.
 
-**VoltageScale Voltage Scale**
-   ADC Voltage scale.Help for adi.AD4022.Rx/VoltageScale is inherited from superclass adi.AD400x.Base
+**VoltageScale - Voltage Scale**
+   ADC Voltage scale.
 
 **URI - remote host URI**
    Hostname or IP address of remote libIIO deviceHelp for adi.AD4022.Rx/uri is inherited from superclass matlabshared.libiio.base

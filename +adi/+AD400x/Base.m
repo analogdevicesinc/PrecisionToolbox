@@ -12,11 +12,6 @@ classdef Base < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         %   Number of samples per frame, specified as an even positive
         %   integer.
         SamplesPerFrame = 4096
-
-	% SampleRate Sample Rate
-	%   Baseband sampling rate in Hz, specified as a scalar
-	%   in samples per second.
-	SampleRate = '500000'
     end
 
     properties (Dependent)
@@ -27,11 +22,6 @@ classdef Base < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         % VoltageOffset Voltage Offset
         %   ADC Voltage offset.
         VoltageOffset
-    end
-
-    % Channel names
-    properties (Nontunable, Hidden, Constant)
-        channel_names = {'voltage0'}
     end
 
     % isOutput
@@ -64,19 +54,10 @@ classdef Base < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
 	    obj.dataTypeStr = dtype;
         end
 
-	%% Set SampleRate
-	function set.SampleRate(obj, value)
-	    % Set device sampling rate
-	    obj.SampleRate = value;
-	    if obj.ConnectedToDevice
-	        obj.setDeviceAttributeRAW('sampling_frequency', num2str(value));
-	    end
-	end
-
         %% Check Voltage Scale
         function rValue = get.VoltageScale(obj)
             if obj.ConnectedToDevice
-                rValue = obj.getAttributeDouble('voltage0', 'scale', obj.isOutput);
+                rValue = obj.getAttributeDouble(char(obj.channel_names(1)), 'scale', obj.isOutput);
             else
                 rValue = NaN;
             end
@@ -85,7 +66,7 @@ classdef Base < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
         %% Check Voltage Offset
         function rValue = get.VoltageOffset(obj)
             if obj.ConnectedToDevice
-                rValue = obj.getAttributeDouble('voltage0', 'offset', obj.isOutput);
+                rValue = obj.getAttributeDouble(char(obj.channel_names(1)), 'offset', obj.isOutput);
             else
                 rValue = NaN;
             end
@@ -94,9 +75,7 @@ classdef Base < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
 
     %% API Functions
     methods (Hidden, Access = protected)
-        function setupInit(obj)
-	    obj.setDeviceAttributeRAW('sampling_frequency', ...
-	                              num2str(obj.SampleRate));
+        function setupInit(~)
         end
     end
 end
