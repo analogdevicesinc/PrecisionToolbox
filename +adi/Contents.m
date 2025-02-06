@@ -67,3 +67,5 @@
 %   <a href="matlab:help adi.AD7124_4          ">AD7124_4</a>       - ADC
 %   <a href="matlab:help adi.AD7124_8          ">AD7124_8</a>       - ADC
 %   <a href="matlab:help adi.AD4080            ">AD4080</a>         - ADC
+%   <a href="matlab:help adi.AD5592r           ">AD5592r</a>        - ADC
+%   <a href="matlab:help adi.AD5593r           ">AD5593r</a>        - ADC
