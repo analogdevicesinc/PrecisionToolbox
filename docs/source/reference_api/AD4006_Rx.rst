@@ -18,7 +18,7 @@ Class Properties
 **EnabledChannels Enabled Channels**
    Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant
 
-**SampleRate Sample Rate**
+**SampleRate - Sample Rate**
    Baseband sampling rate in Hz, specified as a scalar in samples per second.
 
 **Frame size**
