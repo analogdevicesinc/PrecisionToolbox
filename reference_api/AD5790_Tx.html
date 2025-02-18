@@ -183,7 +183,7 @@ data to the AD5790.</p>
 <section id="class-properties">
 <h2>Class Properties<a class="headerlink" href="#class-properties" title="Link to this heading"></a></h2>
 <dl class="simple">
-<dt><strong>CodeSelect Code Select</strong></dt><dd><p>Set to 2s_complement/offset_binaryHelp for adi.AD5790.Tx/CodeSelect is inherited from superclass adi.AD579x.Base</p>
+<dt><strong>CodeSelect - Code Select</strong></dt><dd><p>Set to 2s_complement/offset_binary</p>
 </dd>
 <dt><strong>DDSFrequencies DDS Frequencies</strong></dt><dd><p>Frequencies values in Hz of the DDS tone generators. For complex data devices the input is a [2xN] matrix where N is the available channels on the board. For complex data devices this is at most max(EnabledChannels)*2. For non-complex data devices this is at most max(EnabledChannels). If N &lt; this upper limit, other DDSs are not set.Help for adi.AD5790.Tx/DDSFrequencies is inherited from superclass adi.common.DDS</p>
 </dd>
@@ -197,13 +197,14 @@ data to the AD5790.</p>
 </dd>
 <dt><strong>EnabledChannels Enabled Channels</strong></dt><dd><p>Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant</p>
 </dd>
-<dt><strong>PowerDown Power Down</strong></dt><dd><p>Set to true/false to power-up/power-down the device channelsHelp for adi.AD5790.Tx/PowerDown is inherited from superclass adi.AD579x.Base</p>
+<dt><strong>PowerDown - Power Down</strong></dt><dd><p>Set to true/false to power-up/power-down the device channels</p>
 </dd>
-<dt><strong>Raw Channel Raw Value</strong></dt><dd><p>Help for adi.AD5790.Tx/Raw is inherited from superclass adi.AD579x.Base</p>
+</dl>
+<p><strong>Raw - Channel Raw Value</strong></p>
+<dl class="simple">
+<dt><strong>SampleRate - Sample Rate</strong></dt><dd><p>Baseband sampling rate in Hz, specified as a scalar in samples per second.</p>
 </dd>
-<dt><strong>SampleRate Sample Rate</strong></dt><dd><p>Baseband sampling rate in Hz, specified as a scalar in samples per second. Help for adi.AD5790.Tx/SampleRate is inherited from superclass adi.AD579x.Base</p>
-</dd>
-<dt><strong>SamplesPerFrame Samples Per Frame</strong></dt><dd><p>Number of samples per frame, specified as an even positive integer. Help for adi.AD5790.Tx/SamplesPerFrame is inherited from superclass adi.AD579x.Base</p>
+<dt><strong>Frame size</strong></dt><dd><p>Size of the frame in samplesHelp for adi.AD5790.Tx/SamplesPerFrame is inherited from superclass matlabshared.libiio.base</p>
 </dd>
 <dt><strong>URI - remote host URI</strong></dt><dd><p>Hostname or IP address of remote libIIO deviceHelp for adi.AD5790.Tx/uri is inherited from superclass matlabshared.libiio.base</p>
 </dd>
