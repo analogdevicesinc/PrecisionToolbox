@@ -8,27 +8,33 @@ The adi.AD4170.Rx System object is a signal source that can receive
 data from the AD4170.
 
 `rx = adi.AD4170.Rx;`
-`rx = adi.AD4170.Rx('serial:COM18,230400');`
+`rx = adi.AD4170.Rx('uri','ip:192.168.2.1');`
 
-`AD4170 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4170.pdf>`_
+`AD4170 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4170-4.pdf>`_
 
 Class Properties
 ================
 
 **AdcMode ADC Mode**
-   ADC Mode for data capture, represented as a string. It supports the following: 'Continuous_Conversion', 'Continuous_Conversion_FIR', 'Continuous_Conversion_IIR', 'Standby', 'Power_Down', 'Idle'
+   ADC Mode for data capture, represented as a string. It supports the following: 'Continuous_Conversion', 'Continuous_Conversion_FIR', 'Continuous_Conversion_IIR', 'Standby', 'Power_Down', 'Idle'Help for adi.AD4170.Rx/AdcMode is inherited from superclass adi.AD4170.Base
 
 **EnabledChannels Enabled Channels**
    Indexs of channels to be enabled. Input should be a [1xN] vector with the indexes of channels to be enabled. Order is irrelevant
 
-**Fs Fs**
-   Fs for configuring the sampling rate of the device. It supports a numeric value. Please refer to the DS for more details on configuring FS
-
-**SampleRate Sample Rate**
-   Baseband sampling rate in Hz, specified as a scalar in samples per second.
+**Fs for configuring the sampling rate of the device.**
+   It supports a numeric value. Please refer to the DS for more details on configuring FS. Fs = 1 corresponds to 500ksps with the sinc5 filterHelp for adi.AD4170.Rx/Fs is inherited from superclass adi.AD4170.Base
 
 **SamplesPerFrame Samples Per Frame**
-   Number of samples per frame, specified as an even positive integer.
+   Number of samples per frame, specified as an even positive integer.Help for adi.AD4170.Rx/SamplesPerFrame is inherited from superclass adi.AD4170.Base
+
+**Data type for the output data**
+   A String Representing the data typeHelp for adi.AD4170.Rx/dataTypeStr is inherited from superclass matlabshared.libiio.base
+
+**Device name**
+   Name of the libIIO deviceHelp for adi.AD4170.Rx/devName is inherited from superclass matlabshared.libiio.base
+
+**Kernel buffers count**
+   The number of buffers allocated in the kernel for data transfersHelp for adi.AD4170.Rx/kernelBuffersCount is inherited from superclass matlabshared.libiio.base
 
 **URI - remote host URI**
    Hostname or IP address of remote libIIO deviceHelp for adi.AD4170.Rx/uri is inherited from superclass matlabshared.libiio.base
