@@ -8,7 +8,7 @@ classdef AD7768_1Tests < HardwareTests
     properties(TestParameter)
         % start. stop, step, tolerance, repeats
         signal_test = {{1000,125000,2500,0.015,10}};
-        samples_per_frame = {{2^1,1048580,2^16,0.0,10}};
+        samples_per_frame = {{2^1,2^20,2^16,0.0,10}};
         sample_rate = {'256000', '128000', '64000', ...
                      '32000', '16000', '8000', '4000', ...
                      '2000', '1000'};
@@ -89,7 +89,7 @@ classdef AD7768_1Tests < HardwareTests
             step = samples_per_frame{3};
             tol = samples_per_frame{4};
             repeats = samples_per_frame{5};
-            numints = round((stop-start)/step);
+            numints = floor((stop-start)/step);
             for ii = 1:repeats
                 ind = randi([0, numints]);
                 val = start+(step*ind);
