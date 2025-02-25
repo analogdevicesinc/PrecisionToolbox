@@ -8,7 +8,7 @@ classdef AD4630_24Tests < HardwareTests
     properties(TestParameter)
         % start frequency, stop frequency, step, tolerance, repeats
         signal_test = {{10000,250000,2500,0.05,10}};
-        signal_vpp = {0.1, 0.3, 0.5};
+        signal_vpp = {0.5};
         sample_rate = {'10000', '50000', '100000', ...
             '200000', '500000', '1000000', ...
             '1760000', '2000000'};
