@@ -89,7 +89,7 @@ classdef AD7768_1Tests < HardwareTests
             step = samples_per_frame{3};
             tol = samples_per_frame{4};
             repeats = samples_per_frame{5};
-            numints = round((stop-start)/step);
+            numints = floor((stop-start)/step);
             for ii = 1:repeats
                 ind = randi([0, numints]);
                 val = start+(step*ind);
