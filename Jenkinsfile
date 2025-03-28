@@ -1,51 +1,45 @@
-//@Library('tfc-lib') _
-library(identifier: 'jenkinssharedlib@MATLAB-bootfiles', retriever: modernSCM(
-  [$class: 'GitSCMSource',
-       remote: 'https://github.com/ribhudp23/jenkinssharedlib-private-fork.git',
-       credentialsId: 'GH-SharedLib-Private-Fork-Access'
-]))
-https://github.com/ribhudp23/jenkinssharedlib-private-fork.git
+@Library('tfc-lib@adef-ci') _
 
-dockerConfig = getDockerConfig(['MATLAB','Vivado'], matlabHSPro=false)
-dockerConfig.add("-e MLRELEASE=R2021b")
+flags = gitParseFlags()
+
+dockerConfig = getDockerConfig(['MATLAB','Vivado','Internal'], matlabHSPro=false)
+dockerConfig.add("-e MLRELEASE=R2023b")
 dockerHost = 'docker'
 
 ////////////////////////////
 
-
-hdlBranches = ['main']
+hdlBranches = ['main','hdl_2021_r2']
 
 stage("Build Toolbox") {
     dockerParallelBuild(hdlBranches, dockerHost, dockerConfig) { 
 	branchName ->
-	withEnv(['HDLBRANCH='+branchName]) {
-	    checkout scm
-	    sh 'git submodule update --init' 
-        sh 'pip3 install -r requirements_doc.txt'
-		sh 'make -C ./CI/gen_doc doc'
-
-	    sh 'make -C ./CI/scripts gen_tlbx'
-	}
-        stash includes: '**', name: 'builtSources', useDefaultExcludes: false
-        archiveArtifacts artifacts: '*.mltbx', followSymlinks: false, allowEmptyArchive: true
-    }
-}
-
-/////////////////////////////////////////////////////
-
-
-
-//////////////////////////////////////////////////////
-node {
-    stage('Deploy Development') {
-        unstash "builtSources"
-        uploadArtifactory('PrecisionToolbox','*.mltbx')
-    }
-    if (env.BRANCH_NAME == 'main') {
-        stage('Deploy Production') {
-            unstash "builtSources"
-            uploadFTP('PrecisionToolbox','*.mltbx')
+	try {
+		withEnv(['HDLBRANCH='+branchName,'LC_ALL=C.UTF-8','LANG=C.UTF-8']) {
+		    checkout scm
+		    sh 'git submodule update --init' 
+		    sh 'make -C ./CI/scripts gen_tlbx'
+		}
+        } catch(Exception ex) {
+		if (branchName == 'hdl_2021_r2') {
+		    error('Production Toolbox Build Failed')
+		}
+		else {
+		    unstable('Development Build Failed')
+		}
+        }
+        if (branchName == 'hdl_2021_r2') {
+            local_stash('builtSources')
+            archiveArtifacts artifacts: 'hdl/*', followSymlinks: false, allowEmptyArchive: true
         }
     }
-    
 }
+
+//////////////////////////////////////////////////////
+
+node('baremetal || lab_b5') {
+    cstage('Deploy Development', "", flags) {
+        local_unstash("builtSources", '', false)
+        uploadArtifactory('PrecisionToolbox','*.mltbx')
+    }
+}
+
