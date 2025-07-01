@@ -1,64 +1,40 @@
-classdef Rx < adi.common.Rx & adi.common.RxTx & ...
-         matlabshared.libiio.base & adi.common.Attribute & ...
-         adi.common.RegisterReadWrite & adi.common.Channel 
+classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
     % AD4080 Precision ADC Class
+    %
     % adi.AD4080.Rx Receives data from the AD4080 ADC
-    %   The adi.AD4080.Rx System object is a signal source that can receive
-    %   data from the AD4080.
+    % The adi.AD4080.Rx System object is a signal source that can receive
+    % data from the AD4080.
     %
-    %   rx = adi.AD4080.Rx;
-    %   rx = adi.AD4080.Rx('uri','192.168.2.1');
+    %   `rx = adi.AD4080.Rx;`
+    %   `rx = adi.AD4080.Rx('serial:COM19,230400');`
     %
-    %   <a href="https://www.analog.com/media/en/technical-documentation/data-sheets/ad4080.pdf">AD4080 Datasheet</a>
+    % `AD4080 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4080.pdf>`_
 
     properties (Nontunable)
         % SampleRate Sample Rate
         %   Baseband sampling rate in Hz, specified as a scalar
-        %   in samples per second. Options are:
-        %   '256000','128000','64000','32000','16000','8000','4000',
-        %   '2000','1000'
+        %   in samples per second.
         SampleRate = '40000000'
-        
+
         % SamplesPerFrame Samples Per Frame
-        %   The number of samples to be captured as part of one continuous buffer
-        SamplesPerFrame = 4096
-
-        % Scale Scale
-        %   Scale value to be used to convert the code to voltage
-        Scale = 0.005722
-
-        % TestMode Test Mode
-        %   Test Mode for AD4080. Options are:
-        %   'off', 'midscale_short', 'pos_fullscale',
-        %   'neg_fullscale', 'checkerboard', 'pn_long', 'on_short', 'one_zero_toggle',
-        %   'user', 'bit_toggle', 'sync', 'one_bit_high', 'mixed_bit_frequency'
-        TestMode = 'off'
-
+        %   Number of samples per frame, specified as an even positive
+        %   integer.
+        SamplesPerFrame = 400
     end
 
-    properties (Nontunable, Hidden)
-        channel_names = { ...
-                         'voltage0'}
+    % Channel names
+    properties (Nontunable, Hidden, Constant)
+        channel_names = {'voltage0'}
     end
 
+    % isOutput
     properties (Hidden, Nontunable, Access = protected)
         isOutput = false
     end
 
-    properties (Constant, Hidden)
-        SampleRateSet = matlab.system.StringSet({ ...
-                                                 '40000000', '256000', '128000', '64000', ...
-                                                 '32000', '16000', '8000', '4000', ...
-                                                 '2000', '1000'})
-
-        TestModeSet = matlab.system.StringSet({'off', 'midscale_short', 'pos_fullscale', ...
-            'neg_fullscale', 'checkerboard', 'pn_long', 'on_short', 'one_zero_toggle', ...
-            'user', 'bit_toggle', 'sync', 'one_bit_high', 'mixed_bit_frequency'})
-
-    end
-
     properties (Nontunable, Hidden)
         Timeout = Inf
+        kernelBuffersCount = 1
         dataTypeStr = 'int32'
         phyDevName = 'ad4080'
         devName = 'ad4080'
@@ -66,6 +42,9 @@ classdef Rx < adi.common.Rx & adi.common.RxTx & ...
 
     properties (Nontunable, Hidden, Constant)
         Type = 'Rx'
+    end
+
+    properties (Hidden, Constant)
         ComplexData = false
     end
 
@@ -73,74 +52,39 @@ classdef Rx < adi.common.Rx & adi.common.RxTx & ...
 
         %% Constructor
         function obj = Rx(varargin)
+            % Initialize the Rx object
             obj = obj@matlabshared.libiio.base(varargin{:});
             obj.enableExplicitPolling = false;
             obj.EnabledChannels = 1;
             obj.BufferTypeConversionEnable = true;
-            obj.uri = 'ip:analog.local';
+            obj.uri = 'serial:COM19,230400';
         end
 
-        function flush(obj)
-            flushBuffers(obj);
-        end
-
-        % Check SamplingRate
         function set.SampleRate(obj, value)
+            % Set device sampling rate
+            if value ~= 40000000 && value ~= 20000000 && value ~= 10000000
+                error('SampleRate must be 40000000, 20000000, or 10000000.');
+            end
             obj.SampleRate = value;
             if obj.ConnectedToDevice
-                obj.setDeviceAttributeRAW('sampling_frequency', value);
+                obj.setDeviceAttributeRAW('select_conversion_rate', num2str(value));
             end
-        end
-
-        % Check TestMode
-        function set.TestMode(obj, value)
-            obj.TestMode = value;
-            if obj.ConnectedToDevice
-                obj.setDeviceAttributeRAW('test_mode', value);
-            end
-        end
-
-    end
-
-    methods (Access = protected)
-
-        function numOut = getNumOutputsImpl(~)
-            numOut = 2;
         end
 
     end
 
     %% API Functions
-    methods (Hidden)
+    methods (Hidden, Access = protected)
 
-        function setupExtra(obj)
+        function setupInit(obj)
             % Write all attributes to device once connected through set
             % methods
             % Do writes directly to hardware without using set methods.
-            % This is required since Simulink doesn't support
+            % This is required since Simulink support doesn't support
             % modification to nontunable variables at SetupImpl
 
-            obj.setDeviceAttributeRAW('sampling_frequency', num2str(obj.SampleRate));
-            obj.setAttributeRAW('voltage0', 'test_mode', obj.TestMode, false);
+            obj.setDeviceAttributeRAW('select_conversion_rate', num2str(obj.SampleRate));
+
         end
-
-    end
-
-    %% External Dependency Methods
-    methods (Hidden, Static)
-
-        function tf = isSupportedContext(bldCfg)
-            tf = matlabshared.libiio.ExternalDependency.isSupportedContext(bldCfg);
-        end
-
-        function updateBuildInfo(buildInfo, bldCfg)
-            % Call the matlabshared.libiio.method first
-            matlabshared.libiio.ExternalDependency.updateBuildInfo(buildInfo, bldCfg);
-        end
-
-        function bName = getDescriptiveName(~)
-            bName = 'AD4080 Precision ADC';
-        end
-
     end
 end
