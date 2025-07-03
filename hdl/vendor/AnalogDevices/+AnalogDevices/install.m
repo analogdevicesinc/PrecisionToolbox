@@ -59,3 +59,4 @@ function install(mode)
         end
 	end	
 end
+
