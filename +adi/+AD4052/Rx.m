@@ -10,7 +10,7 @@ classdef Rx < adi.common.Rx & adi.common.RxTx ...
     %   `rx = adi.AD4052.Rx;`
     %   `rx = adi.AD4052.Rx('uri','serial:COM5,230400');`
     %
-    % `AD4052 Datasheet <http://www.analog.com/media/en/technical-documentation/data-sheets/AD4052.pdf>`_
+    % `AD4052 Datasheet <https://www.analog.com/media/en/technical-documentation/data-sheets/ad4052-ad4058.pdf>`_
 
     properties (Nontunable, Hidden, Constant)
         Type = 'Rx'
