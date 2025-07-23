@@ -22,6 +22,7 @@
 %   <a href="matlab:help adi.AD4030            ">AD4030-24</a>      - ADC
 %   <a href="matlab:help adi.AD4050            ">AD4050</a>         - ADC
 %   <a href="matlab:help adi.AD4052            ">AD4052</a>         - ADC
+%   <a href="matlab:help adi.AD4060            ">AD4060</a>         - ADC
 %   <a href="matlab:help adi.AD4630_16         ">AD4630-16</a>      - ADC
 %   <a href="matlab:help adi.AD4630_24         ">AD4630-24</a>      - ADC
 %   <a href="matlab:help adi.AD4170            ">AD4170</a>         - ADC
