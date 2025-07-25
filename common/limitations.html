@@ -4,11 +4,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Some limitations and bugs are known to be present in the support for the ADCs relevant to the Precision Toolbox. They have been summarized below." name="description" />
 
     <title>Limitations &#8212; Precision Toolbox  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../_static/app.min.css?v=c218d0f6" />
-    <script defer="" src="../_static/app.umd.js?v=5e042acc"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/app.min.css?v=33d8ff8e" />
+    <script async="async" src="../_static/app.umd.js?v=cd58f2cb"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Support" href="support.html" />
@@ -58,7 +59,7 @@
     </div>
     <div id="right">
       <span>
-        <a id="logo-org" href="https://analog.com"></a>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
         <div class="vertical-divider"></div>
         <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
         <a id="logo" href="../index.html">
@@ -179,7 +180,7 @@ Content on this topic
 <p><strong>Libiio backend</strong></p>
 <p>Currently only ethernet/IP backends are supported for all the parts in the toolbox. For AD4030-24, AD4630-16 and AD4630-24 the usb backend can also be used. Serial backends are not supported.</p>
 <p><strong>AD7380</strong></p>
-<p>Trigger setup needs to be done before running any of the toolbox scripts that interact with the AD7380. Refer to the <a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad738x#trigger_management">Trigger Management section on the AD738x Linux IIO driver wiki page</a></p>
+<p>Trigger setup needs to be done before running any of the toolbox scripts that interact with the AD7380. Refer to the <a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad738x#trigger_management" target="_blank">Trigger Management section on the AD738x Linux IIO driver wiki page</a></p>
 <p><strong>AD7768</strong></p>
 <p>The Linux IIO driver for the AD7768 returns data for all the channels whenever a data capture is requested. So, in order to get sensible outputs, ensure that the EnabledChannels array consists of indices for all the channels.</p>
 <p><strong>AD4030-24. AD4630-16, AD4630-24</strong></p>
