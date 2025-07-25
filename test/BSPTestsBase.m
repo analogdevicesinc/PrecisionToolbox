@@ -66,6 +66,11 @@ classdef BSPTestsBase < matlab.unittest.TestCase
                 disp('Found workflow_task_CreateProject... copying');
                 movefile('workflow_task_CreateProject.log',[rdn,'_CreateProject_',cfgb.mode,'.log']);
             end
+            system(join(["find '",testCase.Folder,"' -name 'system_top_timing_summary_routed.rpt' | xargs -I '{}' cp {} ."],''));
+            if exist('system_top_timing_summary_routed.rpt','file')
+                disp('Found system_top_timing_summary_routed... copying');
+                movefile('system_top_timing_summary_routed.rpt',[rdn,'_timing_summary_',cfgb.mode,'.rpt']);
+            end
             system(join(["find '",testCase.Folder,"' -name 'workflow_task_BuildFPGABitstream.log' | xargs -I '{}' cp {} ."],''));
             if exist('workflow_task_BuildFPGABitstream.log','file')
                 disp('Found workflow_task_BuildFPGABitstream... copying');
@@ -109,6 +114,15 @@ classdef BSPTestsBase < matlab.unittest.TestCase
                     'vivado_version',vivado_version,'mode',mode);
                 cfg = [cfg(:)',{cfg1},{cfg2},{cfg3}];
                 
+		mode = 'tx_rx';
+                h2 = str2func([s,'.',variants{k},'.plugin_rd_txrx']);h2 = h2();
+                ReferenceDesignName = h2.ReferenceDesignName;
+                vivado_version = h2.SupportedToolVersion{:};
+                cfg4 = struct('Board',h1,...
+                    'ReferenceDesignName',ReferenceDesignName,...
+                    'vivado_version',vivado_version,'mode',mode);
+                cfg = [cfg(:)',{cfg1},{cfg2},{cfg4}];
+
             end
             
         end
@@ -124,7 +138,7 @@ classdef BSPTestsBase < matlab.unittest.TestCase
                 assert(0);
             elseif strcmp(s{2},'adrv9361z7035') || ...
                     strcmp(s{2},'adrv9364z7020')
-                h = str2func([strjoin(s(1:2),'.'),'.common.plugin_board']);
+                h = str2func([strjoin(s(1:2),'.'),'.plugin_board']);
             else
                 h = str2func([strjoin(s(1:end-1),'.'),'.plugin_board']);
             end
@@ -138,10 +152,16 @@ classdef BSPTestsBase < matlab.unittest.TestCase
         end
         
         function setVivadoPath(~,vivado)
-            if ispc
-                pathname = ['C:\Xilinx\Vivado\',vivado,'\bin\vivado.bat'];
-            elseif isunix
-                pathname = ['/opt/Xilinx/Vivado/',vivado,'/bin/vivado'];
+            CUSTOM_VIVADO_PATH = getenv('CUSTOM_VIVADO_PATH');
+            if ~isempty(CUSTOM_VIVADO_PATH)
+                pathname = CUSTOM_VIVADO_PATH;
+                fprintf('Using custom Vivado path: %s\n',pathname);
+            else
+                if ispc
+                    pathname = ['C:\Xilinx\Vivado\',vivado,'\bin\vivado.bat'];
+                elseif isunix
+                    pathname = ['/opt/Xilinx/Vivado/',vivado,'/bin/vivado'];
+                end
             end
             assert(exist(pathname,'file')>0,'Correct version of Vivado is unavailable or in a non-standard location');
             hdlsetuptoolpath('ToolName', 'Xilinx Vivado', ...
