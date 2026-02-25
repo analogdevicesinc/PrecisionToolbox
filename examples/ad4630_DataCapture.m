@@ -15,7 +15,7 @@ rx.FrameCount = 1;
 
 % Only a select few channel groupings yield sensible outputs. Refer to the
 % Limitations section in the documentation for more details
-rx.EnabledChannels = [1];
+rx.EnabledChannels = [1,2];
 
 % Capture data
 data = rx();

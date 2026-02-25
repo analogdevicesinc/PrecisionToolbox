@@ -32,6 +32,10 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
         isOutput = false
     end
 
+    properties(Access = protected)
+        InSetup = false;
+    end
+
     properties (Abstract, Nontunable, Hidden)
         Timeout
         kernelBuffersCount
@@ -81,8 +85,10 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
             end
 
             % Connects to device temporarily and fetches the channel names
+            obj.InSetup = true;
             obj.setup();
             release(obj);
+            obj.InSetup = false;
         end
 
         function set.SamplesPerFrame(obj, value)
@@ -138,6 +144,14 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
             end
 
             obj.set_channel_names();
+            if obj.InSetup
+                obj.EnabledChannels = 1:length(obj.channel_names);
+            else
+                % This looks like an HDL bug, but all channels need to be
+                % enabled or they will timeout or not correctly be configured
+                assert(length(obj.EnabledChannels)==length(obj.channel_names), ...
+                    'All channels must be enabled for platform');
+            end
 
         end
 
@@ -147,7 +161,7 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
             chanCount = obj.iio_device_get_channels_count(phydev);
             for c = 1:chanCount
                 chanPtr = obj.iio_device_get_channel(phydev, c - 1);
-                obj.channel_names{end + 1} = obj.iio_channel_get_name(chanPtr);
+                obj.channel_names{end + 1} = obj.iio_channel_get_id(chanPtr);
             end
         end
 
