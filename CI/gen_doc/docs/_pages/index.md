@@ -59,6 +59,7 @@ The following have device-specific implementations in MATLAB and Simulink. If a 
 | AD4080    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD4170    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD4190    | Zedboard  | Yes   | No    | ADI (2021b) |
+| AD4692    | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD5592r   | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD5593r   | Zedboard  | Yes   | No    | ADI (2021b) |
 | AD5710r   | Zedboard  | Yes   | No    | ADI (2021b) |

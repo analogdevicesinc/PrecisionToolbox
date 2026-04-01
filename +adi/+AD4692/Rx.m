@@ -1,0 +1,94 @@
+classdef Rx < adi.common.Rx & matlabshared.libiio.base & adi.common.Attribute
+    % AD4692 Precision ADC Class
+    % adi.AD4692.Rx Receives data from the AD4692 ADC
+    %   The adi.AD4692.Rx System object is a signal source that can receive
+    %   data from the AD4692.
+    %
+    %   rx = adi.AD4692.Rx;
+    %   rx = adi.AD4692.Rx('uri','192.168.2.1');
+    %
+
+    properties (Nontunable)
+        % SampleRate Sample Rate
+        %   Baseband sampling rate in Hz, specified as a scalar
+        %   in samples per second.
+        SampleRate = '500000'
+
+        % SamplesPerFrame Samples Per Frame
+        %   Number of samples per frame, specified as an even positive
+        %   integer.
+        SamplesPerFrame = 1024
+    end
+
+    properties (Hidden)
+        % Number of frames or buffers of data to capture
+        FrameCount = 1
+    end
+
+    % Channel names
+    properties (Nontunable, Hidden, Constant)
+        channel_names = {'voltage0'}
+    end
+
+    % isOutput
+    properties (Hidden, Nontunable, Access = protected)
+        isOutput = false
+    end
+
+    properties (Nontunable, Hidden)
+        Timeout = Inf
+        kernelBuffersCount = 2
+        dataTypeStr = 'int32'
+        phyDevName = 'ad4692'
+        devName = 'ad4692'
+    end
+
+    properties (Nontunable, Hidden, Constant)
+        Type = 'Rx'
+    end
+
+    properties (Hidden, Constant)
+        ComplexData = false
+    end
+
+    methods
+
+        %% Constructor
+        function obj = Rx(varargin)
+            % Initialize the Rx object
+            obj = obj@matlabshared.libiio.base(varargin{:});
+            obj.enableExplicitPolling = false;
+            obj.EnabledChannels = 1;
+            obj.BufferTypeConversionEnable = true;
+            obj.uri = 'ip:analog.local';
+        end
+
+        function flush(obj)
+            % Flush the buffer
+            flushBuffers(obj);
+        end
+
+        function set.SampleRate(obj, value)
+            % Set device sampling rate
+            obj.SampleRate = value;
+            if obj.ConnectedToDevice
+                obj.setDeviceAttributeRAW('sampling_frequency', value);
+            end
+        end
+
+    end
+
+    %% API Functions
+    methods (Hidden, Access = protected)
+
+        function setupInit(obj)
+            % Write all attributes to device once connected through set
+            % methods
+            % Do writes directly to hardware without using set methods.
+            % This is required since Simulink support doesn't support
+            % modification to nontunable variables at SetupImpl
+            obj.setDeviceAttributeRAW('sampling_frequency',num2str(obj.SampleRate));
+        end
+        
+    end
+end
