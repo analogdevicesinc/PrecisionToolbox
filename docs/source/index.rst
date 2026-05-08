@@ -93,3 +93,4 @@ The following have device-specific implementations in MATLAB and Simulink. In ge
    "AD5706r", "SDP-K1", "Yes", "No", "ADI (2021b)",
    "AD7134", "SDP-K1", "Yes", "No", "ADI (2021b)",
    "AD4134", "SDP-K1", "Yes", "No", "ADI (2021b)"
+   "AD5529r", "SDP-K1", "Yes", "No", "ADI (2021b)"
