@@ -16,9 +16,18 @@ data = sine_wave();
 data = data+2^15;
 data = uint16(data);
 
+% Select the device (uncomment the desired device)
+device = 'AD3530R'; % 8-channel, 16-bit DAC
+% device = 'AD3532R'; % 16-channel, 16-bit DAC
+
 %% Tx set up
 % Instantiate the system object
-tx = adi.AD3530r.Tx;
+switch device
+    case 'AD3530R'
+        tx = adi.AD3530r.Tx();
+    case 'AD3532R'
+        tx = adi.AD3532r.Tx();
+end
 % Specify uri
 tx.uri = 'ip:analog.local';
 tx.EnableCyclicBuffers = true;
