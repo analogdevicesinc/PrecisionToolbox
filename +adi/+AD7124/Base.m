@@ -66,7 +66,11 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
             % Set device sampling rate
             obj.SampleRate = value;
             if obj.ConnectedToDevice
-                obj.setDeviceAttributeRAW('sampling_frequency', value);
+                for i=1:length(obj.channel_names)
+                    if (ismember(i, obj.EnabledChannels))
+                        obj.setAttributeRAW(obj.channel_names{i}, 'sampling_frequency', value, false);
+                    end
+                end
             end
         end
     end
@@ -79,7 +83,11 @@ classdef Base < adi.common.Rx & adi.common.RxTx & ...
             % Do writes directly to hardware without using set methods.
             % This is required since Simulink support doesn't support
             % modification to nontunable variables at SetupImpl
-            obj.setDeviceAttributeRAW('sampling_frequency',num2str(obj.SampleRate));
+            for i=1:length(obj.channel_names)
+                if (ismember(i, obj.EnabledChannels))
+                    obj.setAttributeRAW(obj.channel_names{i}, 'sampling_frequency', num2str(obj.SampleRate), false);
+                end
+            end
         end
     end
 
