@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Some limitations and bugs are known to be present in the support for the ADCs relevant to the Precision Toolbox. They have been summarized below." name="description" />
+
+    <title>Limitations &#8212; Precision Toolbox  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=fb8972a4" />
+    <script async="async" src="../../_static/app.umd.js?v=8c78863f"></script>
+    <link rel="index" title="Index" href="../../genindex/" />
+    <link rel="search" title="Search" href="../../search/" />
+    <link rel="next" title="Support" href="../support/" />
+    <link rel="prev" title="Examples" href="../examples/" />
+   
+  
+  
+  
+  <meta name="repository" content="PrecisionToolbox">
+  <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
+  
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head>
+  
+    <body>
+  
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button class="icon"></button>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://developer.analog.com/" aria-label="Analog Devices Inc. landing page"></a>
+        <div class="vertical-divider"></div>
+        
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs">Documentation</label>
+        
+        <a id="logo" href="../../">
+          <div>Precision Toolbox</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../index.html" class="current">Precision Toolbox</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div class="header localtoc-header">
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Limitations</a><ul>
+<li><a class="reference internal" href="#known-limitations-bugs-and-quirks">Known Limitations, Bugs and Quirks</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../">
+      Precision Toolbox
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../index.html" class="current">Precision Toolbox</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <p class="caption" role="heading">
+  <span class="caption-text">Index:</span>
+</p>
+
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../installation/">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_streaming/">Data Streaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Limitations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../support/">Support</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../reference_api/">Reference APIs</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD7380_Rx/">adi.AD7380.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD7768_Rx/">adi.AD7768.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD7768_1_Rx/">adi.AD7768_1.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4030_Rx/">adi.AD4030.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4630_16_Rx/">adi.AD4630_16.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4630_24_Rx/">adi.AD4630_24.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4858_Rx/">adi.AD4858.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD2S1210_Rx/">adi.AD2S1210.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4000_Rx/">adi.AD4000.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4001_Rx/">adi.AD4001.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4002_Rx/">adi.AD4002.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4003_Rx/">adi.AD4003.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4004_Rx/">adi.AD4004.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4005_Rx/">adi.AD4005.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4006_Rx/">adi.AD4006.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4007_Rx/">adi.AD4007.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4008_Rx/">adi.AD4008.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4010_Rx/">adi.AD4010.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4011_Rx/">adi.AD4011.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4020_Rx/">adi.AD4020.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4021_Rx/">adi.AD4021.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4022_Rx/">adi.AD4022.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4170_Rx/">adi.AD4170.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD5760_Tx/">adi.AD5760.Tx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD5780_Tx/">adi.AD5780.Tx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD5781_Tx/">adi.AD5781.Tx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD5790_Tx/">adi.AD5790.Tx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD5791_Tx/">adi.AD5791.Tx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD7124_4_Rx/">adi.AD7124_4.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD7124_8_Rx/">adi.AD7124_8.Rx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_api/AD4052_Rx/">adi.AD4052.Rx</a></li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body-header">
+  <nav class="breadcrumb empty"><ol></ol></nav>
+</div>
+          <div class="body" role="main">
+            
+  <section id="limitations">
+<h1>Limitations<a class="headerlink" href="#limitations" title="Link to this heading"></a></h1>
+<section id="known-limitations-bugs-and-quirks">
+<h2>Known Limitations, Bugs and Quirks<a class="headerlink" href="#known-limitations-bugs-and-quirks" title="Link to this heading"></a></h2>
+<p>Some limitations and bugs are known to be present in the support for the ADCs relevant to the Precision Toolbox. They have been summarized below.</p>
+<p><strong>Libiio backend</strong></p>
+<p>Currently only ethernet/IP backends are supported for all the parts in the toolbox. For AD4030-24, AD4630-16 and AD4630-24 the usb backend can also be used. Serial backends are not supported.</p>
+<p><strong>AD7380</strong></p>
+<p>Trigger setup needs to be done before running any of the toolbox scripts that interact with the AD7380. Refer to the <a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad738x#trigger_management" target="_blank">Trigger Management section on the AD738x Linux IIO driver wiki page</a></p>
+<p><strong>AD7768</strong></p>
+<p>The Linux IIO driver for the AD7768 returns data for all the channels whenever a data capture is requested. So, in order to get sensible outputs, ensure that the EnabledChannels array consists of indices for all the channels.</p>
+<p><strong>AD4030-24. AD4630-16, AD4630-24</strong></p>
+<p>The Linux IIO driver for the three parts (there’s a common Linux driver that addresses all three parts) returns data for all the channels whenever a data capture is requested. In order to have sensible outputs, ensure that the EnabledChannels array consists of indices for all the channels.</p>
+<p>Another known issue here has to do with the case where the ADC sends out common mode voltage data along with the differential voltage data. The EnabledChannel property values that consist of more than two indices (even when there are 4 IIO channels), are not ‘valid’. Of the possible groupings with two channel indices, the ones that correspond to {differential0, common_voltage0} and {differential1, common_voltage1} are also not ‘valid’</p>
+<p>It is possible to get data (common-mode and differential) for all the ADC channels, by using a ‘valid’ channel grouping, setting the BufferTypeConversionEnable property to ‘false’ in the Base class for the AD463x family, and adding custom parsing logic to extract the data for all IIO channels, from the 32-bit raw words you get from the data capture.</p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../examples/" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Examples</a>
+    <a href="../support/" title="Next document (Alt+Shift+RightArrow)" class="next">Support</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2023-2024, Analog Devices Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
