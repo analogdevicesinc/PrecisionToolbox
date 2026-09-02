@@ -11,4 +11,4 @@ mv source/_mlpages/Pluto*.html   source/_mlpages/devices/
 mv source/_mlpages/Pack*.html    source/_mlpages/devices/
 
 python3 gen_pages.py
-make html
+make dirhtml
