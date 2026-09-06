@@ -17,7 +17,7 @@ lock(label: 'adgt_test_harness_boards', quantity: 1){
     // harness.set_env('telemetry_repo', 'http://gateway.englab:3000/mirrors/telemetry.git')
     // harness.set_env('telemetry_branch', 'master')
     harness.set_env('matlab_repo', 'https://github.com/analogdevicesinc/PrecisionToolbox.git') // Not necessary when using checkout scm
-    harness.set_env('matlab_release','R2021b')
+    harness.set_env('matlab_release','R2023b')
     harness.set_env('matlab_license','network')
     harness.set_matlab_timeout('30m')
   
@@ -39,6 +39,7 @@ lock(label: 'adgt_test_harness_boards', quantity: 1){
     harness.update_agents()
   
     //Set other test parameters
+    harness.set_env('docker_image', 'tfcollins/test-harness-ci-ubuntu-22_04:latest')
     harness.set_nebula_debug(true)
     harness.set_enable_docker(true)
     harness.set_docker_host_mode(true)
@@ -63,8 +64,10 @@ lock(label: 'adgt_test_harness_boards', quantity: 1){
     harness.add_stage(rebootBoard,'continueWhenFail')
 
     // Test stage
-    harness.set_matlab_commands(["addpath(genpath('test'))",
+    harness.set_matlab_commands(["addpath(genpath('/mlhsp/R2023b/toolbox/shared/libm2k'))",
+                    "addpath(genpath('test'))",
                     "pyenv('Version','/usr/bin/python3')",
+                    "disp(clib.libm2k.libm2k.context.getVersion())",
                     "runHWTests(getenv('board'))"])
     harness.add_stage(harness.stage_library("MATLABTests"),'continueWhenFail')
   
