@@ -24,7 +24,7 @@ classdef (Abstract) Base < ...
     properties (Nontunable, Hidden)
         Timeout = Inf;
         kernelBuffersCount = 2;
-        dataTypeStr = 'uint16';
+        dataTypeStr = 'int16';
     end
 
     properties (Abstract, Hidden, Constant)
